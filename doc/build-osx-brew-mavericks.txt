@@ -1,0 +1,148 @@
+Copyright (c) 2012-2013 SPKLoin Developers
+Copyright (c) 2009-2012 Bitcoin Developers
+Distributed under the MIT/X11 software license, see the accompanying file
+license.txt or http://www.opensource.org/licenses/mit-license.php. This
+product includes software developed by the OpenSSL Project for use in the
+OpenSSL Toolkit (http://www.openssl.org/). This product includes cryptographic
+software written by Eric Young (eay@cryptsoft.com) and UPnP software written by
+Thomas Bernard.
+
+
+Mac OS X Mavericks build instructions
+How to build sparklecoind and Sparkleunity-Qt on 10.9
+
+
+Prerequisites
+
+Install Xcode from the App Store and launch it
+
+All of the commands should be executed in Terminal.app
+
+1.  Install the command line tools
+
+xcode-select --install
+
+2.  Install Homebrew from http://brew.sh
+
+You cannot install Boost 1.55.0 from Homebrew and will have to build it
+https://github.com/bitcoin/bitcoin/issues/3228
+
+3.  Install dependencies from Homebrew
+
+$ brew doctor
+$ brew install https://raw.github.com/mxcl/homebrew/master/Library/Formula/berkeley-db4.rb --without-java --interactive
+/private/tmp/berkeley-db4-UGpd0O/db-4.8.30 $ cd ..
+/private/tmp/berkeley-db4-UGpd0O $ db-4.8.30/dist/configure --prefix=/usr/local/Cellar/berkeley-db4/4.8.30 --mandir=/usr/local/Cellar/berkeley-db4/4.8.30/share/man --enable-cxx
+/private/tmp/berkeley-db4-UGpd0O $ make
+/private/tmp/berkeley-db4-UGpd0O $ make install
+/private/tmp/berkeley-db4-UGpd0O $ exit
+$ brew link berkeley-db4 --force
+$ brew install openssl miniupnpc
+$ brew link openssl --force
+$ sudo mkdir -p /opt/local/lib
+$ sudo ln -s /usr/local/lib /opt/local/lib/db48
+
+4.  Download and extract Boost from
+http://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz/
+
+tar xvfz Downloads/boost_1_55_0.tar.gz
+
+Boost 1.55.0 fails to build with current versions of clang so we need to patch
+https://trac.macports.org/ticket/42282
+
+5.  Download and replace the files needed to build Boost
+
+curl -O https://raw.githubusercontent.com/boostorg/atomic/e4bde20f2eec0a51be14533871d2123bd2ab9cf3/include/boost/atomic/detail/gcc-atomic.hpp
+curl -O https://raw.githubusercontent.com/boostorg/atomic/6bb71fdd8f7cc346d90fb14beb38b7297fc1ffd9/include/boost/atomic/detail/cas128strong.hpp
+mv gcc-atomic.hpp boost_1_55_0/boost/atomic/detail/
+mv cas128strong.hpp boost_1_55_0/boost/atomic/detail/
+
+6.  Build Boost
+
+cd boost_1_55_0/
+./bootstrap.sh
+./b2 --toolset=clang cxxflags="-stdlib=libstdc++" linkflags="-stdlib=libstdc++" variant=release link=static threading=multi runtime-link=static --build-dir=build --build-type=minimal stage --with-program_options --with-system --with-filesystem --with-chrono --with-thread
+./b2 --toolset=clang cxxflags="-stdlib=libstdc++" linkflags="-stdlib=libstdc++" variant=release link=shared threading=multi runtime-link=shared --build-dir=build --build-type=minimal stage --with-program_options --with-system --with-filesystem --with-chrono --with-thread
+cd ..
+
+7.  Duplicate Boost libraries appending -mt
+
+for f in boost_1_55_0/stage/lib/*.dylib; do cp "$f" "${f%.dylib}-mt.dylib"; done
+for f in boost_1_55_0/stage/lib/*.a; do cp "$f" "${f%.a}-mt.a"; done
+
+8.  Copy Boost libraries and source
+
+sudo cp boost_1_55_0/stage/lib/libboost_*.dylib /usr/lib/
+sudo cp boost_1_55_0/stage/lib/libboost_*.a /opt/local/lib/
+sudo cp -r boost_1_55_0/boost/ /usr/include/boost/
+
+9.  Clone the github tree to get the source code
+
+git clone https://github.com/Sparkleunity/Sparkleunity.git
+
+
+Building sparklecoind
+
+1.  Run the makefile
+
+cd Sparkleunity/src/
+make -f makefile.osx RELEASE=true 64BIT=true
+
+
+Building Sparkleunity-Qt.app
+
+You cannot use Qt 4.8.6 if you want to deploy to other systems
+http://qt-project.org/forums/viewthread/41925
+
+1.  Download and install Qt 4.8.5 from
+http://download.qt-project.org/archive/qt/4.8/4.8.5/qt-mac-opensource-4.8.5.dmg
+
+2.  Download and install Qt Creator from http://qt-project.org/downloads
+
+3.  Use Qt Creator to build the project
+
+Double-click Sparkleunity/bitcoin-qt.pro to open Qt-Creator
+Click the Configure Project button
+Click on the monitor icon on the left bar above Debug and change it to Release
+On the top menu, click Build and Build Project "bitcoin-qt"
+
+
+Deploying Sparkleunity-Qt.app
+
+Deploying your app is needed to run it on non-development systems
+
+1.  Sym-link some shit
+
+sudo ln -s /opt/local/lib /opt/local/lib/lib
+sudo ln -s /opt/local/lib/db48/libdb_cxx-4.8.dylib /opt/local/lib/libdb_cxx-4.8.dylib
+
+2.  Copy Sparkleunity-Qt.app and run macdeployqt to bundle required libraries
+
+mkdir deploy
+cp -r build-bitcoin-qt-Desktop-Release/Sparkleunity-Qt.app/ deploy/Sparkleunity-Qt.app/
+sudo macdeployqt deploy/Sparkleunity-Qt.app/
+
+3.  Fix a dependency path
+
+install_name_tool -change "/opt/local/lib/db48/libdb_cxx-4.8.dylib" "@executable_path/../Frameworks/libdb_cxx-4.8.dylib" deploy/Sparkleunity-Qt.app/Contents/MacOS/Sparkleunity-Qt
+
+4.  Compress Sparkleunity-Qt.app into a zip
+
+Right-click on Sparkleunity-Qt.app and click Compress
+
+
+Troubleshooting
+
+Getting an error "EXCEPTION: 11DbException" "DbEnv::open: Invalid argument"?
+This has to do with using berkeley-db 4.8 via brew on OSX. Solution is to update berkeley db (warning, this may make your wallet.dat file incompatible with machines running berkeley-db 4.8).
+
+$ brew uninstall berkeley-db4
+$ brew install berkeley-db --without-java --interactive
+/private/tmp/berkeley-db-UGpd0O/db-5.3.28 $ cd ..
+/private/tmp/berkeley-db-UGpd0O $ db-5.3.28/dist/configure --prefix=/usr/local/Cellar/berkeley-db/5.3.28 --mandir=/usr/local/Cellar/berkeley-db/5.3.28/share/man --enable-cxx
+/private/tmp/berkeley-db-UGpd0O $ make
+/private/tmp/berkeley-db-UGpd0O $ make install
+/private/tmp/berkeley-db-UGpd0O $ exit
+$ brew link berkeley-db --force
+
+You must also ensure the build points to the correct BDB_LIB_SUFFIX. Set BDB_LIB_SUFFIX = -5.3 in your makefile, or open up sparkleunity.pro and edit line 321 to default BDB_LIB_SUFFIX to -5.3 instead of -4.8.

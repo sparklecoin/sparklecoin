@@ -1,0 +1,7 @@
+Team comms (IRC, CC, Skype, etc.) re: Sparkleunity testing
+Sparkleunity Gitian process pre-merge testing
+Sparkleunity Gitian pre-merge build output regression testing
+Sparkleunity Gitian compilation and testing w/ version fixes
+Sparkleunity issues tracking
+Sparkleunity coin control testing
+Sparkleunity regression testing
