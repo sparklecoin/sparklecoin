@@ -78,7 +78,10 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     resize(950, 650);
     setWindowTitle(tr("Sparkleunity Wallet"));
 
-    QFontDatabase::addApplicationFont(":/fonts/weblysleek");
+//    QFontDatabase::addApplicationFont(":/fonts/weblysleek");
+    QFontDatabase::addApplicationFont(":/fonts/opensans");
+    QFontDatabase::addApplicationFont(":/fonts/opensans-bold");
+    QFontDatabase::addApplicationFont(":/fonts/opensans-semibold");
     QFile styleFile(":/themes/default");
     styleFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleFile.readAll());
@@ -282,6 +285,7 @@ void BitcoinGUI::createActions()
     encryptWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Encrypt Wallet"), this);
     encryptWalletAction->setToolTip(tr("Encrypt or decrypt wallet"));
     encryptWalletAction->setCheckable(true);
+
     unlockForMintingAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Unlock Wallet for Minting Only"), this);
     unlockForMintingAction->setToolTip(tr("Unlock wallet only for minting. Sending coins will still require the passphrase."));
     unlockForMintingAction->setCheckable(true);
@@ -298,6 +302,7 @@ void BitcoinGUI::createActions()
     connect(aboutQtAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
     connect(encryptWalletAction, SIGNAL(triggered(bool)), this, SLOT(encryptWallet(bool)));
+
     connect(unlockForMintingAction, SIGNAL(triggered(bool)), this, SLOT(unlockForMinting(bool)));
     connect(backupWalletAction, SIGNAL(triggered()), this, SLOT(backupWallet()));
     connect(changePassphraseAction, SIGNAL(triggered()), this, SLOT(changePassphrase()));
@@ -326,6 +331,7 @@ void BitcoinGUI::createMenuBar()
 
     QMenu *settings = appMenuBar->addMenu(tr("&Settings"));
     settings->addAction(encryptWalletAction);
+
     settings->addAction(unlockForMintingAction);
     settings->addAction(changePassphraseAction);
     settings->addSeparator();
@@ -352,6 +358,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(mintingAction);
     toolbar->addAction(addressBookAction);
+    toolbar->setStyleSheet("QToolButton {height:46px;} QToolButton:checked { border-bottom:2px solid #0099cc;}");
 #ifdef FIRST_CLASS_MESSAGING
     toolbar->addAction(messageAction);
 #endif
@@ -359,6 +366,7 @@ void BitcoinGUI::createToolBars()
     QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
     toolbar2->setMovable(false);
     toolbar2->setToolButtonStyle(Qt::ToolButtonTextOnly);
+    toolbar2->setStyleSheet("QToolButton {margin-right:20px; background:#e9e9e9; float: right; margin-left:30px; font-weight:600; color:#999;} QToolButton:enabled { background:#0099cc; color:#fff; }");
     toolbar2->addAction(exportAction);
 }
 

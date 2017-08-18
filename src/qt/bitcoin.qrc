@@ -90,6 +90,9 @@
     </qresource>
     <qresource prefix="/fonts">
         <file alias="weblysleek">res/fonts/WeblySleek.ttf</file>
+        <file alias="opensans">res/fonts/OpenSans-Regular.ttf</file>
+        <file alias="opensans-bold">res/fonts/OpenSans-Bold.ttf</file>
+        <file alias="opensans-semibold">res/fonts/OpenSans-SemiBold.ttf</file>
     </qresource>
     <qresource prefix="/controls">
         <file alias="caret-down">res/images/controls/caret-down.png</file>

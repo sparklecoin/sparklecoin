@@ -25,9 +25,13 @@ static const int STATUSBAR_ICONSIZE = 16;
 #define COLOR_BAREADDRESS QColor(140, 140, 140)
 
 /* Colors for minting tab for each coin age group */
-#define COLOR_MINT_YOUNG QColor(128, 64, 64)
-#define COLOR_MINT_MATURE QColor(64, 128, 64)
-#define COLOR_MINT_OLD QColor(26, 77, 26)
+#define COLOR_MINT_YOUNG QColor(255, 232, 232)
+#define COLOR_MINT_MATURE QColor(251, 255, 206)
+#define COLOR_MINT_OLD QColor(207, 247, 207)
+
+#define COLOR_MINT_YOUNG_DARK QColor(219, 30, 30)
+#define COLOR_MINT_MATURE_DARK QColor(234, 249, 64)
+#define COLOR_MINT_OLD_DARK QColor(42, 224, 42)
 
 
 #endif // GUICONSTANTS_H

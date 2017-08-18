@@ -30,21 +30,21 @@ MintingView::MintingView(QWidget *parent) :
     QLabel *youngColor = new QLabel(" ");
     youngColor->setMaximumHeight(15);
     youngColor->setMaximumWidth(10);
-    youngColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_YOUNG.red()).arg(COLOR_MINT_YOUNG.green()).arg(COLOR_MINT_YOUNG.blue()));
+    youngColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_YOUNG_DARK.red()).arg(COLOR_MINT_YOUNG_DARK.green()).arg(COLOR_MINT_YOUNG_DARK.blue()));
     QLabel *youngLegend = new QLabel(tr("transaction is too young"));
     youngLegend->setContentsMargins(5,0,15,0);
 
     QLabel *matureColor = new QLabel(" ");
     matureColor->setMaximumHeight(15);
     matureColor->setMaximumWidth(10);
-    matureColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_MATURE.red()).arg(COLOR_MINT_MATURE.green()).arg(COLOR_MINT_MATURE.blue()));
+    matureColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_MATURE_DARK.red()).arg(COLOR_MINT_MATURE_DARK.green()).arg(COLOR_MINT_MATURE_DARK.blue()));
     QLabel *matureLegend = new QLabel(tr("transaction is mature"));
     matureLegend->setContentsMargins(5,0,15,0);
 
     QLabel *oldColor = new QLabel(" ");
     oldColor->setMaximumHeight(15);
     oldColor->setMaximumWidth(10);
-    oldColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_OLD.red()).arg(COLOR_MINT_OLD.green()).arg(COLOR_MINT_OLD.blue()));
+    oldColor->setStyleSheet(legendBoxStyle.arg(COLOR_MINT_OLD_DARK.red()).arg(COLOR_MINT_OLD_DARK.green()).arg(COLOR_MINT_OLD_DARK.blue()));
     QLabel *oldLegend = new QLabel(tr("transaction  has reached maximum probability"));
     oldLegend->setContentsMargins(5,0,15,0);
 
