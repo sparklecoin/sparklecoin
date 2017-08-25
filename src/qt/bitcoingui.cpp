@@ -29,6 +29,7 @@
 #include "guiutil.h"
 #include "rpcconsole.h"
 #include "wallet.h"
+#include "importwalletdialog.h"
 
 #ifdef Q_WS_MAC
 #include "macdockiconhandler.h"
@@ -55,6 +56,8 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QTimer>
+#include <QtSvg/QSvgWidget>
+#include <QtSvg/QGraphicsSvgItem>
 
 #include <QDragEnterEvent>
 #include <QUrl>
@@ -291,6 +294,8 @@ void BitcoinGUI::createActions()
     unlockForMintingAction->setCheckable(true);
     backupWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Backup Wallet"), this);
     backupWalletAction->setToolTip(tr("Backup wallet to another location"));
+    importWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Import Wallet"), this);
+    importWalletAction->setToolTip(tr("Import External Wallet.dat into current wallet"));
     changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase"), this);
     changePassphraseAction->setToolTip(tr("Change the passphrase used for wallet encryption"));
     openRPCConsoleAction = new QAction(tr("&Debug window"), this);
@@ -305,6 +310,7 @@ void BitcoinGUI::createActions()
 
     connect(unlockForMintingAction, SIGNAL(triggered(bool)), this, SLOT(unlockForMinting(bool)));
     connect(backupWalletAction, SIGNAL(triggered()), this, SLOT(backupWallet()));
+    connect(importWalletAction, SIGNAL(triggered()), this, SLOT(importWallet()));
     connect(changePassphraseAction, SIGNAL(triggered()), this, SLOT(changePassphrase()));
 }
 
@@ -321,6 +327,7 @@ void BitcoinGUI::createMenuBar()
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));
     file->addAction(backupWalletAction);
+    file->addAction(importWalletAction);
     file->addAction(exportAction);
 #ifndef FIRST_CLASS_MESSAGING
     file->addAction(messageAction);
@@ -930,10 +937,21 @@ void BitcoinGUI::backupWallet()
         }
     }
 }
+void BitcoinGUI::importWallet()
+{
+    QString walletFile;
+    walletFile = QFileDialog::getOpenFileName(this, "Select Wallet File To Import", QDir::homePath(), "Wallet files(*.dat);; All Files(*.*)");
+    if(!walletModel || walletFile.isEmpty())
+        return;
+    ImportWalletDialog dlg(this, walletFile);
+    dlg.exec();
+//    dlg.ImportWalletRequest();
+}
 
 void BitcoinGUI::changePassphrase()
 {
     AskPassphraseDialog dlg(AskPassphraseDialog::ChangePass, this);
+
     dlg.setModel(walletModel);
     dlg.exec();
 }

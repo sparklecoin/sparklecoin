@@ -40,6 +40,8 @@
         <file>res/icons/horizontal_trans-no-shadow.png</file>
         <file alias="sparkleunity_icon">res/icons/sparkleunity.png</file>
         <file alias="sparkleunity_tooltip">res/icons/sparkleunity.png</file>
+        <file alias="svg-loader">res/icons/loader.svg</file>
+        <file alias="dialog-background">res/images/background.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>

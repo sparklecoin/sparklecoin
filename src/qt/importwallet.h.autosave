@@ -1,0 +1,20 @@
+#ifndef IMPORTINGWALLET_H
+#define IMPORTINGWALLET_H
+
+#include <QDialog>
+
+namespace Ui {
+    class ImportingWallet;
+}
+
+class ImportingWallet : public QDialog
+{
+    Q_OBJECT
+    public:
+        explicit ImportingWallet(QWidget *parent = 0);
+        ~ImportingWallet();
+    private:
+        Ui::ImportingWallet *ui;
+};
+
+#endif //IMPORTINGWALLET_H

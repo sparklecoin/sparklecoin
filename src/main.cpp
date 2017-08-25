@@ -957,11 +957,12 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 	{
 		int64 BlockReward = 2  * COIN;
 		int64 Block_Interval = 210000;
-		int64 Block_Interval_Start = 4204800; //expected number of blocks after 20 years
-		int64 nBlockHeight1 = nBlockHeight - Block_Interval_Start;
-		if(nBlockHeight > 0)
-		{
-			int64 Limit = ceil( nBlockHeight1 / Block_Interval );
+		int64 Block_Interval_Start = 21024000; //expected block height in 100 years
+
+		int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
+		if(nBlockDifference > 0)
+        {
+			int64 Limit = ceil( nBlockDifference / Block_Interval );
 			for(int a = 1; a < Limit; a++)
 			{
 				BlockReward /= 2;
@@ -971,10 +972,6 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 	}
 	if(fTestNet)
 	nSubsidy = 10 * COIN;
-	/*
-	else if((!fTestNet && nTime < POWENDTIME - 86400) || fTestNet){ // reward is 0 before ending PoW 1 day
-        nSubsidy = COIN * 2; //0.175;//0.3472222222;
-    }*/
     return nSubsidy;
 }
 
@@ -988,7 +985,7 @@ int64 GetProofOfStakeReward(int64 nCoinAge)
     return nSubsidy;
 }
 
-static const int64 nTargetTimespan = 24 * 60 * 60;  // one week
+static const int64 nTargetTimespan = 60 * 60;  // one hour
 static const int64 nTargetSpacingWorkMax = STAKE_TARGET_SPACING; // 2-hour
 
 //
@@ -1038,6 +1035,10 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
     int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
+
+	if (pindexLast->GetBlockTime() >= POS_START_TIME && nActualSpacing < 0)
+	nActualSpacing = nTargetSpacing;
+
     int64 nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);

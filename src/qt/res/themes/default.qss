@@ -296,3 +296,18 @@ QFrame#MultisigAddressEntry {
 QFrame#MultisigInputEntry {
     /*border: 1px solid #008000;*/
 }
+
+QFrame#ImportWalletDialog QLabel
+{
+    text-align: center;
+}
+QFrame#ImportWalletDialog QGraphicsView
+{
+    background: url(:/icons/svg-loader);
+}
+QMovie
+{
+    text-align: center;
+    background : #fff;
+    margin: 0 auto;
+}

@@ -42,14 +42,16 @@ static const int COINBASE_MATURITY_SPKL = 500;
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 static const int STAKE_TARGET_SPACING = 2.5 * 60; // 10-minute block spacing 
-static const int STAKE_MIN_AGE = 60 * 60 * 24; // minimum age for coin age
-static const int STAKE_MAX_AGE = 60 * 60 * 24 * 5; // stake age of full weight
+static const int STAKE_MIN_AGE = 60 * 60 * 24 * 30; // minimum age for coin age
+static const int STAKE_MAX_AGE = 60 * 60 * 24 * 90; // stake age of full weight
 
 static const unsigned int MODIFIER_INTERVAL = 1 * 60 * 60; //10 * 60; //6 * 60 * 60;
 
-static const unsigned int GENESIS_BLOCK_REWARD = 37525000;// Thirty-Seven Million Five Hundred Twenty-Five Thousand Dollars and Zero cents
-static const unsigned int POSSTARTIME = 1519343000;
-static const unsigned int POWENDTIME = 1519344000;//pow end time | 2018-2-23 //temporary
+static const unsigned int GENESIS_BLOCK_REWARD = 40950000; //40,950,000 
+
+
+static const unsigned int POS_START_TIME = 1503737849; //current pow start date is 3 days  for testing only 
+//original should be 90 days = 7776000
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;

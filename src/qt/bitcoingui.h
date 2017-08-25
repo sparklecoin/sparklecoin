@@ -93,6 +93,7 @@ private:
     QAction *encryptWalletAction;
     QAction *unlockForMintingAction;
     QAction *backupWalletAction;
+    QAction *importWalletAction;
     QAction *changePassphraseAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
@@ -174,6 +175,8 @@ private slots:
     void unlockForMinting(bool status);
     /** Backup the wallet */
     void backupWallet();
+    /** Import Wallet File */
+    void importWallet();
     /** Change encrypted wallet passphrase */
     void changePassphrase();
     /** Ask for pass phrase to unlock wallet temporarily */
