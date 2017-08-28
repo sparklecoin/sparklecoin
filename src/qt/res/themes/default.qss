@@ -13,14 +13,15 @@ QMainWindow {
 QToolButton, QPushButton {/*
     background: #ffffff;
     color: #222222;*/
+    font-weight: 400;
     background: #0099cc;
     color: #fff;
     border:none;
     margin: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-top: 6px; /*4px;*/
+    padding-bottom: 6px; /*4px;*/
+    padding-left: 10px; /*6px;*/
+    padding-right: 10px; /*6px;*/
     float:right;
 }
 
@@ -147,6 +148,7 @@ QHeaderView::section {
     border: 1px solid #F5f5f5;
     color: #FFFFFF;
     padding:5px;
+    font-weight: 400;
 }
 
 QHeaderView::section:checked

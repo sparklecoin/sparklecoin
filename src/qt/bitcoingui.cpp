@@ -294,7 +294,7 @@ void BitcoinGUI::createActions()
     unlockForMintingAction->setCheckable(true);
     backupWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Backup Wallet"), this);
     backupWalletAction->setToolTip(tr("Backup wallet to another location"));
-    importWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Import Wallet"), this);
+    importWalletAction = new QAction(QIcon(":/icons/import-icon"), tr("&Import Wallet"), this);
     importWalletAction->setToolTip(tr("Import External Wallet.dat into current wallet"));
     changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase"), this);
     changePassphraseAction->setToolTip(tr("Change the passphrase used for wallet encryption"));

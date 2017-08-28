@@ -4,7 +4,6 @@
 #include <QtSvg/QSvgRenderer>
 #include <QtSvg/QtSvg>
 #include <QWidget>
-#include <QtSvg/QSvgWidget>
 #include <QtSvg/QGraphicsSvgItem>
 #include <QLayout>
 #include <walletpassphrasedialog.h>
@@ -16,12 +15,14 @@ ImportWalletDialog::ImportWalletDialog(QWidget *parent, QString walletFilePath) 
     walletFile = walletFilePath;
     ui->setupUi(this);
     ui->successlabel->setVisible(false);
+    ui->finishbutton->setVisible(false);
+    ui->finishbutton->setStyleSheet("padding: 10px 20px; font-weight: 600;");
     connect(this, SIGNAL(failed(QString)), this, SLOT(failHandler(QString)));
     connect(this, SIGNAL(getPassPhrase()), this, SLOT(passPhraseDialog()));
     connect(this, SIGNAL(success()), this, SLOT(successHandler()));
     setWindowFlags(Qt::Dialog | Qt::Desktop | Qt::FramelessWindowHint);
     QString imagePath = ":/icons/svg-loader";
-    QSvgWidget *image = new QSvgWidget(this);
+    image = new QSvgWidget(this);
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setAlignment(Qt::AlignCenter);
     image->load(imagePath);
@@ -37,8 +38,9 @@ void ImportWalletDialog::successHandler()
 {
     ui->importWalletLabel->setVisible(false);
     ui->successlabel->setVisible(true);
-//    ui->importWalletLabel->setStyleSheet("QLabel {color: #009933;}");
-//    ui->importWalletLabel->setStyle("color: #009933");
+    QString path = ":/icons/success-check";
+    image->load(path);
+    ui->finishbutton->setVisible(true);
 }
 void ImportWalletDialog::show()
 {
