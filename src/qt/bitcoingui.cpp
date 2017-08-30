@@ -89,6 +89,10 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     QFont _Font ("Open Sans",8);
     QApplication::setFont(_Font);
+
+    QFont _Font1 ("Source Sans Pro",8);
+    QApplication::setFont(_Font1);
+
     QFile styleFile(":/themes/default");
     styleFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleFile.readAll());
