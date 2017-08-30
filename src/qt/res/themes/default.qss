@@ -1,6 +1,7 @@
 /* Global Styles */
 * {
     font-family: "Open Sans";/*"WeblySleek UI Normal";*/
+    font-size: 12px;
 }
 
 QMainWindow {
