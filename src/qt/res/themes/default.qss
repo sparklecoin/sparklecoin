@@ -1,6 +1,6 @@
 /* Global Styles */
 * {
-    font-family: "Open Sans";/*"WeblySleek UI Normal";*/
+    /*font-family: "Open Sans";/*"WeblySleek UI Normal";*/
 }
 
 QMainWindow {
@@ -191,8 +191,8 @@ QToolBar > QLabel {
 
 QToolBar > QToolButton {
     background: #f9f9f9;
-    color: #555;
-    font-family: 'Ubuntu';
+    color: #555;/*
+    font-family: 'Ubuntu';*/
     font-size: 14px;
     font-weight: 400;
     float: right;

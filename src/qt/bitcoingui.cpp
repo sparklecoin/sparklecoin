@@ -250,7 +250,7 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(messageAction);
 
-    multisigAction = new QAction(QIcon(":/icons/send"), tr("Multisig"), this);
+    multisigAction = new QAction(QIcon(":/icons/multisig"), tr("Multisig"), this);
     tabGroup->addAction(multisigAction);
 
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));

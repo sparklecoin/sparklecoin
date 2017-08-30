@@ -44,6 +44,7 @@
         <file alias="dialog-background">res/images/background.png</file>
         <file alias="success-check">res/icons/checked.svg</file>
         <file alias="import-icon">res/icons/import.png</file>
+        <file alias="multisig">res/icons/multisig.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
