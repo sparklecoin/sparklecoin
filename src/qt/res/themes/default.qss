@@ -8,12 +8,15 @@ QMainWindow {
                 stop: 0 #f9f9f9, stop: 0.5 #fafafa,
                 stop: 1.0 #ffffff);
 }
-
+*
+{
+    font-size: 14px;
+}
 /* Global Styles - Buttons */
 QToolButton, QPushButton {/*
     background: #ffffff;
     color: #222222;*/
-    font-weight: 400;
+    font-weight: 600;
     background: #0099cc;
     color: #fff;
     border:none;
@@ -146,6 +149,9 @@ QTableView::item:selected
 QHeaderView::section {
     background-color: #0099cc;
     border: 1px solid #F5f5f5;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+    font-weight: 400;
     color: #FFFFFF;
     padding:5px;
     font-weight: 400;
@@ -174,7 +180,7 @@ QToolTip {
 
 /* Toolbar */
 QToolBar {
-    background: #ffffff;
+    background: #f9f9f9;
     border-bottom: 1px solid #e8e8e8;
     text-align:right;
 }
@@ -188,10 +194,11 @@ QToolBar > QLabel {
 }
 
 QToolBar > QToolButton {
-    background: #ffffff;
-    color: #222222;
+    background: #f9f9f9;
+    color: #555;
+    font-family: 'Ubuntu';
     font-size: 14px;
-    font-weight:400;
+    font-weight: 400;
     float: right;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -269,8 +276,8 @@ QFrame QLabel#titleTx {
 /* Logo Mask */
 QStackedWidget {
 /*    background-image: url(:/images/logomask);*/
-    background-repeat: no-repeat;
-    background-position: bottom left;
+    background-image: url(:/images/main-background);
+    background-position: center;
 }
 
 /* Send Page */

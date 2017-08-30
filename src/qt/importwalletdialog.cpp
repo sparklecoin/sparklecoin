@@ -16,7 +16,7 @@ ImportWalletDialog::ImportWalletDialog(QWidget *parent, QString walletFilePath) 
     ui->setupUi(this);
     ui->successlabel->setVisible(false);
     ui->finishbutton->setVisible(false);
-    ui->finishbutton->setStyleSheet("padding: 10px 20px; font-weight: 600;");
+    ui->finishbutton->setStyleSheet("padding: 10px 20px; font-weight: 600; font-size: 14px;");
     connect(this, SIGNAL(failed(QString)), this, SLOT(failHandler(QString)));
     connect(this, SIGNAL(getPassPhrase()), this, SLOT(passPhraseDialog()));
     connect(this, SIGNAL(success()), this, SLOT(successHandler()));

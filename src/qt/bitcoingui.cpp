@@ -85,6 +85,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     QFontDatabase::addApplicationFont(":/fonts/opensans");
     QFontDatabase::addApplicationFont(":/fonts/opensans-bold");
     QFontDatabase::addApplicationFont(":/fonts/opensans-semibold");
+    QFontDatabase::addApplicationFont(":/fonts/ubuntu-regular");
+
     QFile styleFile(":/themes/default");
     styleFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleFile.readAll());
@@ -365,7 +367,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(mintingAction);
     toolbar->addAction(addressBookAction);
-    toolbar->setStyleSheet("QToolButton {height:46px;} QToolButton:checked { border-bottom:2px solid #0099cc;}");
+    toolbar->setStyleSheet("QToolButton {height:46px; background-color: #f9fbfc; } QToolButton:checked { border-bottom:2px solid #0099cc; background-color: #f9fbfc;}");
 #ifdef FIRST_CLASS_MESSAGING
     toolbar->addAction(messageAction);
 #endif
