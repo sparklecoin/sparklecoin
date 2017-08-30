@@ -367,7 +367,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(mintingAction);
     toolbar->addAction(addressBookAction);
-    toolbar->setStyleSheet("QToolButton {height:46px; background-color: #f9fbfc; } QToolButton:checked { border-bottom:2px solid #0099cc; background-color: #f9fbfc;}");
+    toolbar->setStyleSheet("QToolButton {height:46px; } QToolButton:checked { border-bottom:2px solid #0099cc; background-color: #f9f9f9;}");
 #ifdef FIRST_CLASS_MESSAGING
     toolbar->addAction(messageAction);
 #endif
@@ -375,7 +375,7 @@ void BitcoinGUI::createToolBars()
     QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
     toolbar2->setMovable(false);
     toolbar2->setToolButtonStyle(Qt::ToolButtonTextOnly);
-    toolbar2->setStyleSheet("QToolButton {margin-right:20px; background:#e9e9e9; float: right; margin-left:30px; font-weight:600; color:#999;} QToolButton:enabled { background:#0099cc; color:#fff; }");
+    toolbar2->setStyleSheet("QToolButton { font-family: 'Open Sans'; margin-right: 20px; background: #e9e9e9; float: right; margin-left:30px; font-weight:600; color:#999;} QToolButton:enabled { background:#0099cc; color:#fff; }");
     toolbar2->addAction(exportAction);
 }
 

@@ -8,10 +8,6 @@ QMainWindow {
                 stop: 0 #f9f9f9, stop: 0.5 #fafafa,
                 stop: 1.0 #ffffff);
 }
-*
-{
-    font-size: 14px;
-}
 /* Global Styles - Buttons */
 QToolButton, QPushButton {/*
     background: #ffffff;
@@ -50,6 +46,7 @@ QLineEdit {
     border-radius: 0px;
     border: 1px solid #dddddd;
     padding: 5px;
+    font-size: 13px;
 }
 
 QTextEdit {
@@ -58,6 +55,7 @@ QTextEdit {
     background: #ffffff;
     border-radius: 0px;
     border: 1px solid #dddddd;
+    font-size: 13px;
 }
 
 QSpinBox, QDoubleSpinBox   {
@@ -65,6 +63,7 @@ QSpinBox, QDoubleSpinBox   {
     border-radius: 0px;
     border: 1px solid #dddddd;
     padding: 5px;
+    font-size: 13px;
 }
 
 QSpinBox::up-button, QDoubleSpinBox::up-button   {
@@ -113,6 +112,7 @@ QComboBox {
     border: 1px solid #DDDDDD;
     color: #303030;
     padding: 5px;
+    font-size: 13px;
 }
 
 QComboBox::down-arrow {
@@ -149,12 +149,8 @@ QTableView::item:selected
 QHeaderView::section {
     background-color: #0099cc;
     border: 1px solid #F5f5f5;
-    font-family: 'Ubuntu';
-    font-size: 14px;
-    font-weight: 400;
     color: #FFFFFF;
     padding:5px;
-    font-weight: 400;
 }
 
 QHeaderView::section:checked
@@ -212,7 +208,7 @@ QToolBar > QToolButton
 QToolBar > QToolButton:hover,
 QToolBar > QToolButton:checked
 {
-    background: #ffffff;
+    background: #f9f9f9;
     color:#0099cc;
 }
 /* Status Bar */
@@ -223,6 +219,7 @@ QStatusBar {
 
 QStatusBar QLabel {
     color: #222222;
+    font-size: 13px;
 }
 
 /* Overview Page */
