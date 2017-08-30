@@ -1,6 +1,6 @@
 /* Global Styles */
 * {
-    /*font-family: "Open Sans";/*"WeblySleek UI Normal";*/
+    font-family: "Open Sans";/*"WeblySleek UI Normal";*/
 }
 
 QMainWindow {
@@ -191,10 +191,10 @@ QToolBar > QLabel {
 
 QToolBar > QToolButton {
     background: #f9f9f9;
-    color: #555;/*
-    font-family: 'Ubuntu';*/
+    color: #555;
+    font-family: 'Source Sans Pro';
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     float: right;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -233,7 +233,7 @@ QFrame#frameOverview {
 QFrame QLabel#titleBalance, QFrame QLabel#titleNumTransactions,
 QFrame QLabel#titleMaturing, QFrame QLabel#titleUnconfirmed,
 QFrame QLabel#titleTotal {
-    color: #222;
+    color: #555;
     font-size: 14px;
     font-weight:600;
 }
@@ -246,10 +246,12 @@ QFrame QLabel#titleTotal, QFrame QLabel#labelTotal {
     margin-top: 10px;
     border-top: 1px solid #e9e9e9;
     margin-bottom: 20px;
+    color: #555;
 }
 
 QFrame QLabel#titleNumTransactions, QFrame QLabel#labelNumTransactions {
     margin-top: 20px;
+    color: #555;
 }
 
 QFrame QLabel#labelBalance, QFrame QLabel#labelNumTransactions,
@@ -257,17 +259,20 @@ QFrame QLabel#labelMaturing, QFrame QLabel#labelUnconfirmed,
 QFrame QLabel#labelTotal {
     font-weight: normal;
     font-size: 16px;
+    color: #555;
 }
 
 QFrame QLabel#titleBalances {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 30px;
+    color: #555;
 }
 
 QFrame QLabel#titleTx {
     font-weight: bold;
     font-size: 20px;
+    color: #555;
 }
 
 /* Logo Mask */

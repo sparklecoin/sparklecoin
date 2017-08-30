@@ -85,7 +85,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     QFontDatabase::addApplicationFont(":/fonts/opensans");
     QFontDatabase::addApplicationFont(":/fonts/opensans-bold");
     QFontDatabase::addApplicationFont(":/fonts/opensans-semibold");
-    QFontDatabase::addApplicationFont(":/fonts/ubuntu-regular");
+    QFontDatabase::addApplicationFont(":/fonts/source-sans-pro");
+
 
     QFile styleFile(":/themes/default");
     styleFile.open(QFile::ReadOnly);
