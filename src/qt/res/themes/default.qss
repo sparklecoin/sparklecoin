@@ -192,15 +192,15 @@ QToolBar > QLabel {
 
 QToolBar > QToolButton {
     background: #f9f9f9;
-    color: #555;
-    font-family: 'Source Sans Pro';
-    font-size: 14px;
-    font-weight: 600;
+    color: #333;/*#555*/
+/*    font-family: 'Source Sans Pro';*/
+    font-size: 13px;/*14px*/
+    font-weight: 400;
     float: right;
     padding-top: 4px;
     padding-bottom: 4px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
     margin:0px;
 }
 QToolBar > QToolButton
