@@ -373,7 +373,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(mintingAction);
     toolbar->addAction(addressBookAction);
-    toolbar->setStyleSheet("QToolButton {height:46px; } QToolButton:checked { border-bottom:2px solid #0099cc; background-color: #f9f9f9;}");
+    toolbar->setStyleSheet("QToolButton {height:46px; } QToolButton:checked { border-bottom:2px solid #0099cc; background-color: #ffffff;}");
 #ifdef FIRST_CLASS_MESSAGING
     toolbar->addAction(messageAction);
 #endif

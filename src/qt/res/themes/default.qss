@@ -177,7 +177,7 @@ QToolTip {
 
 /* Toolbar */
 QToolBar {
-    background: #f9f9f9;
+    background: #ffffff;
     border-bottom: 1px solid #e8e8e8;
     text-align:right;
 }
@@ -191,7 +191,7 @@ QToolBar > QLabel {
 }
 
 QToolBar > QToolButton {
-    background: #f9f9f9;
+    background: #ffffff;
     color: #333;/*#555*/
 /*    font-family: 'Source Sans Pro';*/
     font-size: 13px;/*14px*/
@@ -209,7 +209,7 @@ QToolBar > QToolButton
 QToolBar > QToolButton:hover,
 QToolBar > QToolButton:checked
 {
-    background: #f9f9f9;
+    background: #ffffff;
     color:#0099cc;
 }
 /* Status Bar */
