@@ -1,6 +1,6 @@
 /*
  * W.J. van der Laan 2011-2012
- * The SPKLoin Developers 2013
+ * The Peercoin Developers 2013
  */
 #include "bitcoingui.h"
 #include "clientmodel.h"
@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
     // Do this early as we don't want to bother initializing if we are just calling IPC
     for (int i = 1; i < argc; i++)
     {
-        if (strlen(argv[i]) >= 7 && strncasecmp(argv[i], "sparklecoin:", 7) == 0)
+        if (strlen(argv[i]) >= 12 && strncasecmp(argv[i], "sparklecoin:", 12) == 0)
         {
             const char *strURI = argv[i];
             try {
@@ -178,12 +178,12 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    app.setOrganizationName("SPKLoin");
+    app.setOrganizationName("Sparklecoin");
     app.setOrganizationDomain("sparklecoin.org");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        app.setApplicationName("SPKLoin-Qt-testnet");
+        app.setApplicationName("Sparklecoin-Qt-testnet");
     else
-        app.setApplicationName("SPKLoin-Qt");
+        app.setApplicationName("Sparklecoin-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -273,7 +273,7 @@ int main(int argc, char *argv[])
                 // Check for URI in argv
                 for (int i = 1; i < argc; i++)
                 {
-                    if (strlen(argv[i]) >= 7 && strncasecmp(argv[i], "sparklecoin:", 7) == 0)
+                    if (strlen(argv[i]) >= 12 && strncasecmp(argv[i], "sparklecoin:", 12) == 0)
                     {
                         const char *strURI = argv[i];
                         try {
