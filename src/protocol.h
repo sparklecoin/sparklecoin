@@ -15,7 +15,7 @@
 #include <string>
 #include "uint256.h"
 
-#define SPKLOIN_PORT  6020
+#define SPRKOIN_PORT  6020
 #define RPC_PORT     6021
 #define TESTNET_PORT 16020
 #define TESTNET_RPC_PORT 16021
@@ -26,7 +26,7 @@ void GetMessageStart(unsigned char pchMessageStart[], bool fPersistent = false);
 
 static inline unsigned short GetDefaultPort(const bool testnet = fTestNet)
 {
-    return testnet ? TESTNET_PORT : SPKLOIN_PORT;
+    return testnet ? TESTNET_PORT : SPRKOIN_PORT;
 }
 
 

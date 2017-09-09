@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2011-2013 The SPKLoin developers
+// Copyright (c) 2011-2013 The Peercoin developers
+// Copyright (c) 2016-2017 The Sparklecoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -2358,7 +2359,7 @@ Value submitblock(const Array& params, bool fHelp)
         throw JSONRPCError(-22, "Block decode failed");
     }
 
-    // SPKLoin: sign block
+    // SPRKoin: sign block
     if (!block.SignBlock(*pwalletMain))
         throw JSONRPCError(-100, "Unable to sign block, wallet locked?");
 

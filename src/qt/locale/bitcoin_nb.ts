@@ -16,12 +16,12 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
         <translation>Copyright © 2014 Sparkleunity Utviklerne</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
         <translation>Copyright © 2011-2014 Sparklecoin Utviklerne</translation>
     </message>
     <message>
@@ -716,7 +716,7 @@ Adresse: %4
         <location filename="../forms/coincontroldialog.ui" line="310"/>
         <location filename="../forms/coincontroldialog.ui" line="348"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPKL</translation>
+        <translation>0.00 SPRK</translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="157"/>
@@ -1126,8 +1126,8 @@ Dette betyr at et gebyr på minst %2 er påkrevd.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Obligatorisk transaksjonsgebyr per kB overført. De fleste transaksjonene er 1 kB og krever et gebyr på 0,01 SPKL. Størrelsen på transaksjoner kan øke på grunn av mengden inntransaksjoner som kreves for å finansiere betalingen.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Obligatorisk transaksjonsgebyr per kB overført. De fleste transaksjonene er 1 kB og krever et gebyr på 0,01 SPRK. Størrelsen på transaksjoner kan øke på grunn av mengden inntransaksjoner som kreves for å finansiere betalingen.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1436,8 +1436,8 @@ Dette betyr at et gebyr på minst %2 er påkrevd.</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1479,7 +1479,7 @@ Dette betyr at et gebyr på minst %2 er påkrevd.</translation>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
+        <source>Sparklecoin (SPRKoin) debug window</source>
         <translation>Sparkleunity feilsøkingsvindu</translation>
     </message>
     <message>
@@ -1636,7 +1636,7 @@ Dette betyr at et gebyr på minst %2 er påkrevd.</translation>
         <location filename="../forms/sendcoinsdialog.ui" line="496"/>
         <location filename="../forms/sendcoinsdialog.ui" line="528"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPKL</translation>
+        <translation>0.00 SPRK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="337"/>
@@ -1706,7 +1706,7 @@ Dette betyr at et gebyr på minst %2 er påkrevd.</translation>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="714"/>
         <source>123.456 BTC</source>
-        <translation>123.456 SPKL</translation>
+        <translation>123.456 SPRK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="745"/>

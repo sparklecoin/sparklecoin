@@ -16,12 +16,12 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
         <translation>Copyright © 2014 Die Sparkleunity-Entwickler</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
         <translation>Copyright © 2011-2014 Die Sparklecoin-Entwickler</translation>
     </message>
     <message>
@@ -348,7 +348,7 @@ Sind Sie sich sicher, dass Sie Ihre Wallet verschlüsseln möchten?</translation
     <message>
         <location filename="../bitcoingui.cpp" line="215"/>
         <source>&amp;Receive coins</source>
-        <translation>SPKLoins &amp;empfangen</translation>
+        <translation>Peercoins &amp;empfangen</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="216"/>
@@ -358,7 +358,7 @@ Sind Sie sich sicher, dass Sie Ihre Wallet verschlüsseln möchten?</translation
     <message>
         <location filename="../bitcoingui.cpp" line="221"/>
         <source>&amp;Send coins</source>
-        <translation>SPKLoins &amp;überweisen</translation>
+        <translation>Peercoins &amp;überweisen</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="227"/>
@@ -428,7 +428,7 @@ Sind Sie sich sicher, dass Sie Ihre Wallet verschlüsseln möchten?</translation
     <message>
         <location filename="../bitcoingui.cpp" line="270"/>
         <source>Unlock wallet only for minting. Sending coins will still require the passphrase.</source>
-        <translation>Brieftasche nur zum Prägen entsperren. Das Versenden von SPKLoins wird weiterhin die Passphrase erfordern. </translation>
+        <translation>Brieftasche nur zum Prägen entsperren. Das Versenden von Peercoins wird weiterhin die Passphrase erfordern. </translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="272"/>
@@ -967,7 +967,7 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <message>
         <location filename="../optionsdialog.cpp" line="279"/>
         <source>Choose the default subdivision unit to show in the interface, and when sending coins</source>
-        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von SPKLoins angezeigt werden soll.</translation>
+        <translation>Wählen Sie die standardmäßige Untereinheit, die in der Benutzeroberfläche und beim Überweisen von Peercoins angezeigt werden soll.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="286"/>
@@ -1098,7 +1098,7 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <message>
         <location filename="../optionsdialog.cpp" line="191"/>
         <source>Connect to the Bitcon network through a SOCKS4 proxy (e.g. when connecting through Tor)</source>
-        <translation>Über einen SOCKS4-Proxy zum SPKLoin-Netzwerk verbinden (z.B. bei einer Verbindung über Tor)</translation>
+        <translation>Über einen SOCKS4-Proxy zum Peercoin-Netzwerk verbinden (z.B. bei einer Verbindung über Tor)</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="196"/>
@@ -1122,8 +1122,8 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Vorgeschriebene Netzwerktransaktionsgebühr pro übertragenes kB. Die meisten Transaktionen sind 1 kB groß und erfordern eine Gebühr von 0.01 SPKL. Hinweis: Die Transaktionsgröße kann sich je nach Anzahl der Eingangstransaktionen, die zum Erreichen des Gesamtbetrages zusammengerechnet werden,  erhöhen.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Vorgeschriebene Netzwerktransaktionsgebühr pro übertragenes kB. Die meisten Transaktionen sind 1 kB groß und erfordern eine Gebühr von 0.01 SPRK. Hinweis: Die Transaktionsgröße kann sich je nach Anzahl der Eingangstransaktionen, die zum Erreichen des Gesamtbetrages zusammengerechnet werden,  erhöhen.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1432,8 +1432,8 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1475,8 +1475,8 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
-        <translation>Sparklecoin (SPKLoin) Debugfenster</translation>
+        <source>Sparklecoin (SPRKoin) debug window</source>
+        <translation>Sparklecoin (Peercoin) Debugfenster</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>
@@ -1583,7 +1583,7 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
         <location filename="../sendcoinsdialog.cpp" line="202"/>
         <location filename="../sendcoinsdialog.cpp" line="207"/>
         <source>Send Coins</source>
-        <translation>SPKLoins überweisen</translation>
+        <translation>Peercoins überweisen</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="90"/>
@@ -1827,7 +1827,7 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <message>
         <location filename="../sendcoinsdialog.cpp" line="208"/>
         <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Fehler: Die Transaktion wurde abgelehnt. Dies kann passieren, wenn einige SPKLoins aus Ihrer Brieftasche bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie Ihrer wallet.dat genutzt, die SPKLoins dort ausgegeben haben und dies daher in der derzeit aktiven Brieftasche nicht vermerkt ist.</translation>
+        <translation>Fehler: Die Transaktion wurde abgelehnt. Dies kann passieren, wenn einige Peercoins aus Ihrer Brieftasche bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie Ihrer wallet.dat genutzt, die Peercoins dort ausgegeben haben und dies daher in der derzeit aktiven Brieftasche nicht vermerkt ist.</translation>
     </message>
 </context>
 <context>
@@ -2230,12 +2230,12 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <message>
         <location filename="../transactiondesc.cpp" line="234"/>
         <source>Generated coins must wait 520 blocks before they can be spent.  When you generated this block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to &quot;not accepted&quot; and not be spendable.  This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Erzeugte SPKLoins müssen 520 Blöcke lang warten, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in &quot;nicht angenommen&quot; geändert und der Betrag wird nicht verfügbar werden. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block zur selben Zeit wie Sie erzeugte.</translation>
+        <translation>Erzeugte Peercoins müssen 520 Blöcke lang warten, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in &quot;nicht angenommen&quot; geändert und der Betrag wird nicht verfügbar werden. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block zur selben Zeit wie Sie erzeugte.</translation>
     </message>
     <message>
         <location filename="../transactiondesc.cpp" line="236"/>
         <source>Staked coins must wait 520 blocks before they can return to balance and be spent.  When you generated this proof-of-stake block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to &quot;not accepted&quot; and not be a valid stake.  This may occasionally happen if another node generates a proof-of-stake block within a few seconds of yours.</source>
-        <translation>Geprägte SPKLoins müssen 520 Blöcke lang warten, bevor sie ausgegeben werden können. Als Sie diesen Block prägten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in &quot;nicht angenommen&quot; geändert und der Betrag wird nicht verfügbar werden. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block zur selben Zeit wie Sie prägte.</translation>
+        <translation>Geprägte Peercoins müssen 520 Blöcke lang warten, bevor sie ausgegeben werden können. Als Sie diesen Block prägten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in &quot;nicht angenommen&quot; geändert und der Betrag wird nicht verfügbar werden. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block zur selben Zeit wie Sie prägte.</translation>
     </message>
 </context>
 <context>
@@ -2617,12 +2617,12 @@ Das bedeutet, dass eine Gebühr von mindestens %2 erforderlich ist.</translation
     <message>
         <location filename="../bitcoinstrings.cpp" line="20"/>
         <source>Generate coins</source>
-        <translation>SPKLoins generieren</translation>
+        <translation>Peercoins generieren</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="21"/>
         <source>Don&apos;t generate coins</source>
-        <translation>Keine SPKLoins generieren</translation>
+        <translation>Keine Peercoins generieren</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="22"/>
@@ -3029,7 +3029,7 @@ Falls die Konfigurationsdatei nicht existiert, erzeugen Sie diese bitte mit Lese
     <message>
         <location filename="../bitcoinstrings.cpp" line="128"/>
         <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Fehler: Die Transaktion wurde abgelehnt. Dies kann passieren, wenn einige SPKLoins aus Ihrer Brieftasche bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie Ihrer wallet.dat genutzt, die SPKLoins dort ausgegeben haben und dies daher in der derzeit aktiven Brieftasche nicht vermerkt ist.</translation>
+        <translation>Fehler: Die Transaktion wurde abgelehnt. Dies kann passieren, wenn einige Peercoins aus Ihrer Brieftasche bereits ausgegeben wurden. Beispielsweise weil Sie eine Kopie Ihrer wallet.dat genutzt, die Peercoins dort ausgegeben haben und dies daher in der derzeit aktiven Brieftasche nicht vermerkt ist.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="132"/>

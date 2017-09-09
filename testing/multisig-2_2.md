@@ -49,7 +49,7 @@ createmultisig 2 '["02c16ff447129fae7374d97212cf9fcd88a744da87ff2985869065cd6d17
 Send coins to the multisig address
 ----------------------------------
 
-Alice sends 360 SPKL to the multisig address.
+Alice sends 360 SPRK to the multisig address.
 
 
 **Alice:**
@@ -63,7 +63,7 @@ Create a transaction to spend the coins
 ---------------------------------------
 
 Bob creates a transaction to spend the coins that Alice sent to the multisig address.
-The transaction will have 360 SPKL (Alice's coins) as input and 359.99 SPKL as output (because of the mandatory 0.01 SPKL transaction fee; the transaction won't be accepted by the network without it).
+The transaction will have 360 SPRK (Alice's coins) as input and 359.99 SPRK as output (because of the mandatory 0.01 SPRK transaction fee; the transaction won't be accepted by the network without it).
 
 
 **Bob:**

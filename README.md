@@ -16,7 +16,7 @@ To help faciliate broad community cooperation, a number of trusted Sparklecoin/P
 
 
 ### About Sparklecoin
-[Sparklecoin](http://sparklecoin.net/) (abbreviated SPKL), also known as SPKLoin and Peer-to-Peer Coin is the first [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design introducing [proof-of-stake consensus](http://sparklecoin.net/bin/sparklecoin-paper.pdf) as a security model, with a combined [proof-of-stake](http://sparklecoin.net/bin/sparklecoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sparklecoin is based on [Bitcoin](http://bitcoin.org/en/), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
+[Sparklecoin](http://sparklecoin.net/) (abbreviated SPRK), also known as SPRKoin and Peer-to-Peer Coin is the first [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design introducing [proof-of-stake consensus](http://sparklecoin.net/bin/sparklecoin-paper.pdf) as a security model, with a combined [proof-of-stake](http://sparklecoin.net/bin/sparklecoin-paper.pdf)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sparklecoin is based on [Bitcoin](http://bitcoin.org/en/), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
 
 
 ## Repo Guidelines

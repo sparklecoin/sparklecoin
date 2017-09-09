@@ -1050,7 +1050,7 @@ void ThreadMapPort2(void* parg)
             }
         }
 
-        string strDesc = "SPKLoin " + FormatFullVersion();
+        string strDesc = "SPRKoin " + FormatFullVersion();
 #ifndef UPNPDISCOVER_SUCCESS
         /* miniupnpc 1.5 */
         r = UPNP_AddPortMapping(urls.controlURL, data.first.servicetype,

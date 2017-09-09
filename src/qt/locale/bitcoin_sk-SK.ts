@@ -16,12 +16,12 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -344,7 +344,7 @@ Are you sure you wish to encrypt your wallet?</source>
     <message>
         <location filename="../bitcoingui.cpp" line="215"/>
         <source>&amp;Receive coins</source>
-        <translation>&amp;Prijať SPKLoins</translation>
+        <translation>&amp;Prijať Peercoins</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="216"/>
@@ -354,7 +354,7 @@ Are you sure you wish to encrypt your wallet?</source>
     <message>
         <location filename="../bitcoingui.cpp" line="221"/>
         <source>&amp;Send coins</source>
-        <translation>&amp;Poslať SPKLoins</translation>
+        <translation>&amp;Poslať Peercoins</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="227"/>
@@ -1093,7 +1093,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../optionsdialog.cpp" line="191"/>
         <source>Connect to the Bitcon network through a SOCKS4 proxy (e.g. when connecting through Tor)</source>
-        <translation>Pripojiť do siete SPKLoin cez SOCKS4 proxy (napr. keď sa pripájate cez Tor)</translation>
+        <translation>Pripojiť do siete Peercoin cez SOCKS4 proxy (napr. keď sa pripájate cez Tor)</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="196"/>
@@ -1117,7 +1117,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1427,7 +1427,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
+        <source>SPRK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1470,7 +1470,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
+        <source>Sparklecoin (SPRKoin) debug window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1578,7 +1578,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location filename="../sendcoinsdialog.cpp" line="202"/>
         <location filename="../sendcoinsdialog.cpp" line="207"/>
         <source>Send Coins</source>
-        <translation>Poslať SPKLoins</translation>
+        <translation>Poslať Peercoins</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="90"/>
@@ -1757,7 +1757,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../sendcoinsdialog.cpp" line="149"/>
         <source>Confirm send coins</source>
-        <translation>Potvrdiť odoslanie SPKLoins</translation>
+        <translation>Potvrdiť odoslanie Peercoins</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="150"/>
@@ -2614,12 +2614,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../bitcoinstrings.cpp" line="20"/>
         <source>Generate coins</source>
-        <translation>Počítaj SPKLoins</translation>
+        <translation>Počítaj Peercoins</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="21"/>
         <source>Don&apos;t generate coins</source>
-        <translation>Nepočítaj SPKLoins</translation>
+        <translation>Nepočítaj Peercoins</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="22"/>

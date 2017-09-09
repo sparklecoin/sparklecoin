@@ -1,8 +1,8 @@
 // Copyright (c) 2012-2015 The Sparklecoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef SPKLOIN_KERNEL_H
-#define SPKLOIN_KERNEL_H
+#ifndef SPRKOIN_KERNEL_H
+#define SPRKOIN_KERNEL_H
 
 #include "main.h"
 
@@ -48,4 +48,4 @@ unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex);
 // Check stake modifier hard checkpoints
 bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierChecksum);
 
-#endif // SPKLOIN_KERNEL_H
+#endif // SPRKOIN_KERNEL_H

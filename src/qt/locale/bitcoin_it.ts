@@ -16,13 +16,13 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
         <translation>Copyright © 2014 Sviluppatori Sparkleunity</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
-        <translation>Copyright © 2011-2014 Sviluppatori SPKLoin </translation>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
+        <translation>Copyright © 2011-2014 Sviluppatori Peercoin </translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="133"/>
@@ -1124,8 +1124,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Tariffa di transazione della rete obbligatoria per kB trasferito. La maggior parte delle transazioni sono 1kB ed hanno una tariffa di 0.01 SPKL. Nota: la dimensione del trasferimento aumenta a seconda del numero delle transazioni di input totali necessarie per finanziare il pagamento.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Tariffa di transazione della rete obbligatoria per kB trasferito. La maggior parte delle transazioni sono 1kB ed hanno una tariffa di 0.01 SPRK. Nota: la dimensione del trasferimento aumenta a seconda del numero delle transazioni di input totali necessarie per finanziare il pagamento.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1434,8 +1434,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1477,8 +1477,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
-        <translation>Finestra debug Sparklecoin (SPKLoin)</translation>
+        <source>Sparklecoin (SPRKoin) debug window</source>
+        <translation>Finestra debug Sparklecoin (Peercoin)</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>
@@ -1585,7 +1585,7 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
         <location filename="../sendcoinsdialog.cpp" line="202"/>
         <location filename="../sendcoinsdialog.cpp" line="207"/>
         <source>Send Coins</source>
-        <translation>Spedisci SPKLoin</translation>
+        <translation>Spedisci Peercoin</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="90"/>
@@ -1764,7 +1764,7 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="149"/>
         <source>Confirm send coins</source>
-        <translation>Conferma la spedizione di SPKLoin</translation>
+        <translation>Conferma la spedizione di Peercoin</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="150"/>
@@ -2232,7 +2232,7 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     <message>
         <location filename="../transactiondesc.cpp" line="234"/>
         <source>Generated coins must wait 520 blocks before they can be spent.  When you generated this block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to &quot;not accepted&quot; and not be spendable.  This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Bisogna attendere 120 blocchi prima di spendere I SPKLoin generati. Quando è stato generato questo blocco, è stato trasmesso alla rete per aggiungerlo alla catena di blocchi. Se non riesce a entrare nella catena, verrà modificato in &quot;non accettato&quot; e non sarà spendibile. Questo può accadere a volte, se un altro nodo genera un blocco entro pochi secondi del tuo. {520 ?}</translation>
+        <translation>Bisogna attendere 120 blocchi prima di spendere I Peercoin generati. Quando è stato generato questo blocco, è stato trasmesso alla rete per aggiungerlo alla catena di blocchi. Se non riesce a entrare nella catena, verrà modificato in &quot;non accettato&quot; e non sarà spendibile. Questo può accadere a volte, se un altro nodo genera un blocco entro pochi secondi del tuo. {520 ?}</translation>
     </message>
     <message>
         <location filename="../transactiondesc.cpp" line="236"/>
@@ -2623,13 +2623,13 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     <message>
         <location filename="../bitcoinstrings.cpp" line="20"/>
         <source>Generate coins</source>
-        <translation>Genera SPKLoin
+        <translation>Genera Peercoin
 </translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="21"/>
         <source>Don&apos;t generate coins</source>
-        <translation>Non generare SPKLoin
+        <translation>Non generare Peercoin
 </translation>
     </message>
     <message>

@@ -36,7 +36,7 @@ uint256 hashGenesisBlock = hashGenesisBlockOfficial;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
 static CBigNum bnInitialHashTarget(~uint256(0) >> 28);
 unsigned int nStakeMinAge = STAKE_MIN_AGE;
-int nCoinbaseMaturity = COINBASE_MATURITY_SPKL;
+int nCoinbaseMaturity = COINBASE_MATURITY_SPRK;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 CBigNum bnBestChainTrust = 0;

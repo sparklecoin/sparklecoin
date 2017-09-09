@@ -16,12 +16,12 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1104,7 +1104,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1414,7 +1414,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
+        <source>SPRK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1457,7 +1457,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
+        <source>Sparklecoin (SPRKoin) debug window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

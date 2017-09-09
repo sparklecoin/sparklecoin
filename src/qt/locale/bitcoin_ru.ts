@@ -16,13 +16,13 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
-        <translation>Право собственности © 2014 Sparkleunity Developers</translation>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
+        <translation>Право собственности © 2017 Sparkleunity Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
-        <translation>Право собственности © 2011-2014 SPKLoin Developers</translation>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
+        <translation>Право собственности © 2011-2014 Peercoin Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="133"/>
@@ -1106,7 +1106,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../optionsdialog.cpp" line="191"/>
         <source>Connect to the Bitcon network through a SOCKS4 proxy (e.g. when connecting through Tor)</source>
-        <translation>Подключаться к сети SPKLoin через SOCKS4 прокси (например, при использовании Tor)</translation>
+        <translation>Подключаться к сети Peercoin через SOCKS4 прокси (например, при использовании Tor)</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="196"/>
@@ -1130,8 +1130,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Обязательные операционные платы за каждый килобайт перечислены. Большинство операций имеют меньше 1 килобайта и оплачиваются в размере 0.01 SPKL. Замечание: размер перевода может увеличиваться в зависимости от количества входных операций, добавляемых вместе, чтобы финансировать оплату. </translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Обязательные операционные платы за каждый килобайт перечислены. Большинство операций имеют меньше 1 килобайта и оплачиваются в размере 0.01 SPRK. Замечание: размер перевода может увеличиваться в зависимости от количества входных операций, добавляемых вместе, чтобы финансировать оплату. </translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1440,8 +1440,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1483,8 +1483,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
-        <translation>Окно отладки Sparklecoin (SPKLoin)</translation>
+        <source>Sparklecoin (SPRKoin) debug window</source>
+        <translation>Окно отладки Sparklecoin (Peercoin)</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>
@@ -2624,7 +2624,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../bitcoinstrings.cpp" line="19"/>
         <source>Specify pid file (default: sparklecoind.pid)</source>
-        <translation>Указать pid-файл (по умолчанию: SPKLoin.pid)</translation>
+        <translation>Указать pid-файл (по умолчанию: Peercoin.pid)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="20"/>

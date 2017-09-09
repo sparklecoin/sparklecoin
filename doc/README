@@ -54,7 +54,7 @@ Sparkleunity owes it's existance to the time and effort put forth by
 the developers and supporters of the following projects:
 
 
-	Sparklecoin (SPKLoin) 0.4.0 BETA
+	Sparklecoin (SPRKoin) 0.4.0 BETA
 	Copyright (c) 2011-2014 Bitcoin Developers
 
 	Distributed under the MIT/X11 software license

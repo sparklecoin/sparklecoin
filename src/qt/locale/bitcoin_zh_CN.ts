@@ -16,13 +16,13 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
-        <translation>版权归Sparkleunity开发者所有 © 2014 Sparkleunity Developers</translation>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
+        <translation>版权归Sparkleunity开发者所有 © 2017 Sparkleunity Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
-        <translation>版权归SPKLoin开发者所有  © 2011-2014 SPKLoin Developers</translation>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
+        <translation>版权归Peercoin开发者所有  © 2011-2014 Peercoin Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="133"/>
@@ -33,7 +33,7 @@ This is experimental software.
 Distributed under the MIT/X11 software license, see the accompanying file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation type="unfinished">版权归比特币开发者所有  © 2009-2013 SPKLoin Developers
+        <translation type="unfinished">版权归比特币开发者所有  © 2009-2013 Peercoin Developers
 
 这是一个实验性软件。
 
@@ -712,7 +712,7 @@ Address: %4
         <location filename="../forms/coincontroldialog.ui" line="310"/>
         <location filename="../forms/coincontroldialog.ui" line="348"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPKL</translation>
+        <translation>0.00 SPRK</translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="157"/>
@@ -1126,7 +1126,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1436,8 +1436,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1479,8 +1479,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
-        <translation>Sparklecoin (SPKLoin)调试窗口</translation>
+        <source>Sparklecoin (SPRKoin) debug window</source>
+        <translation>Sparklecoin (Peercoin)调试窗口</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>
@@ -1636,7 +1636,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location filename="../forms/sendcoinsdialog.ui" line="496"/>
         <location filename="../forms/sendcoinsdialog.ui" line="528"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPKL</translation>
+        <translation>0.00 SPRK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="337"/>

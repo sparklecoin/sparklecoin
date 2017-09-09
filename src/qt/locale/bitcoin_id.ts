@@ -16,13 +16,13 @@
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2014 Sparkleunity Developers</source>
-        <translation>Copyright © 2014 Sparkleunity Developers</translation>
+        <source>Copyright © 2017 Sparkleunity Developers</source>
+        <translation>Copyright © 2017 Sparkleunity Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
-        <source>Copyright © 2011-2014 SPKLoin Developers</source>
-        <translation>Copyright © 2011-2014 SPKLoin Developers</translation>
+        <source>Copyright © 2011-2014 Peercoin Developers</source>
+        <translation>Copyright © 2011-2014 Peercoin Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="133"/>
@@ -1116,8 +1116,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPKL fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Biaya transaksi jaringan Wajib per kB ditransfer. Kebanyakan transaksi 1 kB dan dikenakan biaya 0.01 SPKL. Catatan: Ukuran Transfer dapat meningkatkan tergantung pada jumlah transaksi input yang diperlukan untuk ditambahkan bersama-sama untuk mendanai pembayaran.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Biaya transaksi jaringan Wajib per kB ditransfer. Kebanyakan transaksi 1 kB dan dikenakan biaya 0.01 SPRK. Catatan: Ukuran Transfer dapat meningkatkan tergantung pada jumlah transaksi input yang diperlukan untuk ditambahkan bersama-sama untuk mendanai pembayaran.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1426,8 +1426,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPKL</source>
-        <translation>SPKL</translation>
+        <source>SPRK</source>
+        <translation>SPRK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1469,8 +1469,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPKLoin) debug window</source>
-        <translation>Sparklecoin (SPKLoin) jendela debug</translation>
+        <source>Sparklecoin (SPRKoin) debug window</source>
+        <translation>Sparklecoin (Peercoin) jendela debug</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="24"/>

@@ -1,5 +1,6 @@
 // Copyright (c) 2012 The Bitcoin developers
-// Copyright (c) 2012-2013 The SPKLoin developers
+// Copyright (c) 2012-2013 The Peercoin developers
+// Copyright (c) 2016-2017 The Sparklecoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef BITCOIN_VERSION_H
@@ -14,9 +15,9 @@
 // These need to be macro's, as version.cpp's voodoo requires it
 
 // sparkleunity version - intended for display purpose only
-#define SPARKLEUNITY_VERSION_MAJOR       0
-#define SPARKLEUNITY_VERSION_MINOR       2
-#define SPARKLEUNITY_VERSION_REVISION    2
+#define SPARKLEUNITY_VERSION_MAJOR       1
+#define SPARKLEUNITY_VERSION_MINOR       0
+#define SPARKLEUNITY_VERSION_REVISION    1
 #define SPARKLEUNITY_VERSION_BUILD       0
 
 static const int SPARKLEUNITY_VERSION =
@@ -26,16 +27,16 @@ static const int SPARKLEUNITY_VERSION =
                          +       1 * SPARKLEUNITY_VERSION_BUILD;
 
 // sparklecoin version - reference for code tracking
-#define SPKLOIN_VERSION_MAJOR       0
-#define SPKLOIN_VERSION_MINOR       5
-#define SPKLOIN_VERSION_REVISION    0
-#define SPKLOIN_VERSION_BUILD       0
+#define SPRKOIN_VERSION_MAJOR       0
+#define SPRKOIN_VERSION_MINOR       5
+#define SPRKOIN_VERSION_REVISION    0
+#define SPRKOIN_VERSION_BUILD       0
 
-static const int SPKLOIN_VERSION =
-                           1000000 * SPKLOIN_VERSION_MAJOR
-                         +   10000 * SPKLOIN_VERSION_MINOR
-                         +     100 * SPKLOIN_VERSION_REVISION
-                         +       1 * SPKLOIN_VERSION_BUILD;
+static const int SPRKOIN_VERSION =
+                           1000000 * SPRKOIN_VERSION_MAJOR
+                         +   10000 * SPRKOIN_VERSION_MINOR
+                         +     100 * SPRKOIN_VERSION_REVISION
+                         +       1 * SPRKOIN_VERSION_BUILD;
 
 // bitcoin version - reference for code tracking
 #define BITCOIN_VERSION_MAJOR       0
