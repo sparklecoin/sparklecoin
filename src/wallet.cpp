@@ -1270,7 +1270,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 {
     // The following split & combine thresholds are important to security
     // Should not be adjusted if you don't understand the consequences0
-    static unsigned int nStakeSplitAge = (60 * 60 * 24 * 5);//(60 * 60 * 24 * 90);
+    static unsigned int nStakeSplitAge = (60 * 60 * 24 * 90);
     const CBlockIndex* LastBlockData= GetLastBlockIndex(pindexBest, false);
 //    int64 nCombineThreshold = GetProofOfWorkReward(GetLastBlockIndex(pindexBest, false)->nBits) / 3;
     int64 nCombineThreshold = GetProofOfWorkReward(LastBlockData->nBits,LastBlockData->nHeight,LastBlockData->nTime) / 3;

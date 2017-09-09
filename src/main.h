@@ -38,20 +38,19 @@ static const int64 MAX_MONEY = 2000000000 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK = 9999 * COIN;
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
-static const int COINBASE_MATURITY_SPKL = 500;
+static const int COINBASE_MATURITY_SPRK = 500;
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
-static const int STAKE_TARGET_SPACING = 2.5 * 60; // 10-minute block spacing 
+static const int STAKE_TARGET_SPACING = 10 * 60; // 10-minute block spacing
 static const int STAKE_MIN_AGE = 60 * 60 * 24 * 30; // minimum age for coin age
 static const int STAKE_MAX_AGE = 60 * 60 * 24 * 90; // stake age of full weight
 
-static const unsigned int MODIFIER_INTERVAL = 1 * 60 * 60; //10 * 60; //6 * 60 * 60;
+static const unsigned int MODIFIER_INTERVAL = 6 * 60 * 60; //10 * 60; //6 * 60 * 60;
 
-static const unsigned int GENESIS_BLOCK_REWARD = 40950000; //40,950,000 
+static const unsigned int GENESIS_BLOCK_REWARD = 59187500; // 40950000; //40,950,000
 
 
-static const unsigned int POS_START_TIME = 1503737849; //current pow start date is 3 days  for testing only 
-//original should be 90 days = 7776000
+static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;

@@ -955,9 +955,9 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
     }
 	else
 	{
-		int64 BlockReward = 2  * COIN;
+		int64 BlockReward = 7  * COIN;
 		int64 Block_Interval = 210000;
-		int64 Block_Interval_Start = 21024000; //expected block height in 100 years
+		int64 Block_Interval_Start = 5256000; //expected block height in 100 years
 
 		int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
 		if(nBlockDifference > 0)
@@ -971,7 +971,7 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 		nSubsidy = BlockReward;
 	}
 	if(fTestNet)
-	nSubsidy = 10 * COIN;
+	    nSubsidy = 10 * COIN;
     return nSubsidy;
 }
 
@@ -985,8 +985,8 @@ int64 GetProofOfStakeReward(int64 nCoinAge)
     return nSubsidy;
 }
 
-static const int64 nTargetTimespan = 60 * 60;  // one hour
-static const int64 nTargetSpacingWorkMax = STAKE_TARGET_SPACING; // 2-hour
+static const int64 nTargetTimespan = 7 * 24 * 60 * 60;  // one week
+static const int64 nTargetSpacingWorkMax = 12 * STAKE_TARGET_SPACING; // 2-hour
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -999,9 +999,9 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     bnResult *= 2;
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
     {
-        // Maximum 25600% adjustment per day...
-		bnResult *= 4;
-        nTime -= nTargetTimespan * 4;
+        // Maximum 200% adjustment per day...
+        bnResult *= 2;
+        nTime -= 24 * 60 * 60;
     }
     if (bnResult > bnProofOfWorkLimit)
         bnResult = bnProofOfWorkLimit;
