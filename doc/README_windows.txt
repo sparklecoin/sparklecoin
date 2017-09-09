@@ -1,4 +1,4 @@
-Sparkleunity 0.2.2
+Sparkleunity 1.0.1
 Copyright (c) 2014-2016 Sparkleunity developers
 
 Distributed under the MIT/X11 software license, see the accompanying

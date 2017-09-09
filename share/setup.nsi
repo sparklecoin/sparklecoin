@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.2.2.0
+!define VERSION 1.0.1.0
 !define COMPANY "Sparkleunity project"
 !define URL http://github.com/sparkleunity/sparkleunity/
 
