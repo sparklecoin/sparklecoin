@@ -11,7 +11,9 @@
 #include "base58.h"
 #include <string>
 
+#ifndef Q_MOC_RUN
 #include <boost/lexical_cast.hpp>
+#endif
 
 #include "json/json_spirit_reader_template.h"
 #include "json/json_spirit_writer_template.h"
