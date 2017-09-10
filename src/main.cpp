@@ -971,7 +971,7 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 		nSubsidy = BlockReward;
 	}
 	if(fTestNet)
-	    nSubsidy = 10 * COIN;
+	    nSubsidy = 100 * COIN;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%" PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
@@ -1041,7 +1041,7 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
 
 	if (pindexLast->GetBlockTime() >= POS_START_TIME && nActualSpacing < 0)
-	nActualSpacing = nTargetSpacing;
+        nActualSpacing = nTargetSpacing;
 
     int64 nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
@@ -2358,10 +2358,10 @@ bool LoadBlockIndex(bool fAllowNew)
     {
         hashGenesisBlock = hashGenesisBlockTestNet;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 18);
-        nStakeMinAge = 60 * 60 * 1; // test net min age is 1 day
+        nStakeMinAge = 60 * 60 * 1; // test net min age is 1 hour
         nCoinbaseMaturity = 60;
         bnInitialHashTarget = CBigNum(~uint256(0) >> 20);
-        nModifierInterval = 60 * 10; // test net modifier interval is 20 minutes
+        nModifierInterval = 60 * 10; // test net modifier interval is 10 minutes
     }
 
     printf("%s Network: genesis=0x%s nBitsLimit=0x%08x nBitsInitial=0x%08x nStakeMinAge=%d nCoinbaseMaturity=%d nModifierInterval=%d\n",
