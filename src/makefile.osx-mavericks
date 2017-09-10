@@ -14,12 +14,16 @@ BREWDIR=/usr/local
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)/obj" \
- -I"$(BREWDIR)/opt/berkeley-db4/include" \
+ -I"$(BREWDIR)/opt/berkeley-db@4/include" \
+ -I"$(BREWDIR)/opt/openssl/include" \
+ -I"$(BREWDIR)/opt/miniupnpc/include" \
  -I"$(BREWDIR)/opt/boost/include"
 
 LIBPATHS= \
  -L"$(DEPSDIR)/lib" \
- -L"$(BREWDIR)/opt/berkeley-db4/lib" \
+ -L"$(BREWDIR)/opt/berkeley-db@4/lib" \
+ -L"$(BREWDIR)/opt/openssl/lib" \
+ -L"$(BREWDIR)/opt/miniupnpc/lib" \
  -L"$(BREWDIR)/opt/boost/lib" 
 
 USE_UPNP:=1
