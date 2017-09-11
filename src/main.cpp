@@ -982,10 +982,16 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 // sparklecoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 int64 GetProofOfStakeReward(int64 nCoinAge)
 {
-    static int64 nRewardCoinYear = CENT;  // creation amount per coin-year
-    int64 nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
+
+    static int64 nRewardCoinYear = CENT; // creation amount per coin-year
+
+    if(fTestNet)
+        nRewardCoinYear = COIN;  // creation amount per coin-year
+
+    int64 nSubsidy = nRewardCoinYear * nCoinAge * 33 / (365 * 33 + 8);
     if (fDebug && GetBoolArg("-printcreation"))
-        printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
+        printf("GetProofOfStakeReward(): create=%s (%d at %d per year) nCoinAge=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nSubsidy, nRewardCoinYear, nCoinAge);
+
     return nSubsidy;
 }
 
@@ -1040,12 +1046,17 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     bnNew.SetCompact(pindexPrev->nBits);
     int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
 
-	if (pindexLast->GetBlockTime() >= POS_START_TIME && nActualSpacing < 0)
+/*
+	if (pindexLast->GetBlockTime() >= POS_START_TIME && nActualSpacing < 0) {
+        printf("GetNextTargetRequired: nActualSpacing=%d nTargetSpacing=%d bnNew=%s\n", nActualSpacing, nTargetSpacing, CBigNum(bnNew).ToString().c_str());
         nActualSpacing = nTargetSpacing;
+        }
+*/
 
     int64 nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
+    //printf("GetNextTargetRequired: fProofOfStake=%d nActualSpacing=%d nTargetSpacing=%d bnNew=%s\n", fProofOfStake, nActualSpacing, nTargetSpacing, CBigNum(bnNew).ToString().c_str());
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
@@ -3818,10 +3829,13 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
         pblock->nBits = GetNextTargetRequired(pindexPrev, true);
         CTransaction txCoinStake;
         int64 nSearchTime = txCoinStake.nTime; // search to current time
+
         if (nSearchTime > nLastCoinStakeSearchTime)
         {
             if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, txCoinStake))
             {
+                if (fDebug && GetBoolArg("-printcreation"))
+                    printf("CreateNewBlock: coinstake created\n");
                 if (txCoinStake.nTime >= max(pindexPrev->GetMedianTimePast()+1, pindexPrev->GetBlockTime() - nMaxClockDrift))
                 {   // make sure coinstake would meet timestamp protocol
                     // as it would be the same as the block timestamp
