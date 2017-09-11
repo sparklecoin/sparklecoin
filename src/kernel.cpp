@@ -17,7 +17,7 @@ unsigned int nProtocolV04SwitchTime     = 1495823150;
 unsigned int nProtocolV04TestSwitchTime = 1495823150;
 // Protocol switch time of v0.5 kernel protocol
 unsigned int nProtocolV05SwitchTime     = 1495823150;
-unsigned int nProtocolV05TestSwitchTime = 1495823150;
+unsigned int nProtocolV05TestSwitchTime = 1505222712;
 
 // TxDB upgrade time for v0.4 protocol
 // Note: v0.4 upgrade does not require block chain re-download. However,
@@ -279,6 +279,8 @@ static bool GetKernelStakeModifierV05(unsigned int nTimeTx, uint64& nStakeModifi
 
     if (nStakeModifierTime + nStakeMinAge - nStakeModifierSelectionInterval <= (int64) nTimeTx)
     {
+        if (fDebug && GetBoolArg("-printstakemodifier"))
+            printf("GetKernelStakeModifierV05: %d+%d-%d<=%d nStakeModifier=%d, nStakeModifierHeight=%d\n",nStakeModifierTime,nStakeMinAge,nStakeModifierSelectionInterval,(int64)nTimeTx,nStakeModifier,nStakeModifierHeight);
         // Best block is still more than
         // (nStakeMinAge minus a selection interval) older than kernel timestamp
         if (fPrintProofOfStake)
