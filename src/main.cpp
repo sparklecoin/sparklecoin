@@ -980,8 +980,10 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 }
 
 // sparklecoin: miner's coin stake is rewarded based on coin age spent (coin-days)
-int64 GetProofOfStakeReward(int64 nCoinAge)
+int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nTime)
 {
+    if (nTime < POS_START_TIME)
+        return 0; // no rewards until POS is allowed
 
     static int64 nRewardCoinYear = CENT; // creation amount per coin-year
 
@@ -1370,7 +1372,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
             if (!GetCoinAge(txdb, nCoinAge))
                 return error("ConnectInputs() : %s unable to get coin age for coinstake", GetHash().ToString().substr(0,10).c_str());
             int64 nStakeReward = GetValueOut() - nValueIn;
-            if (nStakeReward > GetProofOfStakeReward(nCoinAge) - GetMinFee() + MIN_TX_FEE)
+            if (nStakeReward > GetProofOfStakeReward(nCoinAge, nTime) - GetMinFee() + MIN_TX_FEE)
                 return DoS(100, error("ConnectInputs() : %s stake reward exceeded", GetHash().ToString().substr(0,10).c_str()));
         }
         else

@@ -50,8 +50,8 @@ static const unsigned int MODIFIER_INTERVAL = 6 * 60 * 60; //10 * 60; //6 * 60 *
 
 static const unsigned int GENESIS_BLOCK_REWARD = 59187500; // 40950000; //40,950,000
 
-
-static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
+static const unsigned int POS_START_TIME = 1505297593;
+//static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
@@ -124,7 +124,7 @@ void FormatHashBuffers(CBlock* pblock, char* pmidstate, char* pdata, char* phash
 bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nTime);
-int64 GetProofOfStakeReward(int64 nCoinAge);
+int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nTime);
 unsigned int ComputeMinWork(unsigned int nBase, int64 nTime);
 int GetNumBlocksOfPeers();
 bool IsInitialBlockDownload();
