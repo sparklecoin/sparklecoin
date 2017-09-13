@@ -397,10 +397,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "stop\n"
-            "Stop Sparkleunity server.");
+            "Stop Sparklecoin server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Sparkleunity server stopping";
+    return "Sparklecoin server stopping";
 }
 
 
@@ -2012,7 +2012,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys.  So:
     StartShutdown();
-    return "wallet encrypted; Sparkleunity server stopping, restart to run with encrypted wallet";
+    return "wallet encrypted; Sparklecoin server stopping, restart to run with encrypted wallet";
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>
@@ -2092,10 +2092,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "Sparkleunity is not connected!");
+        throw JSONRPCError(-9, "Sparklecoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "Sparkleunity is downloading blocks...");
+        throw JSONRPCError(-10, "Sparklecoin is downloading blocks...");
 
     typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;
@@ -2225,10 +2225,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
 
     {
         if (vNodes.empty())
-            throw JSONRPCError(-9, "Sparkleunity is not connected!");
+            throw JSONRPCError(-9, "Sparklecoin is not connected!");
 
         if (IsInitialBlockDownload())
-            throw JSONRPCError(-10, "Sparkleunity is downloading blocks...");
+            throw JSONRPCError(-10, "Sparklecoin is downloading blocks...");
 
         // Update block
         static unsigned int nTransactionsUpdatedLast;
@@ -2721,9 +2721,9 @@ Value createmultisig(const Array& params, bool fHelp)
 
             "\nExamples:\n"
             "\nCreate a multisig address from 2 addresses\n"
-            "sparkleunityd createmultisig 2 \"[\\\"PCHAhUGKiFKDHKW8Pgw3qrp2vMfhwWjuCo\\\",\\\"PJrhyo8CUvFZQT8j67Expre2PYLhavnHXb\\\"]\""
+            "sparklecoind createmultisig 2 \"[\\\"tPG8t3dXxVJT7s9CgkMuCAUNqzmr4xK6zs\\\",\\\"tSf42LsxAtHhzbVXT1XWLGbUXWt9UgWtzQ\\\"]\""
             "\nAs a json rpc call\n"
-            "curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\": \"curltest\", \"method\": \"icreatemultisig\", \"params\": [2, \"[\\\"PCHAhUGKiFKDHKW8Pgw3qrp2vMfhwWjuCo\\\",\\\"PJrhyo8CUvFZQT8j67Expre2PYLhavnHXb\\\"]\"]} -H 'content-type: text/plain;' http://127.0.0.1:9902"
+            "curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\": \"curltest\", \"method\": \"icreatemultisig\", \"params\": [2, \"[\\\"tPG8t3dXxVJT7s9CgkMuCAUNqzmr4xK6zs\\\",\\\"tSf42LsxAtHhzbVXT1XWLGbUXWt9UgWtzQ\\\"]\"]} -H 'content-type: text/plain;' http://127.0.0.1:9902"
         ;
         throw runtime_error(msg);
     }
@@ -3753,7 +3753,7 @@ void ThreadRPCServer2(void* parg)
     {
         unsigned char rand_pwd[32];
         RAND_bytes(rand_pwd, 32);
-        string strWhatAmI = "To use sparkleunity(sparklecoind)";
+        string strWhatAmI = "To use sparklecoin(sparklecoind)";
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))

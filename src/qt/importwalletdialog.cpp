@@ -160,7 +160,7 @@ void ImportWalletDialog::processRequest()
             if (wallet->nLoadWallet == DB_CORRUPT)
                 throw runtime_error("Error loading "+(walletFile.toStdString())+": Wallet corrupted \n");
             else if (wallet->nLoadWallet == DB_TOO_NEW)
-                throw runtime_error("Error loading "+(walletFile.toStdString())+": Wallet requires newer version of Sparkleunity\n");
+                throw runtime_error("Error loading "+(walletFile.toStdString())+": Wallet requires newer version of Sparklecoin\n");
             else if (wallet->nLoadWallet == DB_NEED_REWRITE)
                 throw runtime_error((walletFile.toStdString())+" file is incomplete \n");
             else

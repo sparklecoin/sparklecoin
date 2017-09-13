@@ -1,18 +1,18 @@
-# Sparkleunity Official Development Repository
+# Sparklecoin Official Development Repository
 
-## What is Sparkleunity?
+## What is Sparklecoin?
 
-Sparkleunity is a Sparklecoin network-compatible, community-developed wallet client.
+Sparklecoin is a Sparklecoin network-compatible, community-developed wallet client.
 
 The project has been designed to provide people with a stable, secure, and feature-rich alternative to the Sparklecoin reference wallet (http://github.com/sparklecoin/sparklecoin). 
 
 To help faciliate broad community cooperation, a number of trusted Sparklecoin/Peershares community leaders have write permissions to the project's codebase, allowing for decentralization and continuity. Community members, old and new, are encouraged to find ways to contribute to the success of the project. If you have experience with programming, product design, QA engineering, translation, or have a different set of skills that you want to bring to the project, your involvement is appreciated!
 
 
-### Sparkleunity Resources
-* Source: [Source Code](https://github.com/Sparkleunity/Sparkleunity)
-* Documentation: [Build Instructions](https://github.com/Sparkleunity/Sparkleunity/tree/master/doc)
-* Support: [Sparkleunity Forum](http://www.sparklecointalk.org/index.php?board=64.0), [Issue Tracker](https://github.com/Sparkleunity/Sparkleunity/issues?state=open)
+### Sparklecoin Resources
+* Source: [Source Code](https://github.com/Sparklecoin/Sparkleunity)
+* Documentation: [Build Instructions](https://github.com/Sparklecoin/Sparkleunity/tree/master/doc)
+* Support: [Sparklecoin Forum](http://www.sparklecointalk.org/index.php?board=64.0), [Issue Tracker](https://github.com/Sparkleunity/Sparkleunity/issues?state=open)
 
 
 ### About Sparklecoin
@@ -32,7 +32,7 @@ To help faciliate broad community cooperation, a number of trusted Sparklecoin/P
 ## Translation Guidelines
 
 Changes to translations as well as new translations can be submitted to
-[Sparkleunity's Get Localization page](http://www.getlocalization.com/Sparkleunity/).
+[Sparklecoin's Get Localization page](http://www.getlocalization.com/Sparkleunity/).
 
 Translations are periodically pulled from Get Localization and merged into the git repository.
 

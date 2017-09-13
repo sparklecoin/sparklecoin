@@ -68,7 +68,7 @@ OBJS= \
     obj/noui.o \
     obj/kernel.o
 
-all: sparkleunityd.exe
+all: sparklecoind.exe
 
 obj/build.h: FORCE
 	/bin/sh ../share/genbuild.sh obj/build.h
@@ -78,7 +78,7 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	${HOST}-g++ -c $(CFLAGS) -o $@ $<
 
-sparkleunityd.exe: $(OBJS:obj/%=obj/%)
+sparklecoind.exe: $(OBJS:obj/%=obj/%)
 	${HOST}-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -92,7 +92,7 @@ test_bitcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 
 clean:
 	-rm -f obj/*.o
-	-rm -f sparkleunityd.exe
+	-rm -f sparklecoind.exe
 	-rm -f obj-test/*.o
 	-rm -f test_bitcoin.exe
 	-rm -f src/build.h

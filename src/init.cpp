@@ -76,7 +76,7 @@ void Shutdown(void* parg)
         delete pwalletMain;
         CreateThread(ExitTimeout, NULL);
         Sleep(50);
-        printf("Sparkleunity exiting\n\n");
+        printf("Sparklecoin exiting\n\n");
         fExit = true;
 #ifndef QT_GUI
         // ensure non UI client get's exited here, but let Bitcoin-Qt reach return 0; in bitcoin.cpp
@@ -142,7 +142,7 @@ bool static Bind(const CService &addr) {
     std::string strError;
     if (!BindListenPort(addr, strError))
     {
-        ThreadSafeMessageBox(strError, _("Sparkleunity"), wxOK | wxMODAL);
+        ThreadSafeMessageBox(strError, _("Sparklecoin"), wxOK | wxMODAL);
         return false;
     }
     return true;
@@ -190,12 +190,12 @@ bool AppInit2(int argc, char* argv[])
     if (mapArgs.count("-?") || mapArgs.count("--help"))
     {
         string strUsage = string() +
-          _("Sparkleunity version") + " " + FormatFullVersion() + "\n\n" +
+          _("Sparklecoin version") + " " + FormatFullVersion() + "\n\n" +
           _("Usage:") + "\t\t\t\t\t\t\t\t\t\t\n" +
-            "  sparkleunityd [options]                   \t  " + "\n" +
-            "  sparkleunityd [options] <command> [params]\t  " + _("Send command to -server or sparkleunityd") + "\n" +
-            "  sparkleunityd [options] help              \t\t  " + _("List commands") + "\n" +
-            "  sparkleunityd [options] help <command>    \t\t  " + _("Get help for a command") + "\n" +
+            "  sparklecoind [options]                   \t  " + "\n" +
+            "  sparklecoind [options] <command> [params]\t  " + _("Send command to -server or sparklecoind") + "\n" +
+            "  sparklecoind [options] help              \t\t  " + _("List commands") + "\n" +
+            "  sparklecoind [options] help <command>    \t\t  " + _("Get help for a command") + "\n" +
           _("Options:") + "\n" +
             "  -conf=<file>     \t\t  " + _("Specify configuration file (default: sparklecoin.conf)") + "\n" +
             "  -pid=<file>      \t\t  " + _("Specify pid file (default: sparklecoind.pid)") + "\n" +
@@ -266,7 +266,7 @@ bool AppInit2(int argc, char* argv[])
             "  -checklevel=<n>  \t\t  " + _("How thorough the block verification is (0-6, default: 1)") + "\n";
 
         strUsage += string() +
-            _("\nSSL options: (see the Sparkleunity Wiki for SSL setup instructions)") + "\n" +
+            _("\nSSL options: (see the Sparklecoin Wiki for SSL setup instructions)") + "\n" +
             "  -rpcssl                                \t  " + _("Use OpenSSL (https) for JSON-RPC connections") + "\n" +
             "  -rpcsslcertificatechainfile=<file.cert>\t  " + _("Server certificate file (default: server.cert)") + "\n" +
             "  -rpcsslprivatekeyfile=<file.pem>       \t  " + _("Server private key (default: server.pem)") + "\n" +
@@ -351,7 +351,7 @@ bool AppInit2(int argc, char* argv[])
     if (!fDebug)
         ShrinkDebugFile();
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("Sparkleunity version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
+    printf("Sparklecoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
     printf("Default data directory %s\n", GetDefaultDataDir().string().c_str());
 
     if (GetBoolArg("-loadblockindextest"))
@@ -369,7 +369,7 @@ bool AppInit2(int argc, char* argv[])
     static boost::interprocess::file_lock lock(pathLockFile.string().c_str());
     if (!lock.try_lock())
     {
-        ThreadSafeMessageBox(strprintf(_("Cannot obtain a lock on data directory %s.  Sparkleunity is probably already running."), GetDataDir().string().c_str()), _("Sparkleunity"), wxOK|wxMODAL);
+        ThreadSafeMessageBox(strprintf(_("Cannot obtain a lock on data directory %s.  Sparklecoin is probably already running."), GetDataDir().string().c_str()), _("Sparklecoin"), wxOK|wxMODAL);
         return false;
     }
 
@@ -378,7 +378,7 @@ bool AppInit2(int argc, char* argv[])
     // Load data files
     //
     if (fDaemon)
-        fprintf(stdout, "Sparkleunity server starting\n");
+        fprintf(stdout, "Sparklecoin server starting\n");
     int64 nStart;
 
     InitMessage(_("Loading addresses..."));
@@ -415,12 +415,12 @@ bool AppInit2(int argc, char* argv[])
         if (nLoadWalletRet == DB_CORRUPT)
             strErrors << _("Error loading wallet.dat: Wallet corrupted") << "\n";
         else if (nLoadWalletRet == DB_TOO_NEW)
-            strErrors << _("Error loading wallet.dat: Wallet requires newer version of Sparkleunity") << "\n";
+            strErrors << _("Error loading wallet.dat: Wallet requires newer version of Sparklecoin") << "\n";
         else if (nLoadWalletRet == DB_NEED_REWRITE)
         {
-            strErrors << _("Wallet needed to be rewritten: restart Sparkleunity to complete") << "\n";
+            strErrors << _("Wallet needed to be rewritten: restart Sparklecoin to complete") << "\n";
             printf("%s", strErrors.str().c_str());
-            ThreadSafeMessageBox(strErrors.str(), _("Sparkleunity"), wxOK | wxICON_ERROR | wxMODAL);
+            ThreadSafeMessageBox(strErrors.str(), _("Sparklecoin"), wxOK | wxICON_ERROR | wxMODAL);
             return false;
         }
         else
@@ -492,7 +492,7 @@ bool AppInit2(int argc, char* argv[])
 
     if (!strErrors.str().empty())
     {
-        ThreadSafeMessageBox(strErrors.str(), _("Sparkleunity"), wxOK | wxICON_ERROR | wxMODAL);
+        ThreadSafeMessageBox(strErrors.str(), _("Sparklecoin"), wxOK | wxICON_ERROR | wxMODAL);
         return false;
     }
 
@@ -548,7 +548,7 @@ bool AppInit2(int argc, char* argv[])
         addrProxy = CService(mapArgs["-proxy"], 9050);
         if (!addrProxy.IsValid())
         {
-            ThreadSafeMessageBox(_("Invalid -proxy address"), _("Sparkleunity"), wxOK | wxMODAL);
+            ThreadSafeMessageBox(_("Invalid -proxy address"), _("Sparklecoin"), wxOK | wxMODAL);
             return false;
         }
     }
@@ -558,7 +558,7 @@ bool AppInit2(int argc, char* argv[])
         BOOST_FOREACH(std::string snet, mapMultiArgs["-noproxy"]) {
             enum Network net = ParseNetwork(snet);
             if (net == NET_UNROUTABLE) {
-                ThreadSafeMessageBox(_("Unknown network specified in -noproxy"), _("Sparkleunity"), wxOK | wxMODAL);
+                ThreadSafeMessageBox(_("Unknown network specified in -noproxy"), _("Sparklecoin"), wxOK | wxMODAL);
                 return false;
             }
             SetNoProxy(net);
@@ -591,7 +591,7 @@ bool AppInit2(int argc, char* argv[])
         BOOST_FOREACH(std::string snet, mapMultiArgs["-onlynet"]) {
             enum Network net = ParseNetwork(snet);
             if (net == NET_UNROUTABLE) {
-                ThreadSafeMessageBox(_("Unknown network specified in -onlynet"), _("Sparkleunity"), wxOK | wxMODAL);
+                ThreadSafeMessageBox(_("Unknown network specified in -onlynet"), _("Sparklecoin"), wxOK | wxMODAL);
                 return false;
             }
             nets.insert(net);
@@ -649,11 +649,11 @@ bool AppInit2(int argc, char* argv[])
     {
         if (!ParseMoney(mapArgs["-paytxfee"], nTransactionFee) || nTransactionFee < MIN_TX_FEE)
         {
-            ThreadSafeMessageBox(_("Invalid amount for -paytxfee=<amount>"), _("Sparkleunity"), wxOK | wxMODAL);
+            ThreadSafeMessageBox(_("Invalid amount for -paytxfee=<amount>"), _("Sparklecoin"), wxOK | wxMODAL);
             return false;
         }
         if (nTransactionFee > 0.25 * COIN)
-            ThreadSafeMessageBox(_("Warning: -paytxfee is set very high.  This is the transaction fee you will pay if you send a transaction."), _("Sparkleunity"), wxOK | wxICON_EXCLAMATION | wxMODAL);
+            ThreadSafeMessageBox(_("Warning: -paytxfee is set very high.  This is the transaction fee you will pay if you send a transaction."), _("Sparklecoin"), wxOK | wxICON_EXCLAMATION | wxMODAL);
     }
 
     if (mapArgs.count("-reservebalance")) // sparklecoin: reserve balance amount
@@ -661,7 +661,7 @@ bool AppInit2(int argc, char* argv[])
         int64 nReserveBalance = 0;
         if (!ParseMoney(mapArgs["-reservebalance"], nReserveBalance))
         {
-            ThreadSafeMessageBox(_("Invalid amount for -reservebalance=<amount>"), _("Sparkleunity"), wxOK | wxMODAL);
+            ThreadSafeMessageBox(_("Invalid amount for -reservebalance=<amount>"), _("Sparklecoin"), wxOK | wxMODAL);
             return false;
         }
     }
@@ -669,7 +669,7 @@ bool AppInit2(int argc, char* argv[])
     if (mapArgs.count("-checkpointkey")) // sparklecoin: checkpoint master priv key
     {
         if (!Checkpoints::SetCheckpointPrivKey(GetArg("-checkpointkey", "")))
-            ThreadSafeMessageBox(_("Unable to sign checkpoint, wrong checkpointkey?\n"), _("Sparkleunity"), wxOK | wxMODAL);
+            ThreadSafeMessageBox(_("Unable to sign checkpoint, wrong checkpointkey?\n"), _("Sparklecoin"), wxOK | wxMODAL);
     }
 
     //
@@ -681,7 +681,7 @@ bool AppInit2(int argc, char* argv[])
     RandAddSeedPerfmon();
 
     if (!CreateThread(StartNode, NULL))
-        ThreadSafeMessageBox(_("Error: CreateThread(StartNode) failed"), _("Sparkleunity"), wxOK | wxMODAL);
+        ThreadSafeMessageBox(_("Error: CreateThread(StartNode) failed"), _("Sparklecoin"), wxOK | wxMODAL);
 
     if (fServer)
         CreateThread(ThreadRPCServer, NULL);

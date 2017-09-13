@@ -1,4 +1,4 @@
-Name Sparkleunity
+Name Sparklecoin
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 1.0.1.0
-!define COMPANY "Sparkleunity project"
-!define URL http://github.com/sparkleunity/sparkleunity/
+!define COMPANY "Sparklecoin project"
+!define URL http://github.com/sparklecoin/sparklecoin/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/sparkleunity.ico"
@@ -19,8 +19,8 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER Sparkleunity
-!define MUI_FINISHPAGE_RUN $INSTDIR\Sparkleunity.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER Sparklecoin
+!define MUI_FINISHPAGE_RUN $INSTDIR\Sparklecoin.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/sparkleunity128.png"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -48,18 +48,18 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile Sparkleunity-${VERSION}-win-setup.exe
+OutFile Sparklecoin-${VERSION}-win-setup.exe
 !if "" == "64"
-InstallDir $PROGRAMFILES64\Sparkleunity
+InstallDir $PROGRAMFILES64\Sparklecoin
 !else
-InstallDir $PROGRAMFILES\Sparkleunity
+InstallDir $PROGRAMFILES\Sparklecoin
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.0
-VIAddVersionKey ProductName Sparkleunity
+VIAddVersionKey ProductName Sparklecoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,11 +73,11 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/Sparkleunity.exe
+    File ../release/Sparklecoin.exe
     File /oname=license.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../release/sparkleunityd.exe
+    File ../release/sparklecoind.exe
 #    SetOutPath $INSTDIR\doc
 #    File /r ../doc\*.*
 #    SetOutPath $INSTDIR\src
@@ -96,7 +96,7 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\sparkleunity.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\sparklecoin.exe
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -124,7 +124,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\sparkleunity.exe
+    Delete /REBOOTOK $INSTDIR\sparklecoin.exe
     Delete /REBOOTOK $INSTDIR\license.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -137,7 +137,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Sparkleunity.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Sparklecoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -145,7 +145,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "sparkleunity"
+    DeleteRegKey HKCR "sparklecoin"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

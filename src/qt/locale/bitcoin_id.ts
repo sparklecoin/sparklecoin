@@ -6,18 +6,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About Sparkleunity</source>
-        <translation>Tentang Sparkleunity</translation>
+        <source>About Sparklecoin</source>
+        <translation>Tentang Sparklecoin</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="75"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparkleunity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparkleunity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparklecoin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparklecoin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2017 Sparkleunity Developers</source>
-        <translation>Copyright © 2017 Sparkleunity Developers</translation>
+        <source>Copyright © 2017 Sparklecoin Developers</source>
+        <translation>Copyright © 2017 Sparklecoin Developers</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
@@ -266,8 +266,8 @@ Apakah Anda yakin ingin mengenkripsi dompet Anda?</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="117"/>
-        <source>Sparkleunity will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your Sparklecoins from being stolen by malware infecting your computer.</source>
-        <translation>Sparkleunity akan menutup sekarang untuk menyelesaikan proses enkripsi. Ingat bahwa mengenkripsi dompet Anda tidak dapat sepenuhnya melindungi Sparklecoins Anda dari yang dicuri oleh malware menginfeksi komputer Anda.</translation>
+        <source>Sparklecoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your Sparklecoins from being stolen by malware infecting your computer.</source>
+        <translation>Sparklecoin akan menutup sekarang untuk menyelesaikan proses enkripsi. Ingat bahwa mengenkripsi dompet Anda tidak dapat sepenuhnya melindungi Sparklecoins Anda dari yang dicuri oleh malware menginfeksi komputer Anda.</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="123"/>
@@ -497,8 +497,8 @@ Apakah Anda yakin ingin mengenkripsi dompet Anda?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="76"/>
-        <source>Sparkleunity Wallet</source>
-        <translation>Dompet Sparkleunity</translation>
+        <source>Sparklecoin Wallet</source>
+        <translation>Dompet Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="222"/>
@@ -507,28 +507,28 @@ Apakah Anda yakin ingin mengenkripsi dompet Anda?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="253"/>
-        <source>&amp;About Sparkleunity</source>
-        <translation>Tentang Sparkleunity</translation>
+        <source>&amp;About Sparklecoin</source>
+        <translation>Tentang Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="260"/>
-        <source>Modify configuration options for Sparkleunity</source>
-        <translation>Memodifikasi pilihan konfigurasi untuk Sparkleunity</translation>
+        <source>Modify configuration options for Sparklecoin</source>
+        <translation>Memodifikasi pilihan konfigurasi untuk Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="262"/>
-        <source>Show/Hide &amp;Sparkleunity</source>
-        <translation>Tampilkan/Sembunyikan Sparkleunity</translation>
+        <source>Show/Hide &amp;Sparklecoin</source>
+        <translation>Tampilkan/Sembunyikan Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="263"/>
-        <source>Show or hide the Sparkleunity window</source>
-        <translation>Tampilkan atau sembunyikan jendela Sparkleunity</translation>
+        <source>Show or hide the Sparklecoin window</source>
+        <translation>Tampilkan atau sembunyikan jendela Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="415"/>
-        <source>Sparkleunity client</source>
-        <translation>Klien Sparkleunity</translation>
+        <source>Sparklecoin client</source>
+        <translation>Klien Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="443"/>
@@ -671,8 +671,8 @@ Alamat: %4</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="128"/>
-        <source>A fatal error occured. Sparkleunity can no longer continue safely and will quit.</source>
-        <translation>Sebuah error fatal terjadi. Sparkleunity tidak bisa lagi melanjutkan dengan aman dan akan berhenti.</translation>
+        <source>A fatal error occured. Sparklecoin can no longer continue safely and will quit.</source>
+        <translation>Sebuah error fatal terjadi. Sparklecoin tidak bisa lagi melanjutkan dengan aman dan akan berhenti.</translation>
     </message>
 </context>
 <context>
@@ -970,8 +970,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="287"/>
-        <source>Whether to show Sparkleunity addresses in the transaction list</source>
-        <translation>Apakah menampilkan alamat Sparkleunity dalam daftar transaksi</translation>
+        <source>Whether to show Sparklecoin addresses in the transaction list</source>
+        <translation>Apakah menampilkan alamat Sparklecoin dalam daftar transaksi</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="290"/>
@@ -1081,8 +1081,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="187"/>
-        <source>Automatically open the Sparkleunity client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Secara otomatis membuka port klien Sparkleunity pada router. Ini hanya bekerja ketika router Anda mendukung UPnP dan diaktifkan.</translation>
+        <source>Automatically open the Sparklecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Secara otomatis membuka port klien Sparklecoin pada router. Ini hanya bekerja ketika router Anda mendukung UPnP dan diaktifkan.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="190"/>
@@ -1136,13 +1136,13 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="172"/>
-        <source>&amp;Start Sparkleunity on window system startup</source>
-        <translation>Mulai Sparkleunity pada sistem jendela startup</translation>
+        <source>&amp;Start Sparklecoin on window system startup</source>
+        <translation>Mulai Sparklecoin pada sistem jendela startup</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="173"/>
-        <source>Automatically start Sparkleunity after the computer is turned on</source>
-        <translation>Otomatis mulai Sparkleunity setelah komputer dihidupkan</translation>
+        <source>Automatically start Sparklecoin after the computer is turned on</source>
+        <translation>Otomatis mulai Sparklecoin setelah komputer dihidupkan</translation>
     </message>
 </context>
 <context>
@@ -1561,8 +1561,8 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="306"/>
-        <source>Welcome to the Sparkleunity RPC console.&lt;br&gt;Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.&lt;br&gt;Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Selamat datang di konsol Sparkleunity RPC. &lt;br&gt;Gunakan panah atas dan bawah untuk menavigasi sejarah, dan &lt;b&gt;Ctrl-L&lt;/b&gt; untuk menghapus layar. &lt;br&gt;Type &lt;b&gt;help&lt;/b&gt;  untuk overview command yang tersedia.</translation>
+        <source>Welcome to the Sparklecoin RPC console.&lt;br&gt;Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.&lt;br&gt;Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Selamat datang di konsol Sparklecoin RPC. &lt;br&gt;Gunakan panah atas dan bawah untuk menavigasi sejarah, dan &lt;b&gt;Ctrl-L&lt;/b&gt; untuk menghapus layar. &lt;br&gt;Type &lt;b&gt;help&lt;/b&gt;  untuk overview command yang tersedia.</translation>
     </message>
 </context>
 <context>
@@ -2568,18 +2568,18 @@ Ini berarti diperlukan biaya minimal %2.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="8"/>
-        <source>Unable to bind to port %d on this computer.  Sparkleunity is probably already running.</source>
-        <translation>Tidak dapat mengikat ke port %d di komputer ini. Sparkleunity mungkin sudah berjalan.</translation>
+        <source>Unable to bind to port %d on this computer.  Sparklecoin is probably already running.</source>
+        <translation>Tidak dapat mengikat ke port %d di komputer ini. Sparklecoin mungkin sudah berjalan.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="12"/>
-        <source>Sparkleunity version</source>
-        <translation>Versi Sparkleunity</translation>
+        <source>Sparklecoin version</source>
+        <translation>Versi Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="14"/>
-        <source>Send command to -server or sparkleunityd</source>
-        <translation>Kirim command ke -server atau sparkleunityd</translation>
+        <source>Send command to -server or sparklecoind</source>
+        <translation>Kirim command ke -server atau sparklecoind</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="15"/>
@@ -2859,23 +2859,23 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="78"/>
-        <source>Cannot obtain a lock on data directory %s.  Sparkleunity is probably already running.</source>
-        <translation>Tidak dapat memperoleh kunci pada direktori data %s. Sparkleunity mungkin sudah berjalan.</translation>
+        <source>Cannot obtain a lock on data directory %s.  Sparklecoin is probably already running.</source>
+        <translation>Tidak dapat memperoleh kunci pada direktori data %s. Sparklecoin mungkin sudah berjalan.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="81"/>
-        <source>Sparkleunity</source>
-        <translation>Sparkleunity</translation>
+        <source>Sparklecoin</source>
+        <translation>Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="88"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Sparkleunity</source>
-        <translation>Error loading wallet.dat: Dompet memerlukan versi terbaru dari Sparkleunity</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Sparklecoin</source>
+        <translation>Error loading wallet.dat: Dompet memerlukan versi terbaru dari Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="89"/>
-        <source>Wallet needed to be rewritten: restart Sparkleunity to complete</source>
-        <translation>Dompet perlu ditulis ulang: me-restart Sparkleunity untuk menyelesaikan</translation>
+        <source>Wallet needed to be rewritten: restart Sparklecoin to complete</source>
+        <translation>Dompet perlu ditulis ulang: me-restart Sparklecoin untuk menyelesaikan</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="103"/>
@@ -2891,8 +2891,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="119"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Sparkleunity will not work properly.</source>
-        <translation>Peringatan: Harap periksa tanggal komputer Anda dan waktu sudah benar. Jika jam Anda salah Sparkleunity tidak akan berfungsi.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Sparklecoin will not work properly.</source>
+        <translation>Peringatan: Harap periksa tanggal komputer Anda dan waktu sudah benar. Jika jam Anda salah Sparklecoin tidak akan berfungsi.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="82"/>

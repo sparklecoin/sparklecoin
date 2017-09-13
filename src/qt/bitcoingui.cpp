@@ -79,7 +79,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0)
 {
     resize(950, 650);
-    setWindowTitle(tr("Sparkleunity Wallet"));
+    setWindowTitle(tr("Sparklecoin Wallet"));
 
 //    QFontDatabase::addApplicationFont(":/fonts/weblysleek");
     QFontDatabase::addApplicationFont(":/fonts/opensans");
@@ -280,17 +280,17 @@ void BitcoinGUI::createActions()
     quitAction->setToolTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(QIcon(":/icons/sparkleunity_tooltip"), tr("&About Sparkleunity"), this);
+    aboutAction = new QAction(QIcon(":/icons/sparkleunity_tooltip"), tr("&About Sparklecoin"), this);
     aboutAction->setToolTip(tr("Show information about Sparklecoin"));
     aboutAction->setMenuRole(QAction::AboutRole);
     aboutQtAction = new QAction(tr("About &Qt"), this);
     aboutQtAction->setToolTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setToolTip(tr("Modify configuration options for Sparkleunity"));
+    optionsAction->setToolTip(tr("Modify configuration options for Sparklecoin"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
-    toggleHideAction = new QAction(QIcon(":/icons/sparkleunity_tooltip"), tr("Show/Hide &Sparkleunity"), this);
-    toggleHideAction->setToolTip(tr("Show or hide the Sparkleunity window"));
+    toggleHideAction = new QAction(QIcon(":/icons/sparkleunity_tooltip"), tr("Show/Hide &Sparklecoin"), this);
+    toggleHideAction->setToolTip(tr("Show or hide the Sparklecoin window"));
     exportAction = new QAction(QIcon(":/icons/export"), tr("&Export..."), this);
     exportAction->setToolTip(tr("Export the data in the current tab to a file"));
     encryptWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Encrypt Wallet"), this);
@@ -458,7 +458,7 @@ void BitcoinGUI::createTrayIcon()
     trayIcon = new QSystemTrayIcon(this);
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
-    trayIcon->setToolTip(tr("Sparkleunity client"));
+    trayIcon->setToolTip(tr("Sparklecoin client"));
     trayIcon->setIcon(QIcon(":/icons/sparkleunity_tooltip"));
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));

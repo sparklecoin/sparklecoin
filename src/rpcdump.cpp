@@ -170,7 +170,7 @@ Value importwallet(const Array& params, bool fHelp)
         if (nLoadWallet == DB_CORRUPT)
             throw runtime_error("Error loading "+walletFile+": Wallet corrupted \n");
         else if (nLoadWallet == DB_TOO_NEW)
-        	throw runtime_error("Error loading "+walletFile+": Wallet requires newer version of Sparkleunity\n");
+        	throw runtime_error("Error loading "+walletFile+": Wallet requires newer version of Sparklecoin\n");
         else if (nLoadWallet == DB_NEED_REWRITE)
             throw runtime_error(walletFile+" file is incomplete \n");
         else

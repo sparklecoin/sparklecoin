@@ -2321,7 +2321,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        ThreadSafeMessageBox(strMessage, "Sparkleunity", wxOK | wxICON_EXCLAMATION | wxMODAL);
+        ThreadSafeMessageBox(strMessage, "Sparklecoin", wxOK | wxICON_EXCLAMATION | wxMODAL);
         StartShutdown();
         return false;
     }
@@ -2382,7 +2382,7 @@ bool LoadBlockIndex(bool fAllowNew)
     }
 
     printf("%s Network: genesis=0x%s nBitsLimit=0x%08x nBitsInitial=0x%08x nStakeMinAge=%d nCoinbaseMaturity=%d nModifierInterval=%d\n",
-           fTestNet? "Test" : "Sparkleunity", hashGenesisBlock.ToString().substr(0, 20).c_str(), bnProofOfWorkLimit.GetCompact(), bnInitialHashTarget.GetCompact(), nStakeMinAge, nCoinbaseMaturity, nModifierInterval);
+           fTestNet? "Test" : "Sparklecoin", hashGenesisBlock.ToString().substr(0, 20).c_str(), bnProofOfWorkLimit.GetCompact(), bnInitialHashTarget.GetCompact(), nStakeMinAge, nCoinbaseMaturity, nModifierInterval);
 
     //
     // Load block index

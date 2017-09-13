@@ -1,5 +1,5 @@
 // Copyright (c) 2012 The Bitcoin developers
-// Copyright (c) 2014 The Sparkleunity developers
+// Copyright (c) 2014 The Sparklecoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include <string>
@@ -7,10 +7,10 @@
 #include "version.h"
 
 // Name of client reported in the 'version' message. Report the same name
-// for both sparkleunityd and sparkleunity(-qt), to make it harder for attackers to
+// for both sparklecoind and sparklecoin(-qt), to make it harder for attackers to
 // target servers or GUI users specifically.
 
-// For the current run of Sparkleunity releases, the client name should be selected from
+// For the current run of Sparklecoin releases, the client name should be selected from
 // the list of ancient coinage, from oldest known to more recent. 
 // You can find ideas for future client names, here: http://en.wikipedia.org/wiki/List_of_historical_currencies
 

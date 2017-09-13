@@ -52,10 +52,10 @@
 #     mkdir miniupnpc
 #     cp *.h miniupnpc/
 #
-# - Build sparkleunityd.exe
+# - Build sparklecoind.exe
 #   in MinGW MSYS
-#     cd sparkleunity/src
-#     make sparkleunityd.exe -f makefile.mingw USE_UPNP=1
+#     cd sparklecoin/src
+#     make sparklecoind.exe -f makefile.mingw USE_UPNP=1
 #
 #
 
@@ -123,12 +123,12 @@ OBJS= \
     obj/kernel.o
 
 
-all: sparkleunityd.exe
+all: sparklecoind.exe
 
 obj/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-sparkleunityd.exe: $(OBJS:obj/%=obj/%)
+sparklecoind.exe: $(OBJS:obj/%=obj/%)
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -136,11 +136,11 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp $(HEADERS)
 	g++ -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-test_sparkleunity.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_sparklecoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework $(LIBS)
 
 clean:
-	-del /Q sparkleunityd test_sparkleunity
+	-del /Q sparklecoind test_sparklecoin
 	-del /Q obj\*
 	-del /Q obj-test\*
 	-del /Q build.h

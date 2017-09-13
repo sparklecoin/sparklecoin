@@ -14,7 +14,7 @@
 
 // These need to be macro's, as version.cpp's voodoo requires it
 
-// sparkleunity version - intended for display purpose only
+// sparklecoin version - intended for display purpose only
 #define SPARKLEUNITY_VERSION_MAJOR       1
 #define SPARKLEUNITY_VERSION_MINOR       0
 #define SPARKLEUNITY_VERSION_REVISION    1

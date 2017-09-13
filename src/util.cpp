@@ -1072,7 +1072,7 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Sparkleunity will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Sparklecoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
                     ThreadSafeMessageBox(strMessage+" ", string("SPRKoin"), wxOK | wxICON_EXCLAMATION);
@@ -1119,7 +1119,7 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
     ss << "/";
     ss << "Sparklecoin:" << FormatVersion(SPRKOIN_VERSION);
     ss << "/";
-    ss << "Sparkleunity:" << FormatVersion(SPARKLEUNITY_VERSION);
+    ss << "Sparklecoin:" << FormatVersion(SPARKLEUNITY_VERSION);
     ss << "(" << CLIENT_BUILD << ")/";
     return ss.str();
 }

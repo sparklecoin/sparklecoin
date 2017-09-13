@@ -6,18 +6,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About Sparkleunity</source>
-        <translation>Su Sparkleunity</translation>
+        <source>About Sparklecoin</source>
+        <translation>Su Sparklecoin</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="75"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparkleunity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparkleunity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparklecoin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparklecoin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="113"/>
-        <source>Copyright © 2017 Sparkleunity Developers</source>
-        <translation>Copyright © 2014 Sviluppatori Sparkleunity</translation>
+        <source>Copyright © 2017 Sparklecoin Developers</source>
+        <translation>Copyright © 2014 Sviluppatori Sparklecoin</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="120"/>
@@ -266,8 +266,8 @@ Sei sicuro che vuoi cifrare il tuo portafoglio?</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="117"/>
-        <source>Sparkleunity will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your Sparklecoins from being stolen by malware infecting your computer.</source>
-        <translation>Sparkleunity si chiuderà adesso per finire il processo di criptazione. Ricorda che criptare il tuo portafoglio non può proteggere completamente i tuoi Sparklecoin da essere rubati con malware che ha infettato il tuo computer.</translation>
+        <source>Sparklecoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your Sparklecoins from being stolen by malware infecting your computer.</source>
+        <translation>Sparklecoin si chiuderà adesso per finire il processo di criptazione. Ricorda che criptare il tuo portafoglio non può proteggere completamente i tuoi Sparklecoin da essere rubati con malware che ha infettato il tuo computer.</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="123"/>
@@ -497,8 +497,8 @@ Sei sicuro che vuoi cifrare il tuo portafoglio?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="76"/>
-        <source>Sparkleunity Wallet</source>
-        <translation>Portafoglio Sparkleunity</translation>
+        <source>Sparklecoin Wallet</source>
+        <translation>Portafoglio Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="222"/>
@@ -507,28 +507,28 @@ Sei sicuro che vuoi cifrare il tuo portafoglio?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="253"/>
-        <source>&amp;About Sparkleunity</source>
-        <translation>Su Sparkleunity</translation>
+        <source>&amp;About Sparklecoin</source>
+        <translation>Su Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="260"/>
-        <source>Modify configuration options for Sparkleunity</source>
-        <translation>Modifica opzioni di configurazione per Sparkleunity</translation>
+        <source>Modify configuration options for Sparklecoin</source>
+        <translation>Modifica opzioni di configurazione per Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="262"/>
-        <source>Show/Hide &amp;Sparkleunity</source>
-        <translation>Mostra/Nascondi Sparkleunity</translation>
+        <source>Show/Hide &amp;Sparklecoin</source>
+        <translation>Mostra/Nascondi Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="263"/>
-        <source>Show or hide the Sparkleunity window</source>
-        <translation>Mostra o nascondi la finestra di Sparkleunity</translation>
+        <source>Show or hide the Sparklecoin window</source>
+        <translation>Mostra o nascondi la finestra di Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="415"/>
-        <source>Sparkleunity client</source>
-        <translation>Client Sparkleunity</translation>
+        <source>Sparklecoin client</source>
+        <translation>Client Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="443"/>
@@ -679,8 +679,8 @@ Indirizzo: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="128"/>
-        <source>A fatal error occured. Sparkleunity can no longer continue safely and will quit.</source>
-        <translation>Un errore fatale è occorso. Sparkleunity non può più continuare in modo sicuro e sarà terminato.</translation>
+        <source>A fatal error occured. Sparklecoin can no longer continue safely and will quit.</source>
+        <translation>Un errore fatale è occorso. Sparklecoin non può più continuare in modo sicuro e sarà terminato.</translation>
     </message>
 </context>
 <context>
@@ -978,8 +978,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="287"/>
-        <source>Whether to show Sparkleunity addresses in the transaction list</source>
-        <translation>Se mostrare gli indirizzi Sparkleunity nella lista transazioni</translation>
+        <source>Whether to show Sparklecoin addresses in the transaction list</source>
+        <translation>Se mostrare gli indirizzi Sparklecoin nella lista transazioni</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="290"/>
@@ -1089,8 +1089,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="187"/>
-        <source>Automatically open the Sparkleunity client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aprire automaticamente la porta del client Sparkleunity nel router. Questo funziona solamente quando il supporto UPnp del router è abilitato.</translation>
+        <source>Automatically open the Sparklecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aprire automaticamente la porta del client Sparklecoin nel router. Questo funziona solamente quando il supporto UPnp del router è abilitato.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="190"/>
@@ -1144,13 +1144,13 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="172"/>
-        <source>&amp;Start Sparkleunity on window system startup</source>
-        <translation>Avvia Sparkleunity a finestra all&apos;avvio del sistema</translation>
+        <source>&amp;Start Sparklecoin on window system startup</source>
+        <translation>Avvia Sparklecoin a finestra all&apos;avvio del sistema</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="173"/>
-        <source>Automatically start Sparkleunity after the computer is turned on</source>
-        <translation>Automaticamente avvia Sparkleunity dopo che il computer è stato acceso</translation>
+        <source>Automatically start Sparklecoin after the computer is turned on</source>
+        <translation>Automaticamente avvia Sparklecoin dopo che il computer è stato acceso</translation>
     </message>
 </context>
 <context>
@@ -1569,8 +1569,8 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="306"/>
-        <source>Welcome to the Sparkleunity RPC console.&lt;br&gt;Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.&lt;br&gt;Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Benvenuto alla console Sparkleunity RPC.&lt;br&gt;Utilizza le frecce in alto e in basso per navigare la cronologia, e &lt;b&gt;Ctrl-L&lt;/b&gt;per cancellare lo schermo.&lt;br&gt;Scrivi &lt;b&gt;aiuto&lt;/b&gt; per una panoramica dei comandi disponibili.</translation>
+        <source>Welcome to the Sparklecoin RPC console.&lt;br&gt;Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.&lt;br&gt;Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Benvenuto alla console Sparklecoin RPC.&lt;br&gt;Utilizza le frecce in alto e in basso per navigare la cronologia, e &lt;b&gt;Ctrl-L&lt;/b&gt;per cancellare lo schermo.&lt;br&gt;Scrivi &lt;b&gt;aiuto&lt;/b&gt; per una panoramica dei comandi disponibili.</translation>
     </message>
 </context>
 <context>
@@ -2578,18 +2578,18 @@ Questo significa che è necessaria una tariffa di almeno %2.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="8"/>
-        <source>Unable to bind to port %d on this computer.  Sparkleunity is probably already running.</source>
-        <translation>Impossibile connettersi con la porta %d su questo computer. Sparkleunity è probabilmente già in funzione.</translation>
+        <source>Unable to bind to port %d on this computer.  Sparklecoin is probably already running.</source>
+        <translation>Impossibile connettersi con la porta %d su questo computer. Sparklecoin è probabilmente già in funzione.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="12"/>
-        <source>Sparkleunity version</source>
-        <translation>Versione Sparkleunity</translation>
+        <source>Sparklecoin version</source>
+        <translation>Versione Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="14"/>
-        <source>Send command to -server or sparkleunityd</source>
-        <translation>Invia un comando al -server o sparkleunityd</translation>
+        <source>Send command to -server or sparklecoind</source>
+        <translation>Invia un comando al -server o sparklecoind</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="15"/>
@@ -2895,23 +2895,23 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="78"/>
-        <source>Cannot obtain a lock on data directory %s.  Sparkleunity is probably already running.</source>
-        <translation>Non è possibile ottenere il lock sulla directory dati %s. Sparkleunity è probabilmente già in funzione.</translation>
+        <source>Cannot obtain a lock on data directory %s.  Sparklecoin is probably already running.</source>
+        <translation>Non è possibile ottenere il lock sulla directory dati %s. Sparklecoin è probabilmente già in funzione.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="81"/>
-        <source>Sparkleunity</source>
-        <translation>Sparkleunity</translation>
+        <source>Sparklecoin</source>
+        <translation>Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="88"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Sparkleunity</source>
-        <translation>Errore caricamento wallet.dat. Il portafoglio richiede una nuova versione di Sparkleunity</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Sparklecoin</source>
+        <translation>Errore caricamento wallet.dat. Il portafoglio richiede una nuova versione di Sparklecoin</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="89"/>
-        <source>Wallet needed to be rewritten: restart Sparkleunity to complete</source>
-        <translation>Il portafoglio deve essere riscritto: riavvia Sparkleunity per completare</translation>
+        <source>Wallet needed to be rewritten: restart Sparklecoin to complete</source>
+        <translation>Il portafoglio deve essere riscritto: riavvia Sparklecoin per completare</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="103"/>
@@ -2927,8 +2927,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="119"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Sparkleunity will not work properly.</source>
-        <translation>Attenzione: Per favore controlla che la data e l&apos;orario del tuo computer sono corretti. Se il tuo orario è sbagliato Sparkleunity non funzionerà correttamente.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Sparklecoin will not work properly.</source>
+        <translation>Attenzione: Per favore controlla che la data e l&apos;orario del tuo computer sono corretti. Se il tuo orario è sbagliato Sparklecoin non funzionerà correttamente.</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="82"/>

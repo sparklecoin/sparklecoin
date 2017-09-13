@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About Sparkleunity</string>
+   <string>About Sparklecoin</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="leftMargin">
@@ -72,7 +72,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparkleunity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sparklecoin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -110,7 +110,7 @@
      <item>
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Copyright © 2017 Sparkleunity Developers</string>
+        <string>Copyright © 2017 Sparklecoin Developers</string>
        </property>
       </widget>
      </item>
