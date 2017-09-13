@@ -982,8 +982,11 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
 // sparklecoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nTime)
 {
-    if (nTime < POS_START_TIME)
+    if (nTime < POS_START_TIME) {
+        if (fDebug && GetBoolArg("-printcreation"))
+            printf("GetProofOfStakeReward(): no reward %d < %d\n", nTime, POS_START_TIME);
         return 0; // no rewards until POS is allowed
+        }
 
     static int64 nRewardCoinYear = CENT; // creation amount per coin-year
 
@@ -1373,7 +1376,8 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
                 return error("ConnectInputs() : %s unable to get coin age for coinstake", GetHash().ToString().substr(0,10).c_str());
             int64 nStakeReward = GetValueOut() - nValueIn;
             if (nStakeReward > GetProofOfStakeReward(nCoinAge, nTime) - GetMinFee() + MIN_TX_FEE)
-                return DoS(100, error("ConnectInputs() : %s stake reward exceeded", GetHash().ToString().substr(0,10).c_str()));
+                return DoS(100, error("ConnectInputs() : %s stake reward exceeded (%d > %d - %d + %d)", GetHash().ToString().substr(0,10).c_str(), 
+                    nStakeReward, GetProofOfStakeReward(nCoinAge, nTime), GetMinFee(), MIN_TX_FEE));
         }
         else
         {
@@ -2370,10 +2374,10 @@ bool LoadBlockIndex(bool fAllowNew)
     if (fTestNet)
     {
         hashGenesisBlock = hashGenesisBlockTestNet;
-        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 18);
+        bnProofOfWorkLimit = CBigNum(~uint256(0) >> 22);
         nStakeMinAge = 60 * 60 * 12; // test net min age is 12 hour
         nCoinbaseMaturity = 60;
-        bnInitialHashTarget = CBigNum(~uint256(0) >> 20);
+        bnInitialHashTarget = CBigNum(~uint256(0) >> 24);
         nModifierInterval = 60 * 10; // test net modifier interval is 10 minutes
     }
 

@@ -50,7 +50,7 @@ static const unsigned int MODIFIER_INTERVAL = 6 * 60 * 60; //10 * 60; //6 * 60 *
 
 static const unsigned int GENESIS_BLOCK_REWARD = 59187500; // 40950000; //40,950,000
 
-static const unsigned int POS_START_TIME = 1505297593;
+static const unsigned int POS_START_TIME = 1505376000;
 //static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
 
 #ifdef USE_UPNP
