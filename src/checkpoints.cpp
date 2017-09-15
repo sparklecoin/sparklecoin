@@ -365,7 +365,7 @@ namespace Checkpoints
 }
 
 // sparklecoin: sync-checkpoint master key
-const std::string CSyncCheckpoint::strMasterPubKey = "01234707c28533fd5c9f79d2d3a2d80dff259ad8f915241cd14608fb9bc07c74830efe8438f2b272a866b4af5e0c2cc2a9909972aefbd976937e39f46bb38c277c";
+const std::string CSyncCheckpoint::strMasterPubKey = "042072baee577ac8a05e8a6e98ec74e529aa4187bdedb0127eacab1d31ce85c5b6cdef1a6cf81165d10d00afb4e2434f021fb4c100c454159bf96841b0498d079a";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 
