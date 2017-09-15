@@ -443,6 +443,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     double dPriority            = 0;
     double dPriorityInputs      = 0;
     unsigned int nQuantity      = 0;
+    int nQuantityUncompressed   = 0;
 
     vector<COutPoint> vCoinControl;
     vector<COutput>   vOutputs;
@@ -458,6 +459,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         nAmount = 0;
         dPriorityInputs = 0;
         nBytesInputs = 0;
+        CScript scriptChange = (CScript)vector<unsigned char>(24, 0);
 
         // Inputs
         BOOST_FOREACH(const COutput& out, vOutputs)
@@ -472,8 +474,30 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             dPriorityInputs += (double)out.tx->vout[out.i].nValue * (out.nDepth+1);
 
             // Bytes
-            txDummy.vin.push_back(CTxIn(out.tx->vout[out.i].GetHash(), out.tx->vout[out.i].nValue));
-            nBytesInputs += 73; // Future ECDSA signature in DER format
+            CTxDestination address;
+            vector<valtype> vSolutions;
+            txnouttype whichType;
+            if (Solver(out.tx->vout[out.i].scriptPubKey, whichType, vSolutions) && whichType == TX_PUBKEY)
+            {
+                nBytesInputs += 114;
+            }
+            else if(ExtractDestination(out.tx->vout[out.i].scriptPubKey, address))
+            {
+                CPubKey pubkey;
+                CKeyID *keyid = boost::get<CKeyID>(&address);
+                if (keyid && model->getPubKey(*keyid, pubkey))
+                {
+                    nBytesInputs += (pubkey.IsCompressed() ? 148 : 180);
+                    if (!pubkey.IsCompressed())
+                        nQuantityUncompressed++;
+                }
+                else
+                    nBytesInputs += 148; // in all error cases, simply assume 148 here
+            }
+            else nBytesInputs += 148;
+
+            // Default change script for avatar mode
+            scriptChange = out.tx->vout[out.i].scriptPubKey;
         }
 
         // Outputs
@@ -519,14 +543,14 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             nBytes = nBytesInputs + GetSerializeSize(*(CTransaction*)&txDummy, SER_NETWORK, PROTOCOL_VERSION);
 
             // Priority
-            dPriority = dPriorityInputs / nBytes;
+            dPriority = dPriorityInputs / (nBytes - nBytesInputs + (nQuantityUncompressed * 29)); // 29 = 180 - 151 (uncompressed public keys are over the limit. max 151 bytes of the input are ignored for priority)
             sPriorityLabel = CoinControlDialog::getPriorityLabel(dPriority);
 
             // Fee
             int64 nFee = nTransactionFee * (1 + (int64)nBytes / 1000);
 
             // Min Fee
-            int64 nMinFee = txDummy.GetMinFee(1, false, GMF_SEND);
+            int64 nMinFee = txDummy.GetMinFee(nBytes);
 
             if (nPayFee < max(nFee, nMinFee))
             {
