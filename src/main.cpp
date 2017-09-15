@@ -33,8 +33,8 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 uint256 hashGenesisBlock = hashGenesisBlockOfficial;
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
-static CBigNum bnInitialHashTarget(~uint256(0) >> 28);
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
+static CBigNum bnInitialHashTarget(~uint256(0) >> 64);
 unsigned int nStakeMinAge = STAKE_MIN_AGE;
 int nCoinbaseMaturity = COINBASE_MATURITY_SPRK;
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -2400,12 +2400,17 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        // Genesis Block:
-        // CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-        //   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-        //   vMerkleTree: 4a5e1e
+        /*
+        Sparklecoin Found Genesis Block:
+        genesis hash=000000009b215dc941dc7f516a9698dcffe9dd903e0dfc9a3935ea02246e2767
+        merkle root=cf779a86b9d27c71a32ecc4d47fb55e2680823742626faeddc7661666f649131
+        CBlock(hash=000000009b215dc941dc, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=cf779a86b9, nTime=1505303795, nBits=1d00ffff, nNonce=3834868268, vtx=1, vchBlockSig=)
+          Coinbase(hash=cf779a86b9, nTime=1505303795, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+            CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274831322d5365702d3230313720552e532e206d6964646c652d636c61737320696e636f6d6573207265616368656420686967686573742d65766572206c6576656c20696e2032303136)
+            CTxOut(empty)
+          vMerkleTree: cf779a86b9
+        Sparklecoin End Genesis Block
+        */
 
         // Genesis block
         const char* pszTimestamp = "12-Sep-2017 U.S. middle-class incomes reached highest-ever level in 2016";
@@ -2422,7 +2427,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1505303795;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 376721577;
+        block.nNonce   = 3834868268;
 
         if (fTestNet)
         {

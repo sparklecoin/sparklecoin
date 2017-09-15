@@ -50,8 +50,7 @@ static const unsigned int MODIFIER_INTERVAL = 6 * 60 * 60; //10 * 60; //6 * 60 *
 
 static const unsigned int GENESIS_BLOCK_REWARD = 59187500; // 40950000; //40,950,000
 
-static const unsigned int POS_START_TIME = 1505376000;
-//static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
+static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
@@ -59,7 +58,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x0000044b48ff792db6d8cc65a3aafe6a92acd9ae5a91791c23dcc7991005822f");
+static const uint256 hashGenesisBlockOfficial("0x000000009b215dc941dc7f516a9698dcffe9dd903e0dfc9a3935ea02246e2767");
 static const uint256 hashGenesisBlockTestNet("0x00000304f012d5deacd81adae6703e5c336d26fd690e6fa9e477b76ead0931c9");
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
