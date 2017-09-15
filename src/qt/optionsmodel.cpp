@@ -21,6 +21,10 @@ void OptionsModel::Init()
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
     fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
+
+    if (nTransactionFee < MIN_TX_FEE) 
+        nTransactionFee = MIN_TX_FEE;
+
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
 
     // These are shared with core bitcoin; we want
@@ -53,7 +57,7 @@ bool OptionsModel::Upgrade()
         if (walletdb.ReadSetting(key.toStdString(), value))
         {
             settings.setValue(key, value);
-            walletdb.EraseSetting(key.toStdString());
+        //    walletdb.EraseSetting(key.toStdString());
         }
     }
     QList<QString> boolOptions;
@@ -64,7 +68,7 @@ bool OptionsModel::Upgrade()
         if (walletdb.ReadSetting(key.toStdString(), value))
         {
             settings.setValue(key, value);
-            walletdb.EraseSetting(key.toStdString());
+        //    walletdb.EraseSetting(key.toStdString());
         }
     }
     try
@@ -74,7 +78,7 @@ bool OptionsModel::Upgrade()
         {
             addrProxy = addrProxyAddress;
             settings.setValue("addrProxy", addrProxy.ToStringIPPort().c_str());
-            walletdb.EraseSetting("addrProxy");
+        //    walletdb.EraseSetting("addrProxy");
         }
     }
     catch (std::ios_base::failure &e)
@@ -83,7 +87,7 @@ bool OptionsModel::Upgrade()
         if (walletdb.ReadSetting("addrProxy", addrProxy))
         {
             settings.setValue("addrProxy", addrProxy.ToStringIPPort().c_str());
-            walletdb.EraseSetting("addrProxy");
+        //    walletdb.EraseSetting("addrProxy");
         }
     }
     Init();
