@@ -1050,9 +1050,11 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     // sparklecoin: retarget with exponential moving toward target spacing
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
-    int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
+    int64 nTargetSpacing = STAKE_TARGET_SPACING;
 
 /*
+    int64 nTargetSpacing = fProofOfStake? STAKE_TARGET_SPACING : min(nTargetSpacingWorkMax, (int64) STAKE_TARGET_SPACING * (1 + pindexLast->nHeight - pindexPrev->nHeight));
+
 	if (pindexLast->GetBlockTime() >= POS_START_TIME && nActualSpacing < 0) {
         printf("GetNextTargetRequired: nActualSpacing=%d nTargetSpacing=%d bnNew=%s\n", nActualSpacing, nTargetSpacing, CBigNum(bnNew).ToString().c_str());
         nActualSpacing = nTargetSpacing;
