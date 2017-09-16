@@ -30,6 +30,7 @@ CCriticalSection cs_main;
 CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
+unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 uint256 hashGenesisBlock = hashGenesisBlockOfficial;
@@ -1061,7 +1062,8 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
     int64 nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
-    //printf("GetNextTargetRequired: fProofOfStake=%d nActualSpacing=%d nTargetSpacing=%d bnNew=%s\n", fProofOfStake, nActualSpacing, nTargetSpacing, CBigNum(bnNew).ToString().c_str());
+    if (fDebug && GetBoolArg("-printnexttarget"))
+        printf("GetNextTargetRequired: fProofOfStake=%d diffHeight=%d nActualSpacing=%d nTargetSpacing=%d bnOld=%s bnNew=%s\n", fProofOfStake, pindexLast->nHeight - pindexPrev->nHeight, nActualSpacing, nTargetSpacing, CBigNum(pindexPrev->nBits).ToString().c_str(     ), CBigNum(bnNew).ToString().c_str());
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
@@ -2379,6 +2381,7 @@ bool LoadBlockIndex(bool fAllowNew)
         nCoinbaseMaturity = 60;
         bnInitialHashTarget = CBigNum(~uint256(0) >> 24);
         nModifierInterval = 60 * 10; // test net modifier interval is 10 minutes
+        POS_START_TIME = 1505568407; // Sat Sep 16 2017 16:26:47 UTC+0300
     }
 
     printf("%s Network: genesis=0x%s nBitsLimit=0x%08x nBitsInitial=0x%08x nStakeMinAge=%d nCoinbaseMaturity=%d nModifierInterval=%d\n",

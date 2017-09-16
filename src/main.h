@@ -50,8 +50,6 @@ static const unsigned int MODIFIER_INTERVAL = 6 * 60 * 60; //10 * 60; //6 * 60 *
 
 static const unsigned int GENESIS_BLOCK_REWARD = 59187500; // 40950000; //40,950,000
 
-static const unsigned int POS_START_TIME = 1513584000; // Mon Dec 18 09:00:00 CET 2017
-
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
 #else
@@ -64,12 +62,7 @@ static const uint256 hashGenesisBlockTestNet("0x00000304f012d5deacd81adae6703e5c
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
 
 extern CScript COINBASE_FLAGS;
-
-
-
-
-
-
+extern unsigned int POS_START_TIME;
 extern CCriticalSection cs_main;
 extern std::map<uint256, CBlockIndex*> mapBlockIndex;
 extern std::set<std::pair<COutPoint, unsigned int> > setStakeSeen;
