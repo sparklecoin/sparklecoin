@@ -34,7 +34,7 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 uint256 hashGenesisBlock = hashGenesisBlockOfficial;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 32);
-static CBigNum bnInitialHashTarget(~uint256(0) >> 48);
+static CBigNum bnInitialHashTarget(~uint256(0) >> 52);
 unsigned int nStakeMinAge = STAKE_MIN_AGE;
 int nCoinbaseMaturity = COINBASE_MATURITY_SPRK;
 CBlockIndex* pindexGenesisBlock = NULL;
