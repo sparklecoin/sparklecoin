@@ -1061,11 +1061,15 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
         }
 */
 
+    // sparkle: if time between blocks less than 300 seconds apart, increase difficulty penalty
+    if (nActualSpacing >= 0 && nActualSpacing*2 < STAKE_TARGET_SPACING)
+        nActualSpacing -= STAKE_TARGET_SPACING;
+
     int64 nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
     bnNew /= ((nInterval + 1) * nTargetSpacing);
     if (fDebug && GetBoolArg("-printnexttarget"))
-        printf("GetNextTargetRequired: fProofOfStake=%d diffHeight=%d nActualSpacing=%d nTargetSpacing=%d bnOld=%s bnNew=%s\n", fProofOfStake, pindexLast->nHeight - pindexPrev->nHeight, nActualSpacing, nTargetSpacing, CBigNum(pindexPrev->nBits).ToString().c_str(     ), CBigNum(bnNew).ToString().c_str());
+        printf("GetNextTargetRequired: fProofOfStake=%d diffHeight=%d nActualSpacing=%d nTargetSpacing=%d prevbits=%0x change=%f\n", fProofOfStake, pindexLast->nHeight - pindexPrev->nHeight, nActualSpacing, nTargetSpacing, pindexPrev->nBits,  (float)((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing) / (float) ((nInterval + 1) * nTargetSpacing));
 
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
