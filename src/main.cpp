@@ -2411,20 +2411,20 @@ bool LoadBlockIndex(bool fAllowNew)
 
         /*
         Sparklecoin Found Genesis Block:
-        genesis hash=000000009b215dc941dc7f516a9698dcffe9dd903e0dfc9a3935ea02246e2767
-        merkle root=cf779a86b9d27c71a32ecc4d47fb55e2680823742626faeddc7661666f649131
-        CBlock(hash=000000009b215dc941dc, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=cf779a86b9, nTime=1505303795, nBits=1d00ffff, nNonce=3834868268, vtx=1, vchBlockSig=)
-          Coinbase(hash=cf779a86b9, nTime=1505303795, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-            CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274831322d5365702d3230313720552e532e206d6964646c652d636c61737320696e636f6d6573207265616368656420686967686573742d65766572206c6576656c20696e2032303136)
+        genesis hash=00000000e7a2418a21c3b3042794cef19d88b9587ebff903f3b6b204940113a3
+        merkle root=096b93c547a625d4a671ff804375c74e16929f4b7353cbacc0bb46a3ec77f21b
+        CBlock(hash=00000000e7a2418a21c3, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=096b93c547, nTime=1505724970, nBits=1d00ffff, nNonce=2102633905, vtx=1, vchBlockSig=)
+          Coinbase(hash=096b93c547, nTime=1505724970, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+            CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274b31342d5365702d3230313720317374204d6170206f66205761746572206f6e20746865204d6f6f6e20436f756c642041696420467574757265204c756e6172204578706c6f726174696f6e)
             CTxOut(empty)
-          vMerkleTree: cf779a86b9
+          vMerkleTree: 096b93c547
         Sparklecoin End Genesis Block
         */
 
         // Genesis block
-        const char* pszTimestamp = "12-Sep-2017 U.S. middle-class incomes reached highest-ever level in 2016";
+        const char* pszTimestamp = "14-Sep-2017 1st Map of Water on the Moon Could Aid Future Lunar Exploration";
         CTransaction txNew;
-        txNew.nTime = 1505303795;
+        txNew.nTime = 1505724970;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(9999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2434,14 +2434,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1505303795;
+        block.nTime    = 1505724970;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 3834868268;
+        block.nNonce   = 2102633905;
 
         if (fTestNet)
         {
-            block.nTime    = 1505303795;
-            block.nNonce   = 2458388;
+            block.nNonce   = 8077822;
         }
 /*
         //////////////////////////////////////////////////// Genesis ///////////////////////////////
@@ -2467,7 +2466,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xcf779a86b9d27c71a32ecc4d47fb55e2680823742626faeddc7661666f649131"));
+        assert(block.hashMerkleRoot == uint256("0x096b93c547a625d4a671ff804375c74e16929f4b7353cbacc0bb46a3ec77f21b"));
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
         assert(block.CheckBlock());
