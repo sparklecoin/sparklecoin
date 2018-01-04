@@ -954,25 +954,29 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
     if(nBlockHeight == 1){
         nSubsidy = GENESIS_BLOCK_REWARD * COIN;
     }
-	else
-	{
-		int64 BlockReward = 7  * COIN;
-		int64 Block_Interval = 210000;
-		int64 Block_Interval_Start = 5256000; //expected block height in 100 years
+    else
+    {
+        int64 BlockReward = 7  * COIN;
+        if (IsProtocolV06(nTime))
+            BlockReward /= 28;
 
-		int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
-		if(nBlockDifference > 0)
+        int64 Block_Interval = 210000;
+        int64 Block_Interval_Start = 5256000; //expected block height in 100 years
+
+        int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
+        if(nBlockDifference > 0)
         {
-			int64 Limit = ceil( nBlockDifference / Block_Interval );
-			for(int a = 1; a < Limit; a++)
-			{
-				BlockReward /= 2;
-			}
-		}
-		nSubsidy = BlockReward;
-	}
-	if(fTestNet)
-	    nSubsidy = 100 * COIN;
+            int64 Limit = ceil( nBlockDifference / Block_Interval );
+            for(int a = 1; a < Limit; a++)
+            {
+                BlockReward /= 2;
+            }
+        }
+        nSubsidy = BlockReward;
+    }
+
+    if(fTestNet)
+        nSubsidy = 100 * COIN;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%" PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
@@ -4036,7 +4040,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
     	nBlockHeight = GetLastBlockIndex(pindexBest, false)->nHeight + 1;
     }
     if (pblock->IsProofOfWork())
-        pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits, nBlockHeight, pblock->nTime);
+        pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits, nBlockHeight, max(nLastCoinStakeSearchTime,(int64)pblock->nTime));
 
     // Fill in header
     pblock->hashPrevBlock  = pindexPrev->GetBlockHash();
