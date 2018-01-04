@@ -1741,7 +1741,6 @@ bool CBlock::SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew)
 bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 {
     uint256 hash = GetHash();
-
     if (!txdb.TxnBegin())
         return error("SetBestChain() : TxnBegin failed");
 
@@ -1959,7 +1958,8 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
     txdb.WriteBlockIndex(CDiskBlockIndex(pindexNew));
     if (!txdb.TxnCommit())
         return false;
-
+    if (fDebug  && GetBoolArg("-printcheckchaintrust"))
+        printf("AddToBlockIndex check chaintrust %s > %s = %d\n", CBigNum(pindexNew->bnChainTrust).ToString().c_str(), CBigNum(bnBestChainTrust).ToString().c_str(), (pindexNew->bnChainTrust > bnBestChainTrust));
     // New best
     if (pindexNew->bnChainTrust > bnBestChainTrust)
         if (!SetBestChain(txdb, pindexNew))
@@ -2117,7 +2117,6 @@ bool CBlock::AcceptBlock()
         return error("AcceptBlock() : WriteToDisk failed");
     if (!AddToBlockIndex(nFile, nBlockPos))
         return error("AcceptBlock() : AddToBlockIndex failed");
-
     // Relay inventory, but don't relay old inventory during initial block download
     int nBlockEstimate = Checkpoints::GetTotalBlocksEstimate();
     if (hashBestChain == hash)
@@ -3884,6 +3883,9 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
 
         if (nSearchTime > nLastCoinStakeSearchTime)
         {
+                 if (fDebug && GetBoolArg("-printcreation"))
+                    printf("CreateNewBlock: difficulty %d at %d resulting in target: %s\n", pblock->nBits, nSearchTime, CBigNum().SetCompact(pblock->nBits).getuint256().GetHex().c_str());
+
             if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, txCoinStake))
             {
                 if (fDebug && GetBoolArg("-printcreation"))
