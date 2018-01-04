@@ -1042,11 +1042,21 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
         return bnProofOfWorkLimit.GetCompact(); // genesis block
 
     const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);
-    if (pindexPrev->pprev == NULL)
-        return bnInitialHashTarget.GetCompact(); // first block
+    if (pindexPrev->pprev == NULL) {
+        if (fProofOfStake && IsProtocolV06(pindexLast->nTime)) {
+            return 503481369;
+            }
+        else
+            return bnInitialHashTarget.GetCompact(); // first block
+        }
     const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
-    if (pindexPrevPrev->pprev == NULL)
-        return bnInitialHashTarget.GetCompact(); // second block
+    if (pindexPrevPrev->pprev == NULL) {
+        if (fProofOfStake && IsProtocolV06(pindexLast->nTime)) {
+            return 503481369;
+            }
+        else
+            return bnInitialHashTarget.GetCompact(); // second block
+        }
 
     int64 nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
 
