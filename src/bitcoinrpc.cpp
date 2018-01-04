@@ -3149,7 +3149,7 @@ Value sendrawtransaction(const Array& params, bool fHelp)
     // parse hex string from parameter
     vector<unsigned char> txData(ParseHex(params[0].get_str()));
     CDataStream ssData(txData, SER_NETWORK, PROTOCOL_VERSION);
-    bool fCheckInputs = false;
+    bool fCheckInputs = true;
     if (params.size() > 1)
         fCheckInputs = (params[1].get_int() != 0);
     CTransaction tx;
