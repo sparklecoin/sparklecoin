@@ -349,20 +349,20 @@ QVariant MintingTableModel::data(const QModelIndex &index, int role) const
             return getDayToMint(rec);
         }
         break;
-      case Qt::BackgroundColorRole:
+      case Qt::BackgroundRole:
         int minAge = nStakeMinAge / 60 / 60 / 24;
         int maxAge = STAKE_MAX_AGE / 60 / 60 / 24;
         if(rec->getAge() < minAge)
         {
-            return COLOR_MINT_YOUNG;
+            return COLOR_MINT_YOUNG_DARK;
         }
         else if (rec->getAge() >= minAge && rec->getAge() < maxAge)
         {
-            return COLOR_MINT_MATURE;
+            return COLOR_MINT_MATURE_DARK;
         }
         else
         {
-            return COLOR_MINT_OLD;
+            return COLOR_MINT_OLD_DARK;
         }
         break;
 
