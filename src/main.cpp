@@ -954,25 +954,29 @@ int64 GetProofOfWorkReward(unsigned int nBits, int nBlockHeight, unsigned int nT
     if(nBlockHeight == 1){
         nSubsidy = GENESIS_BLOCK_REWARD * COIN;
     }
-	else
-	{
-		int64 BlockReward = 7  * COIN;
-		int64 Block_Interval = 210000;
-		int64 Block_Interval_Start = 5256000; //expected block height in 100 years
+    else
+    {
+        int64 BlockReward = 7  * COIN;
+        if (IsProtocolV06(nTime))
+            BlockReward /= 28;
 
-		int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
-		if(nBlockDifference > 0)
+        int64 Block_Interval = 210000;
+        int64 Block_Interval_Start = 5256000; //expected block height in 100 years
+
+        int64 nBlockDifference = nBlockHeight - Block_Interval_Start;
+        if(nBlockDifference > 0)
         {
-			int64 Limit = ceil( nBlockDifference / Block_Interval );
-			for(int a = 1; a < Limit; a++)
-			{
-				BlockReward /= 2;
-			}
-		}
-		nSubsidy = BlockReward;
-	}
-	if(fTestNet)
-	    nSubsidy = 100 * COIN;
+            int64 Limit = ceil( nBlockDifference / Block_Interval );
+            for(int a = 1; a < Limit; a++)
+            {
+                BlockReward /= 2;
+            }
+        }
+        nSubsidy = BlockReward;
+    }
+
+    if(fTestNet)
+        nSubsidy = 100 * COIN;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%" PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
@@ -1038,11 +1042,21 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
         return bnProofOfWorkLimit.GetCompact(); // genesis block
 
     const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);
-    if (pindexPrev->pprev == NULL)
-        return bnInitialHashTarget.GetCompact(); // first block
+    if (pindexPrev->pprev == NULL) {
+        if (fProofOfStake && IsProtocolV06(pindexLast->nTime)) {
+            return 503481369;
+            }
+        else
+            return bnInitialHashTarget.GetCompact(); // first block
+        }
     const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
-    if (pindexPrevPrev->pprev == NULL)
-        return bnInitialHashTarget.GetCompact(); // second block
+    if (pindexPrevPrev->pprev == NULL) {
+        if (fProofOfStake && IsProtocolV06(pindexLast->nTime)) {
+            return 503481369;
+            }
+        else
+            return bnInitialHashTarget.GetCompact(); // second block
+        }
 
     int64 nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
 
@@ -1727,7 +1741,6 @@ bool CBlock::SetBestChainInner(CTxDB& txdb, CBlockIndex *pindexNew)
 bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
 {
     uint256 hash = GetHash();
-
     if (!txdb.TxnBegin())
         return error("SetBestChain() : TxnBegin failed");
 
@@ -1945,7 +1958,8 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
     txdb.WriteBlockIndex(CDiskBlockIndex(pindexNew));
     if (!txdb.TxnCommit())
         return false;
-
+    if (fDebug  && GetBoolArg("-printcheckchaintrust"))
+        printf("AddToBlockIndex check chaintrust %s > %s = %d\n", CBigNum(pindexNew->bnChainTrust).ToString().c_str(), CBigNum(bnBestChainTrust).ToString().c_str(), (pindexNew->bnChainTrust > bnBestChainTrust));
     // New best
     if (pindexNew->bnChainTrust > bnBestChainTrust)
         if (!SetBestChain(txdb, pindexNew))
@@ -2103,7 +2117,6 @@ bool CBlock::AcceptBlock()
         return error("AcceptBlock() : WriteToDisk failed");
     if (!AddToBlockIndex(nFile, nBlockPos))
         return error("AcceptBlock() : AddToBlockIndex failed");
-
     // Relay inventory, but don't relay old inventory during initial block download
     int nBlockEstimate = Checkpoints::GetTotalBlocksEstimate();
     if (hashBestChain == hash)
@@ -3870,6 +3883,9 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
 
         if (nSearchTime > nLastCoinStakeSearchTime)
         {
+                 if (fDebug && GetBoolArg("-printcreation"))
+                    printf("CreateNewBlock: difficulty %d at %d resulting in target: %s\n", pblock->nBits, nSearchTime, CBigNum().SetCompact(pblock->nBits).getuint256().GetHex().c_str());
+
             if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, txCoinStake))
             {
                 if (fDebug && GetBoolArg("-printcreation"))
@@ -4036,7 +4052,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfS
     	nBlockHeight = GetLastBlockIndex(pindexBest, false)->nHeight + 1;
     }
     if (pblock->IsProofOfWork())
-        pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits, nBlockHeight, pblock->nTime);
+        pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits, nBlockHeight, max(nLastCoinStakeSearchTime,(int64)pblock->nTime));
 
     // Fill in header
     pblock->hashPrevBlock  = pindexPrev->GetBlockHash();

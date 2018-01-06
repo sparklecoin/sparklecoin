@@ -302,8 +302,8 @@ void BitcoinGUI::createActions()
     unlockForMintingAction->setCheckable(true);
     backupWalletAction = new QAction(QIcon(":/icons/filesave"), tr("&Backup Wallet"), this);
     backupWalletAction->setToolTip(tr("Backup wallet to another location"));
-    importWalletAction = new QAction(QIcon(":/icons/import-icon"), tr("&Import Wallet"), this);
-    importWalletAction->setToolTip(tr("Import External Wallet.dat into current wallet"));
+    //importWalletAction = new QAction(QIcon(":/icons/import-icon"), tr("&Import Wallet"), this);
+    //importWalletAction->setToolTip(tr("Import External Wallet.dat into current wallet"));
     changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase"), this);
     changePassphraseAction->setToolTip(tr("Change the passphrase used for wallet encryption"));
     openRPCConsoleAction = new QAction(tr("&Debug window"), this);
@@ -318,7 +318,7 @@ void BitcoinGUI::createActions()
 
     connect(unlockForMintingAction, SIGNAL(triggered(bool)), this, SLOT(unlockForMinting(bool)));
     connect(backupWalletAction, SIGNAL(triggered()), this, SLOT(backupWallet()));
-    connect(importWalletAction, SIGNAL(triggered()), this, SLOT(importWallet()));
+    //connect(importWalletAction, SIGNAL(triggered()), this, SLOT(importWallet()));
     connect(changePassphraseAction, SIGNAL(triggered()), this, SLOT(changePassphrase()));
 }
 
@@ -335,7 +335,7 @@ void BitcoinGUI::createMenuBar()
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));
     file->addAction(backupWalletAction);
-    file->addAction(importWalletAction);
+    //file->addAction(importWalletAction);
     file->addAction(exportAction);
 #ifndef FIRST_CLASS_MESSAGING
     file->addAction(messageAction);
