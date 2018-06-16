@@ -167,6 +167,23 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry)
             in.push_back(Pair("coinbase", HexStr(txin.scriptSig.begin(), txin.scriptSig.end())));
         else
         {
+            CTransaction tx;
+            uint256 hashBlock = 0;
+            if (!GetTransaction(txin.prevout.hash, tx, hashBlock))
+                throw JSONRPCError(-5, "No information available about transaction");
+
+            if (tx.vout.size() > txin.prevout.n)
+            {
+                std::vector<CTxDestination> addresses;
+                txnouttype txtype;
+                int nRequired;
+
+                in.push_back(Pair("value", ValueFromAmount(tx.vout[txin.prevout.n].nValue)));
+
+                if (ExtractDestinations(tx.vout[txin.prevout.n].scriptPubKey, txtype, addresses, nRequired) && addresses.size() == 1)
+                    in.push_back(Pair("address", CBitcoinAddress(addresses[0]).ToString()));
+            }
+
             in.push_back(Pair("txid", txin.prevout.hash.GetHex()));
             in.push_back(Pair("vout", (boost::int64_t)txin.prevout.n));
             Object o;
@@ -203,6 +220,7 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, Object& entry)
             {
                 entry.push_back(Pair("confirmations", 1 + nBestHeight - pindex->nHeight));
                 entry.push_back(Pair("blocktime", (boost::int64_t)pindex->nTime));
+                entry.push_back(Pair("height", pindex->nHeight));
             }
             else
                 entry.push_back(Pair("confirmations", 0));
@@ -231,12 +249,29 @@ void TxToJSON(const CTransaction& tx, Object& txdata)
         }
         else 
         {
+            CTransaction tx;
+            uint256 hashBlock = 0;
+            if (!GetTransaction(txin.prevout.hash, tx, hashBlock))
+                throw JSONRPCError(-5, "No information available about transaction");
+
             vin.push_back(Pair("txid", txin.prevout.hash.ToString().c_str()));
             vin.push_back(Pair("vout", (int)txin.prevout.n));
             Object o;
             o.push_back(Pair("asm", txin.scriptSig.ToString()));
             o.push_back(Pair("hex", HexStr(txin.scriptSig.begin(), txin.scriptSig.end())));
             vin.push_back(Pair("scriptSig", o));
+            vin.push_back(Pair("debug", (int)tx.vout.size()));
+            if (tx.vout.size() > txin.prevout.n)
+            {
+                std::vector<CTxDestination> addresses;
+                txnouttype txtype;
+                int nRequired;
+
+                vin.push_back(Pair("value", ValueFromAmount(tx.vout[txin.prevout.n].nValue)));
+
+                if (ExtractDestinations(tx.vout[txin.prevout.n].scriptPubKey, txtype, addresses, nRequired))
+                    vin.push_back(Pair("address", CBitcoinAddress(addresses[0]).ToString()));
+            }
         }
 
         vin.push_back(Pair("sequence", (boost::uint64_t)txin.nSequence));
