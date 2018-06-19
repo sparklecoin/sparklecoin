@@ -1,4 +1,4 @@
-Sparklecoin 1.1.0
+Sparklecoin 1.1.1
 Copyright (c) 2014-2018 Sparklecoin developers
 
 Distributed under the MIT/X11 software license, see the accompanying
