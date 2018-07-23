@@ -16,8 +16,8 @@
 
 // sparklecoin version - intended for display purpose only
 #define SPARKLEUNITY_VERSION_MAJOR       1
-#define SPARKLEUNITY_VERSION_MINOR       1
-#define SPARKLEUNITY_VERSION_REVISION    2
+#define SPARKLEUNITY_VERSION_MINOR       2
+#define SPARKLEUNITY_VERSION_REVISION    0
 #define SPARKLEUNITY_VERSION_BUILD       0
 
 static const int SPARKLEUNITY_VERSION =
@@ -28,7 +28,7 @@ static const int SPARKLEUNITY_VERSION =
 
 // sparklecoin version - reference for code tracking
 #define SPRKOIN_VERSION_MAJOR       0
-#define SPRKOIN_VERSION_MINOR       6
+#define SPRKOIN_VERSION_MINOR       7
 #define SPRKOIN_VERSION_REVISION    0
 #define SPRKOIN_VERSION_BUILD       0
 
@@ -61,7 +61,7 @@ extern const std::string CLIENT_DATE;
 // network protocol versioning
 //
 
-static const int PROTOCOL_VERSION = 60007;
+static const int PROTOCOL_VERSION = 60008;
 
 // earlier versions not supported as of Feb 2012, and are disconnected
 // NOTE: as of bitcoin v0.6 message serialization (vSend, vRecv) still

@@ -29,6 +29,8 @@ bool IsProtocolV04(unsigned int nTimeBlock);
 bool IsProtocolV05(unsigned int nTimeTx);
 // Whether a given transaction is subject to new v0.5 protocol
 bool IsProtocolV06(unsigned int nTimeBlock);
+// Whether a given transaction is subject to new v0.7 protocol
+bool IsProtocolV07(unsigned int nTimeTx);
 
 // Compute the hash modifier for proof-of-stake
 bool ComputeNextStakeModifier(const CBlockIndex* pindexCurrent, uint64& nStakeModifier, bool& fGeneratedStakeModifier);
