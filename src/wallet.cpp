@@ -1179,9 +1179,10 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64> >& vecSend, CW
                 // if sub-cent change is required, the fee must be raised to at least MIN_TX_FEE
                 // or until nChange becomes zero
                 // NOTE: this depends on the exact behaviour of GetMinFee
-                if (nFeeRet < MIN_TX_FEE && nChange > 0 && nChange < CENT)
+                int64 nMinFeeBase = IsProtocolV07(wtxNew.nTime) ? MIN_TX_FEE : MIN_TX_FEE*20;
+                if (nFeeRet < nMinFeeBase && nChange > 0 && nChange < CENT)
                 {
-                    int64 nMoveToFee = min(nChange, MIN_TX_FEE - nFeeRet);
+                    int64 nMoveToFee = min(nChange, nMinFeeBase - nFeeRet);
                     nChange -= nMoveToFee;
                     nFeeRet += nMoveToFee;
                 }
@@ -1427,6 +1428,8 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     }
 
     int64 nMinFee = 0;
+    int64 nMinFeeBase = IsProtocolV07(txNew.nTime)? MIN_TX_FEE : MIN_TX_FEE*20;
+
     loop
     {
         // Set output amount
@@ -1452,9 +1455,9 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             return error("CreateCoinStake : exceeded coinstake size limit");
 
         // Check enough fee is paid
-        if (nMinFee < txNew.GetMinFee() - MIN_TX_FEE)
+        if (nMinFee < txNew.GetMinFee() - nMinFeeBase)
         {
-            nMinFee = txNew.GetMinFee() - MIN_TX_FEE;
+            nMinFee = txNew.GetMinFee() - nMinFeeBase;
             continue; // try signing again
         }
         else

@@ -523,6 +523,10 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree, enum Get
     // Base fee is either MIN_TX_FEE or MIN_RELAY_TX_FEE
     int64 nBaseFee = (mode == GMF_RELAY) ? MIN_RELAY_TX_FEE : MIN_TX_FEE;
 
+    // if old protocol multiply by 20 to get old base fee of 0.01
+    if (!IsProtocolV07(nTime))
+        nBaseFee *= 20;
+
     unsigned int nBytes = ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
     unsigned int nNewBlockSize = nBlockSize + nBytes;
     int64 nMinFee = (1 + (int64)nBytes / 1000) * nBaseFee;
@@ -1397,9 +1401,10 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
             if (!GetCoinAge(txdb, nCoinAge))
                 return error("ConnectInputs() : %s unable to get coin age for coinstake", GetHash().ToString().substr(0,10).c_str());
             int64 nStakeReward = GetValueOut() - nValueIn;
-            if (nStakeReward > GetProofOfStakeReward(nCoinAge, nTime) - GetMinFee() + MIN_TX_FEE)
+            int64 nMinFeeBase = IsProtocolV07(nTime) ? MIN_TX_FEE : MIN_TX_FEE*20;
+            if (nStakeReward > GetProofOfStakeReward(nCoinAge, nTime) - GetMinFee() + nMinFeeBase)
                 return DoS(100, error("ConnectInputs() : %s stake reward exceeded (%d > %d - %d + %d)", GetHash().ToString().substr(0,10).c_str(), 
-                    nStakeReward, GetProofOfStakeReward(nCoinAge, nTime), GetMinFee(), MIN_TX_FEE));
+                    nStakeReward, GetProofOfStakeReward(nCoinAge, nTime), GetMinFee(), nMinFeeBase));
         }
         else
         {
@@ -2029,7 +2034,9 @@ bool CBlock::CheckBlock(int64 nBlockHeight) const
         return DoS(50, error("CheckBlock() : coinstake timestamp violation nTimeBlock=%u nTimeTx=%u", GetBlockTime(), vtx[1].nTime));
 
     // Check coinbase reward
-    if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(nBits, nBlockHeight, GetBlockTime()) - vtx[0].GetMinFee() + MIN_TX_FEE) : 0))
+    int64 nBaseFee = IsProtocolV07(vtx[0].nTime) ? MIN_TX_FEE : MIN_TX_FEE*20;
+
+    if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(nBits, nBlockHeight, GetBlockTime()) - vtx[0].GetMinFee() + nBaseFee) : 0))
         return DoS(50, error("CheckBlock() : coinbase reward exceeded %s > %s", 
                    FormatMoney(vtx[0].GetValueOut()).c_str(),
                    FormatMoney(IsProofOfWork()? GetProofOfWorkReward(nBits, nBlockHeight, nTime) : 0).c_str()));
