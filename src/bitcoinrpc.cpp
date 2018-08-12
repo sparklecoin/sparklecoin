@@ -3039,20 +3039,25 @@ Value createrawtransaction(const Array& params, bool fHelp)
         rawTx.vin.push_back(in);
     }
 
-    set<CBitcoinAddress> setAddress;
     BOOST_FOREACH(const Pair& s, sendTo)
     {
         CBitcoinAddress address(s.name_);
-        if (!address.IsValid())
-            throw JSONRPCError(-5, string("Invalid Bitcoin address: ")+s.name_);
-
-        if (setAddress.count(address))
-            throw JSONRPCError(-8, string("Invalid parameter, duplicated address: ")+s.name_);
-        setAddress.insert(address);
-
         CScript scriptPubKey;
-        scriptPubKey.SetDestination(address.Get());
-        int64 nAmount = AmountFromValue(s.value_);
+        int64 nAmount;
+        if (!address.IsValid()) {
+            if (s.value_.get_real() != 0)
+                throw JSONRPCError(-5, string("Invalid Bitcoin address: ")+s.name_);
+            //op_return data
+            scriptPubKey = CScript() << OP_RETURN << ParseHex(s.name_);
+            nAmount = 0;
+            }
+        else {
+            scriptPubKey.SetDestination(address.Get());
+            if (s.value_.get_real() != 0)
+                nAmount = AmountFromValue(s.value_);
+            else
+                nAmount = 0;
+            }
 
         CTxOut out(nAmount, scriptPubKey);
         rawTx.vout.push_back(out);
