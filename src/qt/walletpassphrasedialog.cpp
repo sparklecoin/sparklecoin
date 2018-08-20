@@ -1,6 +1,5 @@
 #include "walletpassphrasedialog.h"
 #include "ui_walletpassphrasedialog.h"
-#include "importwalletdialog.h"
 
 walletPassPhraseDialog::walletPassPhraseDialog(QWidget *parent) : QDialog(parent), ui(new Ui::walletPassPhraseDialog)
 {
@@ -12,8 +11,8 @@ walletPassPhraseDialog::~walletPassPhraseDialog()
 }
 void walletPassPhraseDialog::accept()
 {
-    ImportWalletDialog *parent = (ImportWalletDialog*)parentWidget();
+    //ImportWalletDialog *parent = (ImportWalletDialog*)parentWidget();
 //    parent->passPhrase = ui->walletPassphrase->text();
-    parent->processRequest(ui->walletPassphrase->text());
+    //parent->processRequest(ui->walletPassphrase->text());
     this->close();
 }
