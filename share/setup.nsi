@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.2.0.0
+!define VERSION 1.2.1.0
 !define COMPANY "Sparklecoin project"
 !define URL http://github.com/sparklecoin/sparklecoin/
 
@@ -20,7 +20,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER Sparklecoin
-!define MUI_FINISHPAGE_RUN $INSTDIR\Sparklecoin.exe
+!define MUI_FINISHPAGE_RUN $INSTDIR\sparklecoin.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/sparkleunity128.png"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile Sparklecoin-${VERSION}-win-setup.exe
+OutFile sparklecoin-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Sparklecoin
 !else
@@ -73,7 +73,7 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/Sparklecoin.exe
+    File ../release/sparklecoin.exe
     File /oname=license.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
