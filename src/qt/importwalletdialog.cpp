@@ -19,12 +19,12 @@ ImportWalletDialog::ImportWalletDialog(QWidget *parent, QString walletFilePath) 
     connect(this, SIGNAL(success()), this, SLOT(successHandler()));
     setWindowFlags(Qt::Dialog | Qt::Desktop | Qt::FramelessWindowHint);
     QString imagePath = ":/icons/svg-loader";
-    image = new QSvgWidget(this);
+    //image = new QSvgWidget(this);
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setAlignment(Qt::AlignCenter);
-    image->load(imagePath);
-    image->setGeometry(160, 90, 80, 80);
-    image->setLayout(layout);
+    //image->load(imagePath);
+    //image->setGeometry(160, 90, 80, 80);
+    //image->setLayout(layout);
 //    setWindowModality(Qt::WindowModal);
 //    this->show();
 //    this->exec();
@@ -36,7 +36,7 @@ void ImportWalletDialog::successHandler()
     ui->importWalletLabel->setVisible(false);
     ui->successlabel->setVisible(true);
     QString path = ":/icons/success-check";
-    image->load(path);
+    //image->load(path);
     ui->finishbutton->setVisible(true);
 }
 void ImportWalletDialog::show()
