@@ -56,8 +56,6 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QTimer>
-#include <QtSvg/QSvgWidget>
-#include <QtSvg/QGraphicsSvgItem>
 
 #include <QDragEnterEvent>
 #include <QUrl>

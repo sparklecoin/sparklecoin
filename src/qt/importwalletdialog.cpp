@@ -1,10 +1,7 @@
 #include "importwalletdialog.h"
 #include "ui_importwalletdialog.h"
 #include <QMovie>
-#include <QtSvg/QSvgRenderer>
-#include <QtSvg/QtSvg>
 #include <QWidget>
-#include <QtSvg/QGraphicsSvgItem>
 #include <QLayout>
 #include <walletpassphrasedialog.h>
 #include <QtConcurrentRun>
