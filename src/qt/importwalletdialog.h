@@ -4,7 +4,6 @@
 #include <QDialog>
 #include <QThread>
 #include <QDebug>
-#include <QtSvg/QSvgWidget>
 #include "init.h"
 #include "bitcoinrpc.h"
 #include "ui_interface.h"
