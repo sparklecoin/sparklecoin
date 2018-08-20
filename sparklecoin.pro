@@ -179,7 +179,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/multisigaddressentry.h \
     src/qt/multisiginputentry.h \
     src/qt/multisigdialog.h \
-    src/qt/importwalletdialog.h \
     src/qt/walletpassphrasedialog.h
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
@@ -247,7 +246,6 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/multisigaddressentry.cpp \
     src/qt/multisiginputentry.cpp \
     src/qt/multisigdialog.cpp \
-    src/qt/importwalletdialog.cpp \
     src/qt/walletpassphrasedialog.cpp
 
 RESOURCES += \
@@ -268,7 +266,6 @@ FORMS += \
     src/qt/forms/multisigaddressentry.ui \
     src/qt/forms/multisiginputentry.ui \
     src/qt/forms/multisigdialog.ui \
-    src/qt/forms/importwalletdialog.ui \
     src/qt/forms/walletpassphrasedialog.ui
 
 contains(USE_QRCODE, 1) {
