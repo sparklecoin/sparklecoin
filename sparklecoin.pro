@@ -39,6 +39,7 @@ contains(USE_QRCODE, 1) {
     message(Building with QRCode support)
     DEFINES += USE_QRCODE
     LIBS += -lqrencode
+    win32:LIBS += -lpng
 }
 
 # use: qmake "USE_UPNP=1" ( enabled by default; default)
@@ -56,6 +57,10 @@ contains(USE_UPNP, -) {
     INCLUDEPATH += $$MINIUPNPC_INCLUDE_PATH
     LIBS += $$join(MINIUPNPC_LIB_PATH,,-L,) -lminiupnpc
     win32:LIBS += -liphlpapi
+}
+
+contains(MINIUPNP_STATICLIB, 1) {
+     DEFINES += MINIUPNP_STATICLIB
 }
 
 # use: qmake "USE_DBUS=1"
