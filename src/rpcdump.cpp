@@ -42,7 +42,7 @@ public:
     }
 };
 
-void importPrivateKey(string strSecret, string strLabel = "")
+void importPrivateKey(string strSecret, string strLabel = "", CBlockIndex *startBlock = pindexGenesisBlock)
 {
     CBitcoinSecret vchSecret;
     bool fGood = vchSecret.SetString(strSecret);
@@ -67,7 +67,7 @@ void importPrivateKey(string strSecret, string strLabel = "")
         if (!pwalletMain->AddKey(key))
             throw JSONRPCError(-4,"Error adding key to wallet. It maybe already imported.");
 
-        pwalletMain->ScanForWalletTransactions(pindexGenesisBlock, true);
+        pwalletMain->ScanForWalletTransactions(startBlock, true);
         pwalletMain->ReacceptWalletTransactions();
     }
 
@@ -76,16 +76,28 @@ void importPrivateKey(string strSecret, string strLabel = "")
 
 Value importprivkey(const Array& params, bool fHelp)
 {
-    if (fHelp || params.size() < 1 || params.size() > 2)
+    if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
-            "importprivkey <sparklecoinprivkey> [label]\n"
+            "importprivkey <sparklecoinprivkey> [label] [startingheight]\n"
             "Adds a private key (as returned by dumpprivkey) to your wallet.");
 
     string strSecret = params[0].get_str();
     string strLabel = "";
+    CBlockIndex* startBlock = mapBlockIndex[hashBestChain];
+
     if (params.size() > 1)
         strLabel = params[1].get_str();
-    importPrivateKey(strSecret, strLabel);
+
+    if (params.size() > 2) {
+        int startHeight = params[2].get_int();
+        if (startHeight < 0 || startHeight >  nBestHeight)
+            throw runtime_error("Block number out of range.");
+
+        while (startBlock->nHeight > startHeight)
+            startBlock = startBlock->pprev;
+        }
+
+    importPrivateKey(strSecret, strLabel, startBlock);
     /*
     CBitcoinSecret vchSecret;
     bool fGood = vchSecret.SetString(strSecret);
