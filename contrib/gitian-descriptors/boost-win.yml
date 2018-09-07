@@ -81,6 +81,6 @@ script: |
     done
     #
     cd "$INSTALLPREFIX"
-    find | sort | zip -X@ $OUTDIR/boost-win$BITS-1.55.0-gitian-r6.zip
+    find | sort | zip -X@ $OUTDIR/boost-win$BITS-1.55.0-gitian-r1.zip
   done # for BITS in
 

@@ -29,7 +29,6 @@
 #include "guiutil.h"
 #include "rpcconsole.h"
 #include "wallet.h"
-#include "importwalletdialog.h"
 
 #ifdef Q_WS_MAC
 #include "macdockiconhandler.h"
@@ -56,8 +55,6 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QTimer>
-#include <QtSvg/QSvgWidget>
-#include <QtSvg/QGraphicsSvgItem>
 
 #include <QDragEnterEvent>
 #include <QUrl>
@@ -951,8 +948,8 @@ void BitcoinGUI::importWallet()
     walletFile = QFileDialog::getOpenFileName(this, "Select Wallet File To Import", QDir::homePath(), "Wallet files(*.dat);; All Files(*.*)");
     if(!walletModel || walletFile.isEmpty())
         return;
-    ImportWalletDialog dlg(this, walletFile);
-    dlg.exec();
+    //ImportWalletDialog dlg(this, walletFile);
+    //dlg.exec();
 //    dlg.ImportWalletRequest();
 }
 
