@@ -1143,8 +1143,9 @@ void MapPort(bool /* unused fMapPort */)
 // The second name should resolve to a list of seed addresses.
 // testnet dns seed begins with 't', all else are sparklecoin dns seeds.
 static const char *strDNSSeed[][2] = {
-    {"seed", "seed.sparklecoin.com"},
-    {"tseed", "tseed.sparklecoin.com"}
+    {"seed.sparklecoin.com", "seed.sparklecoin.com"},
+    {"104.217.253.29", "104.217.253.29"},
+    {"tseed.sparklecoin.com", "tseed.sparklecoin.com"}
 };
 
 void ThreadDNSAddressSeed(void* parg)
