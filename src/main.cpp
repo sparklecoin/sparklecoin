@@ -4201,6 +4201,12 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
     CReserveKey reservekey(pwallet);
     unsigned int nExtraNonce = 0;
 
+    if (fProofOfStake && GetBoolArg("-nominting"))
+    {
+        printf("staking disabled\n");
+        return;
+    }
+
     while (fGenerateBitcoins || fProofOfStake)
     {
         if (fShutdown)
