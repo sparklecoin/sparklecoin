@@ -1,0 +1,22 @@
+name: Sparklecoin-qt-artifact
+on: [push, pull_request]
+
+jobs:
+  linux:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: dependencies
+        run: |
+          sudo add-apt-repository ppa:bitcoin/bitcoin
+          sudo apt-get update
+          sudo apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
+          libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
+          libssl1.0-dev libdb++-dev libminiupnpc-dev
+          
+      - name: build
+        run: |
+          qmake "USE_UPNP=0" 
+          make
