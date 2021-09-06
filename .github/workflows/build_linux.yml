@@ -16,6 +16,6 @@ jobs:
           
       - name: build
         run: |
-          cd sparklecoin/src
+          cd src
           make -f makefile.unix USE_UPNP=0
           strip sparklecoind
