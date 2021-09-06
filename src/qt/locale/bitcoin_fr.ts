@@ -731,7 +731,7 @@ Adresse : %4
         <location filename="../forms/coincontroldialog.ui" line="310"/>
         <location filename="../forms/coincontroldialog.ui" line="348"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPRK</translation>
+        <translation>0.00 SCTK</translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="157"/>
@@ -1145,8 +1145,8 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Frais obligatoires de traitement des transactions par le réseau par ko transféré. La plupart des transactions font 1 ko pour un coût de 0,01 SPRK. Note: la taille des transferts peut augmenter en fonction du nombre de transactions d&apos;entrée qui doivent être ajoutées pour couvrir le montant du paiement.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SCTK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Frais obligatoires de traitement des transactions par le réseau par ko transféré. La plupart des transactions font 1 ko pour un coût de 0,01 SCTK. Note: la taille des transferts peut augmenter en fonction du nombre de transactions d&apos;entrée qui doivent être ajoutées pour couvrir le montant du paiement.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1547,8 +1547,8 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
         <location filename="../forms/multisigdialog.ui" line="402"/>
         <location filename="../forms/multisigdialog.ui" line="521"/>
         <location filename="../forms/multisigdialog.ui" line="559"/>
-        <source>SPRK</source>
-        <translation>SPRK</translation>
+        <source>SCTK</source>
+        <translation>SCTK</translation>
     </message>
     <message>
         <location filename="../forms/multisigdialog.ui" line="413"/>
@@ -1633,13 +1633,13 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
     </message>
     <message>
         <location filename="../multisigdialog.cpp" line="496"/>
-        <source>The fee of the transaction (%1 SPRK) is smaller than the expected fee (%2 SPRK). Do you want to send the transaction anyway?</source>
-        <translation>Les frais de la transaction (%1 SPRK) sont inférieurs aux frais prévus (%2 SPRK). Voulez-vous tout de même envoyer la transaction ?</translation>
+        <source>The fee of the transaction (%1 SCTK) is smaller than the expected fee (%2 SCTK). Do you want to send the transaction anyway?</source>
+        <translation>Les frais de la transaction (%1 SCTK) sont inférieurs aux frais prévus (%2 SCTK). Voulez-vous tout de même envoyer la transaction ?</translation>
     </message>
     <message>
         <location filename="../multisigdialog.cpp" line="502"/>
-        <source>The fee of the transaction (%1 SPRK) is bigger than the expected fee (%2 SPRK). Do you want to send the transaction anyway?</source>
-        <translation>Les frais de la transaction (%1 SPRK) sont supérieurs aux frais prévus (%2 SPRK). Voulez-vous tout de même envoyer la transaction ?</translation>
+        <source>The fee of the transaction (%1 SCTK) is bigger than the expected fee (%2 SCTK). Do you want to send the transaction anyway?</source>
+        <translation>Les frais de la transaction (%1 SCTK) sont supérieurs aux frais prévus (%2 SCTK). Voulez-vous tout de même envoyer la transaction ?</translation>
     </message>
 </context>
 <context>
@@ -1836,8 +1836,8 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPRK</source>
-        <translation>SPRK</translation>
+        <source>SCTK</source>
+        <translation>SCTK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1879,7 +1879,7 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPRKoin) debug window</source>
+        <source>Sparklecoin (SCTKoin) debug window</source>
         <translation>Fenêtre de débogage de Sparklecoin</translation>
     </message>
     <message>
@@ -2036,7 +2036,7 @@ Cette étiquette devient rouge si la priorité est inférieure à &quot;moyenne&
         <location filename="../forms/sendcoinsdialog.ui" line="505"/>
         <location filename="../forms/sendcoinsdialog.ui" line="537"/>
         <source>0.00 BTC</source>
-        <translation>0.00 SPRK</translation>
+        <translation>0.00 SCTK</translation>
     </message>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="346"/>

@@ -1122,8 +1122,8 @@ Bedragen kleiner dan 0.546 keer de minimum vergoeding worden weergegeven als STO
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="217"/>
-        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SPRK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
-        <translation>Verplichte network transactie kosten per verstuurde kB. De meeste transacties zijn 1kB en kosten 0.01 SPRK. Opm. Het aantal verstuurde kB neemt toe afhankelijk van het aantal ingebrachte transacties benodigd om de betaling te kunnen bekostigen.</translation>
+        <source>Mandatory network transaction fee per kB transferred. Most transactions are 1 kB and incur a 0.01 SCTK fee. Note: transfer size may increase depending on the number of input transactions required to be added together to fund the payment.</source>
+        <translation>Verplichte network transactie kosten per verstuurde kB. De meeste transacties zijn 1kB en kosten 0.01 SCTK. Opm. Het aantal verstuurde kB neemt toe afhankelijk van het aantal ingebrachte transacties benodigd om de betaling te kunnen bekostigen.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
@@ -1432,8 +1432,8 @@ Bedragen kleiner dan 0.546 keer de minimum vergoeding worden weergegeven als STO
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="105"/>
-        <source>SPRK</source>
-        <translation>SPRK</translation>
+        <source>SCTK</source>
+        <translation>SCTK</translation>
     </message>
     <message>
         <location filename="../forms/qrcodedialog.ui" line="121"/>
@@ -1475,7 +1475,7 @@ Bedragen kleiner dan 0.546 keer de minimum vergoeding worden weergegeven als STO
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Sparklecoin (SPRKoin) debug window</source>
+        <source>Sparklecoin (SCTKoin) debug window</source>
         <translation>Sparklecoin (Sparklecoin) debug scherm</translation>
     </message>
     <message>

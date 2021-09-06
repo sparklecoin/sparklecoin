@@ -1,4 +1,4 @@
-Copyright (c) 2012-2013 SPRKoin Developers
+Copyright (c) 2012-2013 SCTKoin Developers
 Copyright (c) 2009-2012 Bitcoin Developers
 Distributed under the MIT/X11 software license, see the accompanying file
 license.txt or http://www.opensource.org/licenses/mit-license.php.  This
@@ -12,14 +12,14 @@ Mac OS X bitcoind build instructions
 Laszlo Hanyecz <solar@heliacal.net>
 Douglas Huff <dhuff@jrbobdobbs.org>
 
-Modified for SPRKoin by Jeff Larkin <jefflarkin@gmail.com>
+Modified for SCTKoin by Jeff Larkin <jefflarkin@gmail.com>
 Modified for Sparkleunity by Ben Rossi <ben@rossinet.com>
 
 
-See readme-qt.rst for instructions on building the Sparkleunity community version of SPRKoin QT, the
+See readme-qt.rst for instructions on building the Sparkleunity community version of SCTKoin QT, the
 graphical user interface.
 
-Tested on 10.5 and 10.6 intel.  SPRK is not supported because it's big-endian.
+Tested on 10.5 and 10.6 intel.  SCTK is not supported because it's big-endian.
 
 All of the commands should be executed in Terminal.app.. it's in
 /Applications/Utilities

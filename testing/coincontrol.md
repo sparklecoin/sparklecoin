@@ -8,9 +8,9 @@ This report covers test results of the coin control feature of Sparkleunity v0.4
 The test method used is basically clicking/typing on the GUI of Sparkleunity running on Sparklecoin testnet, and comparing the results with those specified in [_Yet another Coin Control Release_ by cozz](https://bitcointalk.org/index.php?topic=144331.0).
 
 There are three addresses with initial balance used in the test, 
-* test1  mkLh7wYGYQiKVm8tLwCs9LusKF2y1gffm9  8.01SPRK 
-* test2  n2LzA1UH46QZPdCGvN2NorPeqg1BbTuw4g  2SPRK
-* test3  mpRAV4VSsxmKh5nRpDuQPquhdHPKu4xUuS  7SPRK
+* test1  mkLh7wYGYQiKVm8tLwCs9LusKF2y1gffm9  8.01SCTK 
+* test2  n2LzA1UH46QZPdCGvN2NorPeqg1BbTuw4g  2SCTK
+* test3  mpRAV4VSsxmKh5nRpDuQPquhdHPKu4xUuS  7SCTK
 
 ### start sparkleunity
 
@@ -50,15 +50,15 @@ daemon=1
 
 ### _Coin Control Dialog_ 
 
-* Send 1 SPRK from test2 to test1 to 1) create change 2) create two outputs in test1.  
-  Results: test2 has 0.99SPRK left and test1 has 9.01SPRK, as shown by coin control window. (A strict verification can be done using a block explorer. txid 94686d535fae9fc015b7e3a270123f437066c60f3c63b658774ffb60e530ee3a )  
+* Send 1 SCTK from test2 to test1 to 1) create change 2) create two outputs in test1.  
+  Results: test2 has 0.99SCTK left and test1 has 9.01SCTK, as shown by coin control window. (A strict verification can be done using a block explorer. txid 94686d535fae9fc015b7e3a270123f437066c60f3c63b658774ffb60e530ee3a )  
   This confirms:
 
 >  * select outputs by checkbox -> only the checked outputs are used when sending a transaction  
 >    if none are selected -> coin control inactive (just as normal)
 
-* Send 5 SPRK from test1 to test2 using test3 as the custom change address.  
-  Results: test1 has 1 SPRK test2 has 5.99 SPRK test3 has 10 SPRK, as expected. The custom change address function is verified. txid eed4baecbcaedcf442647103fc8a18812dce2b4c852ee447b473f157c41cb837
+* Send 5 SCTK from test1 to test2 using test3 as the custom change address.  
+  Results: test1 has 1 SCTK test2 has 5.99 SCTK test3 has 10 SCTK, as expected. The custom change address function is verified. txid eed4baecbcaedcf442647103fc8a18812dce2b4c852ee447b473f157c41cb837
 
 
 * These are all confirmed:
@@ -92,7 +92,7 @@ Note for the last item: the tooltip not only shows in list mode but also in tree
 >    Low Output: "yes" if any recipient receives an amount < 0.01BTC  
 >    Change: shows the change you get back
 
-Low Output is yes when the amount is less than 0.01 SPRK.
+Low Output is yes when the amount is less than 0.01 SCTK.
 
 * **Copy amount to clipboard by direct right clicking the _labels_ does not work. However right clicking the _values_ works.**
 
