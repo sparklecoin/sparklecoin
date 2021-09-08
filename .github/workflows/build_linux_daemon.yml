@@ -19,6 +19,7 @@ jobs:
           cd src
           make -f makefile.unix USE_UPNP=0 STATIC=1
           strip sparklecoind
+          chmod +x sparklecoind
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
