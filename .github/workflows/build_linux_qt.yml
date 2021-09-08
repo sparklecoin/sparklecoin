@@ -20,3 +20,10 @@ jobs:
         run: |
           qmake "USE_UPNP=0" 
           make
+
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: Sparklecoin-qt
+        path: sparklecoin
+        retention-days: 5
