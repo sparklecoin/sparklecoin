@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Sparklecoin-qt
-          path: sparklecoin-qt
+          path: sparklecoin
           retention-days: 5
