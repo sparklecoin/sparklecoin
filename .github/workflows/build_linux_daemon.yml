@@ -17,7 +17,7 @@ jobs:
       - name: build
         run: |
           cd src
-          make -f makefile.unix USE_UPNP=0
+          make -f makefile.unix USE_UPNP=0 STATIC=1
           strip sparklecoind
 
       - name: 'Upload Artifact'
