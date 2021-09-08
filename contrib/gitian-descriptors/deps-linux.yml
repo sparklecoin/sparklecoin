@@ -1,7 +1,7 @@
 ---
-name: "sparkleunity-deps"
+name: "sparklecoin-deps"
 suites:
-- "precise"
+- "trusty"
 architectures:
 - "i386"
 - "amd64"

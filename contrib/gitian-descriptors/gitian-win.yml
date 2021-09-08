@@ -1,7 +1,7 @@
 ---
-name: "sparkleunity"
+name: "sparklecoin"
 suites:
-- "precise"
+- "trusty"
 architectures:
 - "amd64"
 packages:

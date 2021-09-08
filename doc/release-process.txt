@@ -16,7 +16,7 @@
 
 * perform gitian builds
 
-  * From a directory containing the sparkleunity source, gitian-builder and gitian.sigs
+  * From a directory containing the sparklecoin source, gitian-builder and gitian.sigs
    export SIGNER=(your gitian key, ie bluematt, sipa, etc)
    export VERSION=0.5.1
    cd ~/gitian-builder
@@ -31,17 +31,17 @@
    wget 'http://fukuchi.org/works/qrencode/qrencode-3.4.3.tar.bz2'
    wget 'http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2'
    wget 'https://svn.boost.org/trac/boost/raw-attachment/ticket/7262/boost-mingw.patch' -O boost-mingw-gas-cross-compile-2013-03-03.patch
-   wget 'https://download.qt-project.org/archive/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz'
+   wget 'https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz'
    cd ..
-   ./bin/gbuild ../sparkleunity/contrib/gitian-descriptors/boost-linux.yml
+   ./bin/gbuild ../contrib/gitian-descriptors/boost-linux.yml
    cp build/out/boost-linux*-1.55.0-gitian-r1.zip inputs/
-   ./bin/gbuild ../sparkleunity/contrib/gitian-descriptors/deps-linux.yml
+   ./bin/gbuild ../contrib/gitian-descriptors/deps-linux.yml
    cp build/out/sparkleunity-deps-linux*-gitian-r5.zip inputs/
-   ./bin/gbuild ../sparkleunity/contrib/gitian-descriptors/boost-win.yml
+   ./bin/gbuild ../contrib/gitian-descriptors/boost-win.yml
    cp build/out/boost-win*-1.55.0-gitian-r6.zip inputs/
-   ./bin/gbuild ../sparkleunity/contrib/gitian-descriptors/qt-win.yml
+   ./bin/gbuild ../contrib/gitian-descriptors/qt-win.yml
    cp build/out/qt-win*-4.8.5-gitian-r3.zip inputs/
-   ./bin/gbuild ../sparkleunity/contrib/gitian-descriptors/deps-win.yml
+   ./bin/gbuild ../contrib/gitian-descriptors/deps-win.yml
    cp build/out/sparkleunity-deps-win*-gitian-r12.zip inputs/
 
   * Build for Linux32 and Linux64:
