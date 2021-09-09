@@ -20,7 +20,7 @@ script: |
   INDIR=$HOME/build
   TEMPDIR=$HOME/tmp
   # Integrity Check
-  echo "eb728f8268831dc4373be6403b7dd5d5dde03c169ad6882f9a8cb560df6aa138  qt-everywhere-opensource-src-4.8.7.tar.gz" | sha256sum -c
+  echo "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0  qt-everywhere-opensource-src-4.8.7.tar.gz" | sha256sum -c
 
   for BITS in 32 64; do # for architectures
     #
