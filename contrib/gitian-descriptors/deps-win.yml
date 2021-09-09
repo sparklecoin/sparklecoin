@@ -22,7 +22,7 @@ files:
 - "qrencode-3.4.3.tar.bz2"
 script: |
   #
-  export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
+  #export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
   export FAKETIME=$REFERENCE_DATETIME
   export TZ=UTC
   INDIR=$HOME/build
@@ -62,7 +62,8 @@ script: |
     #
     tar xzf $INDIR/db-4.8.30.NC.tar.gz
     cd db-4.8.30.NC/build_unix
-    ../dist/configure --prefix=$INSTALLPREFIX --enable-mingw --enable-cxx --host=$HOST --disable-shared
+    ../dist/configure --prefix=$INSTALLPREFIX --disable-replication --disable-posixmutexes --disable-pthread_api --enable-mingw --enable-cxx --host=$HOST --disable-shared --with-pic
+    sed -i 's/typedef pthread_t db_threadid_t;/typedef u_int32_t db_threadid_t;/g' db.h
     make $MAKEOPTS library_build
     make install_lib install_include
     cd ../..
