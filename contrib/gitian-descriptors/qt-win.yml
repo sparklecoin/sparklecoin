@@ -1,7 +1,7 @@
 ---
 name: "qt"
 suites:
-- "precise"
+- "trusty"
 architectures:
 - "amd64"
 packages: 
@@ -13,14 +13,14 @@ packages:
 reference_datetime: "2011-01-30 00:00:00"
 remotes: []
 files:
-- "qt-everywhere-opensource-src-4.8.5.tar.gz"
+- "qt-everywhere-opensource-src-4.8.7.tar.gz"
 script: |
   # Defines
   export TZ=UTC
   INDIR=$HOME/build
   TEMPDIR=$HOME/tmp
   # Integrity Check
-  echo "eb728f8268831dc4373be6403b7dd5d5dde03c169ad6882f9a8cb560df6aa138  qt-everywhere-opensource-src-4.8.5.tar.gz" | sha256sum -c
+  echo "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0  qt-everywhere-opensource-src-4.8.7.tar.gz" | sha256sum -c
 
   for BITS in 32 64; do # for architectures
     #
@@ -36,8 +36,8 @@ script: |
     #
     cd $BUILDDIR
     #
-    tar xzf $INDIR/qt-everywhere-opensource-src-4.8.5.tar.gz
-    cd qt-everywhere-opensource-src-4.8.5
+    tar xzf $INDIR/qt-everywhere-opensource-src-4.8.7.tar.gz
+    cd qt-everywhere-opensource-src-4.8.7
     SPECNAME="win32-g++"
     SPECFILE="mkspecs/${SPECNAME}/qmake.conf"
     sed 's/$TODAY/2011-01-30/' -i configure
@@ -72,7 +72,7 @@ script: |
     export LD_PRELOAD=/usr/lib/faketime/libfaketime.so.1
     export FAKETIME=$REFERENCE_DATETIME
     find -print0 | xargs -r0 touch # fix up timestamps before packaging
-    find | sort | zip -X@ $OUTDIR/qt-win${BITS}-4.8.5-gitian-r3.zip
+    find | sort | zip -X@ $OUTDIR/qt-win${BITS}-4.8.7-gitian-r3.zip
     unset LD_PRELOAD
     unset FAKETIME
   done # for BITS in
