@@ -124,5 +124,5 @@ script: |
     done
     #
     cd $INSTALLPREFIX
-    find include lib | sort | zip -X@ $OUTDIR/sparkleunity-deps-win$BITS-gitian-r12.zip
+    find include lib | sort | zip -X@ $OUTDIR/sparklecoin-deps-win$BITS-gitian-r12.zip
   done # for BITS in
