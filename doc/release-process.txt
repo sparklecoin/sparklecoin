@@ -1,18 +1,18 @@
 * update translations
 
 * update (commit) version in sources
-  bitcoin-qt.pro
+  sparklecoin-qt.pro
   src/version.h
   share/setup.nsi
   doc/README*
 
 * tag version in git
 
-   git tag -a v0.5.1
+   git tag -a v1.5.1
 
 * write release notes.  git shortlog helps a lot:
 
-   git shortlog --no-merges v0.5.0..
+   git shortlog --no-merges v1.5.0..
 
 * perform gitian builds
 
@@ -24,7 +24,7 @@
   * Fetch and build inputs:
    mkdir -p inputs; cd inputs/
    wget 'http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.tar.gz' -O miniupnpc-1.9.tar.gz
-   wget 'http://www.openssl.org/source/openssl-1.0.1g.tar.gz'
+   wget 'http://www.openssl.org/source/openssl-1.0.1u.tar.gz'
    wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
    wget 'http://zlib.net/zlib-1.2.8.tar.gz'
    wget 'ftp://ftp.simplesystems.org/pub/png/src/history/libpng16/libpng-1.6.8.tar.gz'
@@ -33,50 +33,50 @@
    wget 'https://svn.boost.org/trac/boost/raw-attachment/ticket/7262/boost-mingw.patch' -O boost-mingw-gas-cross-compile-2013-03-03.patch
    wget 'https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz'
    cd ..
-   ./bin/gbuild ../contrib/gitian-descriptors/boost-linux.yml
+   ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/boost-linux.yml
    cp build/out/boost-linux*-1.55.0-gitian-r1.zip inputs/
-   ./bin/gbuild ../contrib/gitian-descriptors/deps-linux.yml
-   cp build/out/sparkleunity-deps-linux*-gitian-r5.zip inputs/
-   ./bin/gbuild ../contrib/gitian-descriptors/boost-win.yml
+   ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/deps-linux.yml
+   cp build/out/sparklecoin-deps-linux*-gitian-r5.zip inputs/
+   ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/boost-win.yml
    cp build/out/boost-win*-1.55.0-gitian-r6.zip inputs/
-   ./bin/gbuild ../contrib/gitian-descriptors/qt-win.yml
-   cp build/out/qt-win*-4.8.5-gitian-r3.zip inputs/
-   ./bin/gbuild ../contrib/gitian-descriptors/deps-win.yml
-   cp build/out/sparkleunity-deps-win*-gitian-r12.zip inputs/
+   ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/qt-win.yml
+   cp build/out/qt-win*-4.8.7-gitian-r3.zip inputs/
+   ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/deps-win.yml
+   cp build/out/sparklecoin-deps-win*-gitian-r12.zip inputs/
 
   * Build for Linux32 and Linux64:
-   ./bin/gbuild --commit sparkleunity=v${VERSION} ../sparkleunity/contrib/gitian-descriptors/gitian-linux.yml
-   ./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../sparkleunity/contrib/gitian-descriptors/gitian-linux.yml
+   ./bin/gbuild --commit sparklecoin=v${VERSION} ../sparklecoin/contrib/gitian-descriptors/gitian-linux.yml
+   ./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../sparklecoin/contrib/gitian-descriptors/gitian-linux.yml
    pushd build/out
-   zip -r sparkleunity-${VERSION}-linux-gitian.zip *
-   mv sparkleunity-${VERSION}-linux-gitian.zip ../../
+   zip -r sparklecoin-${VERSION}-linux-gitian.zip *
+   mv sparklecoin-${VERSION}-linux-gitian.zip ../../
    popd
 
   * Build for Win32 and Win64:
-   ./bin/gbuild --commit sparkleunity=v${VERSION} ../sparkleunity/contrib/gitian-descriptors/gitian-win.yml
-   ./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs/ ../sparkleunity/contrib/gitian-descriptors/gitian-win.yml
+   ./bin/gbuild --commit sparklecoin=v${VERSION} ../sparklecoin/contrib/gitian-descriptors/gitian-win.yml
+   ./bin/gsign --signer $SIGNER --release ${VERSION}-win --destination ../gitian.sigs/ ../sparklecoin/contrib/gitian-descriptors/gitian-win.yml
    pushd build/out
-   zip -r sparkleunity-${VERSION}-win-gitian.zip *
-   mv sparkleunity-${VERSION}-win-gitian.zip ../../
+   zip -r sparklecoin-${VERSION}-win-gitian.zip *
+   mv sparklecoin-${VERSION}-win-gitian.zip ../../
    popd
 
   Build output expected:
-  1. linux 32-bit and 64-bit binaries + source (sparkleunity-${VERSION}-linux-gitian.zip)
-  2. windows 32-bit and 64-bit binaries, installers + source (sparkleunity-${VERSION}-win-gitian.zip)
+  1. linux 32-bit and 64-bit binaries + source (sparklecoin-${VERSION}-linux-gitian.zip)
+  2. windows 32-bit and 64-bit binaries, installers + source (sparklecoin-${VERSION}-win-gitian.zip)
   3. Gitian signatures (in gitian.sigs/${VERSION}[-win]/(your gitian key)/
 
 * repackage gitian builds for release as stand-alone zip/tar/installer exe
 
   * Linux .tar.gz:
-   unzip sparkleunity-${VERSION}-linux-gitian.zip -d sparkleunity-${VERSION}-linux
-   tar czvf sparkleunity-${VERSION}-linux.tar.gz sparkleunity-${VERSION}-linux
-   rm -rf sparkleunity-${VERSION}-linux
+   unzip sparklecoin-${VERSION}-linux-gitian.zip -d sparklecoin-${VERSION}-linux
+   tar czvf sparklecoin-${VERSION}-linux.tar.gz sparklecoin-${VERSION}-linux
+   rm -rf sparklecoin-${VERSION}-linux
 
   * Windows .zip and setup.exe:
-   unzip sparkleunity-${VERSION}-win32-gitian.zip -d sparkleunity-${VERSION}-win32
-   mv sparkleunity-${VERSION}-win32/sparkleunity-*-setup.exe .
-   zip -r sparkleunity-${VERSION}-win32.zip sparkleunity-${VERSION}-win32
-   rm -rf sparkleunity-${VERSION}-win32
+   unzip sparklecoin-${VERSION}-win32-gitian.zip -d sparklecoin-${VERSION}-win32
+   mv sparklecoin-${VERSION}-win32/sparklecoin-*-setup.exe .
+   zip -r sparklecoin-${VERSION}-win32.zip sparklecoin-${VERSION}-win32
+   rm -rf sparklecoin-${VERSION}-win32
 
 * perform Mac build
   See this blog post for how Gavin set up his build environment to build the OSX
@@ -95,7 +95,7 @@
  Build output expected:
   Bitcoin-Qt.dmg
 
-* upload builds to SourceForge
+* upload builds to Github
 
 * create SHA256SUMS for builds, and PGP-sign it
 
@@ -119,31 +119,31 @@
 
 * After 3 or more people have gitian-built, repackage gitian-signed zips:
 
-  * From a directory containing sparkleunity source, gitian.sigs and gitian zips
+  * From a directory containing sparklecoin source, gitian.sigs and gitian zips
    export VERSION=0.5.1
-   mkdir sparkleunity-${VERSION}-linux-gitian
-   pushd sparkleunity-${VERSION}-linux-gitian
-   unzip ../sparkleunity-${VERSION}-linux-gitian.zip
+   mkdir sparklecoin-${VERSION}-linux-gitian
+   pushd sparklecoin-${VERSION}-linux-gitian
+   unzip ../sparklecoin-${VERSION}-linux-gitian.zip
    mkdir gitian
-   cp ../sparkleunity/contrib/gitian-downloader/*.pgp ./gitian/
+   cp ../sparklecoin/contrib/gitian-downloader/*.pgp ./gitian/
    for signer in $(ls ../gitian.sigs/${VERSION}/); do
-     cp ../gitian.sigs/${VERSION}/${signer}/sparkleunity-build.assert ./gitian/${signer}-build.assert
-     cp ../gitian.sigs/${VERSION}/${signer}/sparkleunity-build.assert.sig ./gitian/${signer}-build.assert.sig
+     cp ../gitian.sigs/${VERSION}/${signer}/sparklecoin-build.assert ./gitian/${signer}-build.assert
+     cp ../gitian.sigs/${VERSION}/${signer}/sparklecoin-build.assert.sig ./gitian/${signer}-build.assert.sig
    done
-   zip -r sparkleunity-${VERSION}-linux-gitian.zip *
-   cp sparkleunity-${VERSION}-linux-gitian.zip ../
+   zip -r sparklecoin-${VERSION}-linux-gitian.zip *
+   cp sparklecoin-${VERSION}-linux-gitian.zip ../
    popd
-   mkdir sparkleunity-${VERSION}-win-gitian
-   pushd sparkleunity-${VERSION}-win-gitian
-   unzip ../sparkleunity-${VERSION}-win-gitian.zip
+   mkdir sparklecoin-${VERSION}-win-gitian
+   pushd sparklecoin-${VERSION}-win-gitian
+   unzip ../sparklecoin-${VERSION}-win-gitian.zip
    mkdir gitian
-   cp ../sparkleunity/contrib/gitian-downloader/*.pgp ./gitian/
+   cp ../sparklecoin/contrib/gitian-downloader/*.pgp ./gitian/
    for signer in $(ls ../gitian.sigs/${VERSION}-win/); do
-     cp ../gitian.sigs/${VERSION}-win/${signer}/sparkleunity-build.assert ./gitian/${signer}-build.assert
-     cp ../gitian.sigs/${VERSION}-win/${signer}/sparkleunity-build.assert.sig ./gitian/${signer}-build.assert.sig
+     cp ../gitian.sigs/${VERSION}-win/${signer}/sparklecoin-build.assert ./gitian/${signer}-build.assert
+     cp ../gitian.sigs/${VERSION}-win/${signer}/sparklecoin-build.assert.sig ./gitian/${signer}-build.assert.sig
    done
-   zip -r sparkleunity-${VERSION}-win-gitian.zip *
-   cp sparkleunity-${VERSION}-win-gitian.zip ../
+   zip -r sparklecoin-${VERSION}-win-gitian.zip *
+   cp sparklecoin-${VERSION}-win-gitian.zip ../
    popd
 
   * Upload gitian zips to SourceForge
