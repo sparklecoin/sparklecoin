@@ -53,7 +53,7 @@ script: |
     #export FAKETIME=$REFERENCE_DATETIME
     #
     # Compile static libraries, and use statically linked openssl (-openssl-linked):
-    ./configure -prefix $INSTALLPREFIX -bindir $INSTALLPREFIX/host/bin -confirm-license -release -opensource -static -no-qt3support -xplatform $SPECNAME -device-option CROSS_COMPILE="$HOST-" -no-multimedia -no-audio-backend -no-phonon -no-phonon-backend -no-declarative -no-script -no-scripttools -no-javascript-jit  -no-webkit -svg -no-xmlpatterns -no-sql-sqlite -no-nis -no-cups -no-iconv -no-dbus -no-gif -no-libtiff -opengl no -nomake examples -nomake demos -nomake docs
+    ./configure -prefix $INSTALLPREFIX -bindir $INSTALLPREFIX/host/bin -confirm-license -release -opensource -static -qt-zlib -qt-libpng -qt-libmng -qt-libjpeg -no-sql-mysql -no-sql-oci -no-sql-ibase -stl -no-qt3support -xplatform $SPECNAME -device-option CROSS_COMPILE="$HOST-" -no-multimedia -no-audio-backend -no-phonon -no-phonon-backend -no-declarative -no-script -no-scripttools -no-javascript-jit -no-webkit -svg -no-xmlpatterns -no-sql-sqlite -no-nis -no-cups -no-iconv -no-dbus -no-gif -no-libtiff -opengl no -nomake examples -nomake demos -nomake docs -v
     find . -name *.prl | xargs -l sed 's|/\.||' -i
     find . -name *.prl | xargs -l sed 's|/$||' -i
     make $MAKEOPTS install
