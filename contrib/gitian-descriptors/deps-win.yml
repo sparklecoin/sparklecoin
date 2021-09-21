@@ -1,7 +1,7 @@
 ---
 name: "sparklecoin-deps"
 suites:
-- "trusty"
+- "precise"
 architectures:
 - "amd64"
 packages:
