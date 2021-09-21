@@ -42,7 +42,7 @@ script: |
     cd qt-everywhere-opensource-src-4.8.7
     SPECNAME="win32-g++"
     SPECFILE="mkspecs/${SPECNAME}/qmake.conf"
-    cp ../qmake.conf.win64 $SPECFILE
+    cp $INDIR/qmake.conf.win64 $SPECFILE
     sed 's/$TODAY/2011-01-30/' -i configure
     # Before we tried to pass arguments to ar (static linking) in using QMAKE_LIB, however
     #  qt removes the arguments for ar and provides a script which makes it impossible to pass the determinism flag -
