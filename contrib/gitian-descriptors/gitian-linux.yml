@@ -1,7 +1,7 @@
 ---
 name: "sparklecoin"
 suites:
-- "trusty"
+- "precise"
 architectures:
 - "i386"
 - "amd64"
