@@ -18,9 +18,7 @@ remotes:
 - "url": "https://github.com/sparklecoin/sparklecoin.git"
   "dir": "sparklecoin"
 files:
-- "sparklecoin-deps-linux32-gitian-r5.zip"
 - "sparklecoin-deps-linux64-gitian-r5.zip"
-- "boost-linux32-1.55.0-gitian-r1.zip"
 - "boost-linux64-1.55.0-gitian-r1.zip"
 script: |
   STAGING="$HOME/install"
