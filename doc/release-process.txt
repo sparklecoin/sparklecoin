@@ -32,6 +32,7 @@
    wget 'http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2'
    wget 'https://svn.boost.org/trac/boost/raw-attachment/ticket/7262/boost-mingw.patch' -O boost-mingw-gas-cross-compile-2013-03-03.patch
    wget 'https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz'
+   wget 'https://gist.githubusercontent.com/peerchemist/f345610cb869252f6ee5ac5efa7b4483/raw/39905494a85a676664ed7bbcc9a44ac57f1d8e9b/qmake.conf.win64'
    cd ..
    ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/boost-linux.yml
    cp build/out/boost-linux*-1.55.0-gitian-r1.zip inputs/
