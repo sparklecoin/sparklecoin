@@ -17,7 +17,7 @@
 // sparklecoin version - intended for display purpose only
 #define SPARKLEUNITY_VERSION_MAJOR       1
 #define SPARKLEUNITY_VERSION_MINOR       2
-#define SPARKLEUNITY_VERSION_REVISION    3
+#define SPARKLEUNITY_VERSION_REVISION    4
 #define SPARKLEUNITY_VERSION_BUILD       0
 
 static const int SPARKLEUNITY_VERSION =

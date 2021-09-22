@@ -1,0 +1,29 @@
+name: Sparklecoind-artifact
+on: [push, pull_request]
+
+jobs:
+  linux:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: dependencies
+        run: |
+          sudo add-apt-repository ppa:bitcoin/bitcoin
+          sudo apt-get update
+          sudo apt-get -y install software-properties-common build-essential libminiupnpc-dev libssl1.0-dev libdb4.8-dev libdb4.8++-dev libboost-all-dev
+          
+      - name: build
+        run: |
+          cd src
+          make -f makefile.unix USE_UPNP=0 STATIC=1
+          strip sparklecoind
+          chmod +x sparklecoind
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Sparklecoind
+          path: src/sparklecoind
+          retention-days: 5
