@@ -52,6 +52,7 @@ script: |
     cd $STAGING/host/bin
     ln -s uic $HOST-uic
     ln -s rcc $HOST-rcc
+    ln -s moc $HOST-moc
 
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
