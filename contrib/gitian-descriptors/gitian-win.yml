@@ -47,6 +47,12 @@ script: |
     unzip $INDIR/qt-win${BITS}-4.8.7-gitian-r3.zip
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
     unzip $INDIR/sparklecoin-deps-win${BITS}-gitian-r12.zip
+
+    # it seems to be needing this
+    cd $STAGING/host/bin
+    ln -s uic $HOST-uic
+    ln -s rcc $HOST-rcc
+
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/sparklecoin
