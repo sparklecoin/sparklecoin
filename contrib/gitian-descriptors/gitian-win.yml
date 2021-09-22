@@ -20,7 +20,7 @@ files:
 - "qt-win64-4.8.7-gitian-r3.zip"
 - "boost-win64-1.55.0-gitian-r6.zip"
 - "sparklecoin-deps-win64-gitian-r12.zip"
-- "qmake.win32-g++"
+- "tweaked.qmake.conf"
 script: |
   # Defines
   export TZ=UTC
@@ -55,7 +55,7 @@ script: |
 
     # make qmake.conf proper
     cd $STAGING/mkspec/win32-g++/
-    cp $INDIR/qmake.win32-g++/qmake.conf
+    cp $INDIR/tweaked.qmake.conf qmake.conf
 
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
