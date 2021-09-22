@@ -23,6 +23,7 @@ files:
 - "boost-win64-1.55.0-gitian-r6.zip"
 - "sparklecoin-deps-win32-gitian-r12.zip"
 - "sparklecoin-deps-win64-gitian-r12.zip"
+- "qmake.win32-g++"
 script: |
   # Defines
   export TZ=UTC
@@ -53,6 +54,10 @@ script: |
     ln -s uic $HOST-uic
     ln -s rcc $HOST-rcc
     ln -s moc $HOST-moc
+
+    # make qmake.conf proper
+    cd $STAGING/mkspec/win32-g++/
+    cp $INDIR/qmake.win32-g++/qmake.conf
 
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
