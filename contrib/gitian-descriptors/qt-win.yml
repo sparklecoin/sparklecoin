@@ -24,7 +24,8 @@ script: |
   echo "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0  qt-everywhere-opensource-src-4.8.7.tar.gz" | sha256sum -c
   echo "7a7103c48a251f977c870bae0fd46ae9543d5dda6d7c06f29cf2be7e6bae76d2  qmake.conf.win64" | sha256sum -c
 
-  for BITS in 32 64; do # for architectures
+  # add 32 bellow if you want 32bit binaries to be done as well, I recommend not
+  for BITS in 64; do # for architectures
     #
     INSTALLPREFIX=$HOME/staging${BITS}
     BUILDDIR=$HOME/build${BITS}
