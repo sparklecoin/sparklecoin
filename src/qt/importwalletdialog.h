@@ -4,7 +4,6 @@
 #include <QDialog>
 #include <QThread>
 #include <QDebug>
-#include <QtSvg/QSvgWidget>
 #include "init.h"
 #include "bitcoinrpc.h"
 #include "ui_interface.h"
@@ -32,7 +31,7 @@ class ImportWalletDialog : public QDialog
     Q_OBJECT
     public:
         QString walletFile;
-        QSvgWidget *image;
+        //QSvgWidget *image;
         WalletManager *wallet;
         explicit ImportWalletDialog(QWidget *parent = 0, QString walletFile = "");
         ~ImportWalletDialog();
