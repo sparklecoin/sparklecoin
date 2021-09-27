@@ -18,7 +18,7 @@ jobs:
           
       - name: build
         run: |
-          qmake "USE_UPNP=0" 
+          qmake "USE_UPNP=" 
           make
           chmod +x sparklecoin
 

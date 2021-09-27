@@ -16,7 +16,7 @@ reference_datetime: "2013-06-01 00:00:00"
 remotes: []
 files:
 - "openssl-1.0.1u.tar.gz"
-- "miniupnpc-1.9.tar.gz"
+- "miniupnpc-2.0.20170509.tar.gz"
 - "qrencode-3.4.3.tar.bz2"
 - "db-4.8.30.NC.tar.gz"
 script: |
@@ -29,7 +29,7 @@ script: |
   export LIBRARY_PATH="$STAGING/lib"
   # Integrity Check
   echo "4312b4ca1215b6f2c97007503d80db80d5157f76f8f7d3febbe6b4c56ff26739  openssl-1.0.1u.tar.gz"  | sha256sum -c
-  echo "2923e453e880bb949e3d4da9f83dd3cb6f08946d35de0b864d0339cf70934464  miniupnpc-1.9.tar.gz"   | sha256sum -c
+  echo "d3c368627f5cdfb66d3ebd64ca39ba54d6ff14a61966dbecb8dd296b7039f16a  miniupnpc-2.0.20170509.tar.gz" | sha256sum -c
   echo "dfd71487513c871bad485806bfd1fdb304dedc84d2b01a8fb8e0940b50597a98  qrencode-3.4.3.tar.bz2" | sha256sum -c
   echo "12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef  db-4.8.30.NC.tar.gz"    | sha256sum -c
 
@@ -43,8 +43,8 @@ script: |
   make install_sw
   cd ..
   #
-  tar xzfm miniupnpc-1.9.tar.gz
-  cd miniupnpc-1.9
+  tar xzfm miniupnpc-2.0.20170509.tar.gz
+  cd miniupnpc-2.0.20170509
   #   miniupnpc is always built with -fPIC
   INSTALLPREFIX=$STAGING make $MAKEOPTS install
   rm -f $STAGING/lib/libminiupnpc.so* # no way to skip shared lib build

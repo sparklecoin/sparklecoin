@@ -14,7 +14,6 @@ reference_datetime: "2011-01-30 00:00:00"
 remotes: []
 files:
 - "qt-everywhere-opensource-src-4.8.7.tar.gz"
-- "qmake.conf.win64"
 script: |
   # Defines
   export TZ=UTC
@@ -22,10 +21,8 @@ script: |
   TEMPDIR=$HOME/tmp
   # Integrity Check
   echo "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0  qt-everywhere-opensource-src-4.8.7.tar.gz" | sha256sum -c
-  echo "7a7103c48a251f977c870bae0fd46ae9543d5dda6d7c06f29cf2be7e6bae76d2  qmake.conf.win64" | sha256sum -c
 
-  # add 32 bellow if you want 32bit binaries to be done as well, I recommend not
-  for BITS in 64; do # for architectures
+  for BITS in 32 64; do # for architectures
     #
     INSTALLPREFIX=$HOME/staging${BITS}
     BUILDDIR=$HOME/build${BITS}
@@ -43,8 +40,10 @@ script: |
     cd qt-everywhere-opensource-src-4.8.7
     SPECNAME="win32-g++"
     SPECFILE="mkspecs/${SPECNAME}/qmake.conf"
-    cp $INDIR/qmake.conf.win64 $SPECFILE
     sed 's/$TODAY/2011-01-30/' -i configure
+    sed --posix "s|QMAKE_CFLAGS\t\t= -pipe|QMAKE_CFLAGS\t\t= -pipe -isystem /usr/${HOST}/include/ -frandom-seed=qtbuild|" -i ${SPECFILE}
+    sed 's/QMAKE_CXXFLAGS_EXCEPTIONS_ON = -fexceptions -mthreads/QMAKE_CXXFLAGS_EXCEPTIONS_ON = -fexceptions/' -i ${SPECFILE}
+    sed 's/QMAKE_LFLAGS_EXCEPTIONS_ON = -mthreads/QMAKE_LFLAGS_EXCEPTIONS_ON = -lmingwthrd/' -i ${SPECFILE}
     # Before we tried to pass arguments to ar (static linking) in using QMAKE_LIB, however
     #  qt removes the arguments for ar and provides a script which makes it impossible to pass the determinism flag -
     #  so rather than try to replace ar, post-process all libraries and plugins at the end.
@@ -54,7 +53,7 @@ script: |
     #export FAKETIME=$REFERENCE_DATETIME
     #
     # Compile static libraries, and use statically linked openssl (-openssl-linked):
-    ./configure -prefix $INSTALLPREFIX -bindir $INSTALLPREFIX/host/bin -confirm-license -release -opensource -static -qt-zlib -no-libmng -qt-libtiff -qt-libpng -qt-libjpeg -no-sql-mysql -no-sql-oci -no-sql-ibase -stl -no-qt3support -xplatform $SPECNAME -device-option CROSS_COMPILE="$HOST-" -no-multimedia -no-audio-backend -no-phonon -no-phonon-backend -no-declarative -no-script -no-scripttools -no-javascript-jit -no-webkit -svg -no-xmlpatterns -no-sql-sqlite -no-nis -no-cups -no-iconv -no-dbus -no-gif -opengl no -nomake examples -nomake demos -nomake docs -v
+    ./configure -prefix $INSTALLPREFIX -bindir $INSTALLPREFIX/host/bin -confirm-license -release -opensource -static -no-qt3support -xplatform $SPECNAME -device-option CROSS_COMPILE="$HOST-" -no-multimedia -no-audio-backend -no-phonon -no-phonon-backend -no-declarative -no-script -no-scripttools -no-javascript-jit -no-webkit -no-svg -no-xmlpatterns -no-sql-sqlite -no-sql-mysql -no-nis -no-cups -no-iconv -no-dbus -no-gif -no-libtiff -no-libmng -opengl no -nomake examples -nomake demos -nomake docs
     find . -name *.prl | xargs -l sed 's|/\.||' -i
     find . -name *.prl | xargs -l sed 's|/$||' -i
     make $MAKEOPTS install
