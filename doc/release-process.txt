@@ -23,7 +23,7 @@
 
   * Fetch and build inputs:
    mkdir -p inputs; cd inputs/
-   wget 'http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.tar.gz' -O miniupnpc-1.9.tar.gz
+   wget 'http://miniupnp.free.fr/files/download.php?file=miniupnpc-2.0.20170509.tar.gz'
    wget 'http://www.openssl.org/source/openssl-1.0.1u.tar.gz'
    wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
    wget 'https://zlib.net/fossils/zlib-1.2.8.tar.gz'
@@ -32,8 +32,7 @@
    wget 'http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2'
    wget 'https://svn.boost.org/trac/boost/raw-attachment/ticket/7262/boost-mingw.patch' -O boost-mingw-gas-cross-compile-2013-03-03.patch
    wget 'https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz'
-   wget 'https://gist.githubusercontent.com/peerchemist/f345610cb869252f6ee5ac5efa7b4483/raw/39905494a85a676664ed7bbcc9a44ac57f1d8e9b/qmake.conf.win64'
-   wget 'https://gist.githubusercontent.com/peerchemist/d3534840a210c90338361dc79a8b4063/raw/6167fb907f438cbf4d6e9ad06cf7827ff4c2b811/qmake.win32-g++' -O tweaked.qmake.conf
+
    cd ..
    ./bin/gbuild ../sparklecoin/contrib/gitian-descriptors/boost-linux.yml
    cp build/out/boost-linux*-1.55.0-gitian-r1.zip inputs/
@@ -81,6 +80,19 @@
    rm -rf sparklecoin-${VERSION}-win32
 
 * perform Mac build
+
+  Build osxcross.yml 
+  bin/gbuild --commit osxcross=43864e6d8f432f891acb8af3b2f14b22af471a3b,libdmg-hfsplus=master ../contrib/gitian-descriptors/osxcross.yml
+
+  Build qt-osx.yml
+  bin/gbuild ../contrib/gitian-descriptors/qt-osx.yml
+
+  Build deps-osx.yml
+  bin/gbuild ../contrib/gitian-descriptors/deps-osx.yml
+
+  Build gitian-osx.yml
+  bin/gbuild --commit sparklecoin=v${VERSION} ../contrib/gitian-descriptors/gitian-osx.yml
+
   See this blog post for how Gavin set up his build environment to build the OSX
   release; note that a patched version of macdeployqt is not needed anymore, as
   the required functionality and fixes are implemented directly in macdeployqtplus:
