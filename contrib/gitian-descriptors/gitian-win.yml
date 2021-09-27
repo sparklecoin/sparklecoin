@@ -17,10 +17,12 @@ remotes:
 - "url": "https://github.com/sparklecoin/sparklecoin.git"
   "dir": "sparklecoin"
 files:
+- "qt-win32-4.8.7-gitian-r3.zip"
 - "qt-win64-4.8.7-gitian-r3.zip"
+- "boost-win32-1.55.0-gitian-r6.zip"
 - "boost-win64-1.55.0-gitian-r6.zip"
+- "sparklecoin-deps-win32-gitian-r12.zip"
 - "sparklecoin-deps-win64-gitian-r12.zip"
-- "tweaked.qmake.conf"
 script: |
   # Defines
   export TZ=UTC
@@ -28,8 +30,7 @@ script: |
   OPTFLAGS='-O2'
   TEMPDIR="$HOME/tempdir"
   NEEDDIST=1
-  # add 32 bellow to compile for 32bit as well
-  for BITS in 64; do # for architectures
+  for BITS in 32 64; do # for architectures
     #
     STAGING=$HOME/staging${BITS}
     BUILDDIR=$HOME/build${BITS}
@@ -46,17 +47,6 @@ script: |
     unzip $INDIR/qt-win${BITS}-4.8.7-gitian-r3.zip
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
     unzip $INDIR/sparklecoin-deps-win${BITS}-gitian-r12.zip
-
-    # it seems to be needing this
-    cd $STAGING/host/bin
-    ln -s uic $HOST-uic
-    ln -s rcc $HOST-rcc
-    ln -s moc $HOST-moc
-
-    # make qmake.conf proper
-    cd $STAGING/mkspec/win32-g++/
-    cp $INDIR/tweaked.qmake.conf qmake.conf
-
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/sparklecoin
